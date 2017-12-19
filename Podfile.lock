@@ -1,0 +1,31 @@
+PODS:
+  - Realm (3.0.2):
+    - Realm/Headers (= 3.0.2)
+  - Realm/Headers (3.0.2)
+  - RealmSwift (3.0.2):
+    - Realm (= 3.0.2)
+  - SDWebImage (4.2.2):
+    - SDWebImage/Core (= 4.2.2)
+  - SDWebImage/Core (4.2.2)
+  - SwiftyJSON (4.0.0)
+  - SwiftyVK (2.0.14)
+  - Swinject (2.1.1)
+
+DEPENDENCIES:
+  - RealmSwift
+  - SDWebImage (~> 4.0)
+  - SwiftyJSON
+  - SwiftyVK (= 2.0.14)
+  - Swinject (~> 2.1.0)
+
+SPEC CHECKSUMS:
+  Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
+  RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
+  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  SwiftyVK: 1761158986a64d9afa4b25d8b07fba72d6eb041a
+  Swinject: afea49fd95f392b41171669f165842879c48fad6
+
+PODFILE CHECKSUM: ad7606bacf38247f771cf1dd65e63a193dd028fb
+
+COCOAPODS: 1.3.1

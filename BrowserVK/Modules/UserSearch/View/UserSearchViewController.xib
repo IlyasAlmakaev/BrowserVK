@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="17C88" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserSearchViewController" customModule="BrowserVK" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="TOb-vV-HxF" id="XC0-xC-UYo"/>
+                <outlet property="tableView" destination="w6m-de-XMl" id="ONS-lo-qTA"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w6m-de-XMl">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="rcp-ap-wPV"/>
+                        <outlet property="delegate" destination="-1" id="vmt-Sz-o7n"/>
+                    </connections>
+                </tableView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TOb-vV-HxF">
+                    <rect key="frame" x="177" y="323" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="TOb-vV-HxF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6rh-z9-dRm"/>
+                <constraint firstItem="w6m-de-XMl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FLt-NJ-RVe"/>
+                <constraint firstAttribute="bottom" secondItem="w6m-de-XMl" secondAttribute="bottom" id="PgD-Oi-X4Z"/>
+                <constraint firstItem="TOb-vV-HxF" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="aOw-pn-z6w"/>
+                <constraint firstAttribute="trailing" secondItem="w6m-de-XMl" secondAttribute="trailing" id="ike-hu-UwO"/>
+                <constraint firstItem="w6m-de-XMl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jTz-vk-Wdk"/>
+            </constraints>
+            <point key="canvasLocation" x="32.5" y="88.5"/>
+        </view>
+    </objects>
+</document>

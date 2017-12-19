@@ -1,0 +1,26 @@
+### Headers settings
+company: Ilyas
+
+### Xcode project settings
+project_name: BrowserVK
+xcodeproj_path: BrowserVK.xcodeproj
+prefix: AI
+
+### Code generation settings section
+# The main project target name
+project_target: BrowserVK
+
+# The file path for new modules
+project_file_path: /BrowserVK/Modules
+
+# The Xcode group path to new modules
+project_group_path: /BrowserVK/Modules
+
+### Dependencies settings section
+podfile_path: 
+
+### Templates
+templates:
+- {name: rviper_controller}
+- {name: mvvm_controller}
+- {name: swifty_viper}

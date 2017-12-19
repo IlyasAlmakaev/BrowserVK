@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="17C88" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserInfoViewController" customModule="BrowserVK" customModuleProvider="target">
+            <connections>
+                <outlet property="avatar" destination="GtV-Ks-vaR" id="xBJ-Df-s1G"/>
+                <outlet property="tableView" destination="LgA-MO-iKO" id="l8D-Oh-WYt"/>
+                <outlet property="view" destination="iN0-l3-epB" id="UJj-RX-a7b"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LgA-MO-iKO">
+                    <rect key="frame" x="0.0" y="200" width="375" height="467"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="oYT-Kv-iIG"/>
+                        <outlet property="delegate" destination="-1" id="p0q-ij-hgf"/>
+                    </connections>
+                </tableView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GtV-Ks-vaR">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contact_mask" translatesAutoresizingMaskIntoConstraints="NO" id="zBd-ES-oE6">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="GtV-Ks-vaR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="15X-8H-kBg"/>
+                <constraint firstItem="zBd-ES-oE6" firstAttribute="height" secondItem="GtV-Ks-vaR" secondAttribute="height" id="2Cw-CU-DaW"/>
+                <constraint firstItem="zBd-ES-oE6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8ND-SV-HzO"/>
+                <constraint firstItem="GtV-Ks-vaR" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.3" id="Bke-ms-9MT"/>
+                <constraint firstAttribute="trailing" secondItem="LgA-MO-iKO" secondAttribute="trailing" id="HWS-D1-Ruq"/>
+                <constraint firstItem="LgA-MO-iKO" firstAttribute="top" secondItem="GtV-Ks-vaR" secondAttribute="bottom" id="MEU-Fy-33c"/>
+                <constraint firstItem="zBd-ES-oE6" firstAttribute="width" secondItem="GtV-Ks-vaR" secondAttribute="width" id="T4a-0w-66J"/>
+                <constraint firstItem="LgA-MO-iKO" firstAttribute="top" secondItem="zBd-ES-oE6" secondAttribute="bottom" id="UTG-8M-QCn"/>
+                <constraint firstItem="GtV-Ks-vaR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XoF-mF-Uqd"/>
+                <constraint firstItem="LgA-MO-iKO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hKv-o8-gct"/>
+                <constraint firstAttribute="trailing" secondItem="zBd-ES-oE6" secondAttribute="trailing" id="id4-9B-wip"/>
+                <constraint firstAttribute="trailing" secondItem="GtV-Ks-vaR" secondAttribute="trailing" id="j9D-gI-nHI"/>
+                <constraint firstItem="zBd-ES-oE6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="opg-Hy-aCe"/>
+                <constraint firstAttribute="bottom" secondItem="LgA-MO-iKO" secondAttribute="bottom" id="qyU-xN-fTj"/>
+            </constraints>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="contact_mask" width="120" height="120"/>
+    </resources>
+</document>
