@@ -18,8 +18,8 @@ class UserSearchRouter: UserSearchRouterInput {
         self.factory = factory
     }
     
-    func openUserInfoViewController(navigationController: UINavigationController, userID: Int) {
+    func openUserInfoViewController(userID: Int) {
         guard let userInfoViewController = factory.controller(input: UserInfoInputDataModel(userID: userID))?.viewController else { return }
-        navigationController.pushViewController(userInfoViewController, animated: true)
+        userSearchViewController.navigationController?.pushViewController(userInfoViewController, animated: true)
     }
 }

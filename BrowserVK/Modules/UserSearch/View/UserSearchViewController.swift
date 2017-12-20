@@ -47,9 +47,8 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     func setupInitialState() {
         
         // configurate table view cell
-        let nibCell = UINib(nibName: String(describing: UserSearchTableViewCell.self), bundle: nil)
-        tableView.register(nibCell, forCellReuseIdentifier: UserSearchCellID)
-        
+        tableView.register(cell: UserSearchTableViewCell.self)
+        tableView.registerHeight(cell: UserSearchTableViewCell.self)
         tableView.tableFooterView = UIView(frame: .zero)
         
         // configurate search controller
@@ -68,6 +67,11 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
         refreshControl.addTarget(self, action: #selector(searchWithRefreshControl), for: .valueChanged)
         
         definesPresentationContext = true
+    }
+    
+    func provideTableDataSource(datasource: AnyTableDataSource) {
+        tableView.delegate = datasource
+        tableView.dataSource = datasource
     }
     
     func updateTableView() {
@@ -95,32 +99,32 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     }
 }
 
-extension UserSearchViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchResults.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: UserSearchCellID, for: indexPath) as! UserSearchTableViewCell
-        
-        let contact = searchResults[indexPath.row]
-        cell.contact = contact
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        output.checkPagination(index: indexPath.row, arrayCount: searchResults.count)
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let row = indexPath.row
-        let id = searchResults[row].id
-        output.openUserInfoViewController(navigationController: self.navigationController!, id: id)
-    }
-}
+//extension UserSearchViewController: UITableViewDataSource, UITableViewDelegate {
+//    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return searchResults.count
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        
+//        let cell = tableView.dequeueReusableCell(withIdentifier: UserSearchCellID, for: indexPath) as! UserSearchTableViewCell
+//        
+//        let contact = searchResults[indexPath.row]
+//        cell.contact = contact
+//        
+//        return cell
+//    }
+//    
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        output.checkPagination(index: indexPath.row, arrayCount: searchResults.count)
+//    }
+//    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let row = indexPath.row
+//        let id = searchResults[row].id
+//        output.openUserInfoViewController(navigationController: self.navigationController!, id: id)
+//    }
+//}
 
 extension UserSearchViewController: UISearchBarDelegate {
     

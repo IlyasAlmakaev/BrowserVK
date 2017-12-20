@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 protocol UserSearchRouterInput {
-    func openUserInfoViewController(navigationController: UINavigationController, userID: Int)
+    func openUserInfoViewController(userID: Int)
 }

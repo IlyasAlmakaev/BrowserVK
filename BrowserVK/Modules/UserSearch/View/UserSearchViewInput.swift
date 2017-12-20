@@ -15,6 +15,8 @@ protocol UserSearchViewInput: class {
     
     func setupInitialState()
     
+    func provideTableDataSource(datasource: AnyTableDataSource)
+    
     func updateTableView()
     
     func loadedSearchedContacts(contacts: [Contact])
