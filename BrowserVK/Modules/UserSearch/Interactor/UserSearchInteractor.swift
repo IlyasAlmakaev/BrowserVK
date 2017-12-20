@@ -13,6 +13,8 @@ class UserSearchInteractor: UserSearchInteractorInput {
     var apiFacade: IApiFacade!
     var vkRepository: IVkRepository!
     var hasMore = false
+    var countContacts = 0
+    var currentName = ""
     
     init(apiFacade: IApiFacade, vkRepository: IVkRepository) {
         self.apiFacade = apiFacade
@@ -20,18 +22,26 @@ class UserSearchInteractor: UserSearchInteractorInput {
     }
     
     func getNextContacts() {
-        apiFacade.getNextContacts()
+        countContacts += 20
+  //      apiFacade.getNextContacts()
+        loadContacts()
     }
     
     func resetSearch() {
+        countContacts = 0
         apiFacade.resetSearch()
         vkRepository.deleteAll()
     }
     
     func loadSearchedContacts(name: String) {
-        
-        apiFacade.loadSearchedContacts(name: name, successHundler: { [weak self] (successArray) in
-
+        currentName = name
+        loadContacts()
+    }
+    
+    func loadContacts() {
+        apiFacade.loadSearchedContacts(name: currentName, countContacts: countContacts, successHundler: { [weak self] (successArray, hasMore) in
+            
+            self?.hasMore = hasMore
             self?.vkRepository.setSearchedContacts(objects: successArray, successHundler:  {
                 
                 let contacts = self?.vkRepository.getSearchedContacts()

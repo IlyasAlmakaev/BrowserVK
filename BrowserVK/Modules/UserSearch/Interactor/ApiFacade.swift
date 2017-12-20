@@ -18,9 +18,8 @@ class ApiFacade: VKDelegate {
     
     var userSearchInteractor: UserSearchInteractorInput!
     var userInfoInterator: UserInfoInteractorInput!
+
     
-    var pageNumber = 0
-    var currentName = ""
     
    
  
@@ -130,28 +129,25 @@ class ApiFacade: VKDelegate {
 }
 
 extension ApiFacade: IApiFacade {
-    func loadSearchedContacts(name: String, successHundler: @escaping (Array<Any>?) -> Void) {
+    func loadSearchedContacts(name: String, countContacts: Int, successHundler: @escaping (Array<Any>?, Bool) -> Void) {
         
-        currentName = name
-        
-        VK.API.Users.search([.q: name, .offset: String(pageNumber), .limit: "20", .fields: "photo_50, nickname"]).send(
+        VK.API.Users.search([.q: name, .offset: String(countContacts), .limit: "20", .fields: "photo_50, nickname"]).send(
             onSuccess: { [weak self]
                 response in
                 
                 let objects = response["items"].arrayObject
+                var hasMore = false
  // TODO: доработать пагинацию в стиле viper
-//                if objects?.count == 20 {
-//                    self?.userSearchInteractor.hasMore = true
-//                } else {
-//                    self?.userSearchInteractor.hasMore = false
-//                }
+                if objects?.count == 20 {
+                    hasMore = true
+                }
                 
                 self?.searchResults += objects!
                 
                 DispatchQueue.main.async {
                     //  self!.interactor.loadedSearchedContacts(array: self.searchResults)
                 //    self!.userSearchInteractor.setSearchedContacts(objects: self?.searchResults)
-                    successHundler(self?.searchResults)
+                    successHundler(self?.searchResults, hasMore)
                 }
             },
             onError: { print("search user fail \n \($0)") }
@@ -178,15 +174,14 @@ extension ApiFacade: IApiFacade {
         )
     }
     
-    func getNextContacts() {
-        pageNumber += 20
-        loadSearchedContacts(name: currentName, successHundler: { (successArray) in
-         //   print(successArray ?? 0)
-        })
-    }
+//    func getNextContacts() {
+//        pageNumber += 20
+//        loadSearchedContacts(name: currentName, successHundler: { (successArray) in
+//         //   print(successArray ?? 0)
+//        })
+//    }
     
     func resetSearch() {
         searchResults = []
-        pageNumber = 0
     }
 }
