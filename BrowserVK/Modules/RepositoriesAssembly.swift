@@ -13,6 +13,6 @@ class RepositoriesAssembly: Assembly {
     func assemble(container: Container) {
         container.register(IVkRepository.self) { (r) in
             VkRepository()
-        }
+        }.inObjectScope(.container)
     }
 }
