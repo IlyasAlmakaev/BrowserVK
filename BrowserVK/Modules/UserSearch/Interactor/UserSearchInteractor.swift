@@ -23,7 +23,6 @@ class UserSearchInteractor: UserSearchInteractorInput {
     
     func getNextContacts() {
         countContacts += 20
-  //      apiFacade.getNextContacts()
         loadContacts()
     }
     
@@ -49,18 +48,4 @@ class UserSearchInteractor: UserSearchInteractorInput {
             })
         })
     }
-    
-//    func setSearchedContacts(objects: Array<Any>?) {
-//        vkRepository.setSearchedContacts(objects: objects, successHundler:  {
-//            
-//        })
-//    }
-    
-//    func loadedSearchedContacts(contacts: [Contact]) {
-//        
-//    }
-    
-//    func initVK() {
-//        apiFacade.initVK()
-//    }
 }

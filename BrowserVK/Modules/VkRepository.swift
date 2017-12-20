@@ -41,6 +41,7 @@ class VkRepository {
 }
 
 extension VkRepository: IVkRepository {
+    
     // MARK: UserSearchInteractorInput
     
     func setSearchedContacts(objects: Array<Any>?, successHundler: @escaping() -> Void) {
@@ -50,12 +51,8 @@ extension VkRepository: IVkRepository {
         }
         
         realm.beginWrite()
-//        let convertDeletedContact = Contact(map: objects[0] as AnyObject)
-//        let deletedContact = contactMapper.mapFrom(item: convertDeletedContact!)!
         
-        //        var cont = [Contact]()
-        
-        for object in objects   {
+        for object in objects {
             
             let contact = Contact(map: object as AnyObject)
             
@@ -69,17 +66,8 @@ extension VkRepository: IVkRepository {
         }
   
         try! realm.commitWrite()
-        
-//        deleteContact(contact: deletedContact)
-        //      deleteAll()
-        
-    //    self.userSearchInteractor.loadedSearchedContacts(contacts: getSearchedContacts())
+
         successHundler()
-        
-        //        if cont == getSearchedContacts() {
-        //            print("comparableToArrays")
-        //        }
-        
     }
     
     func getSearchedContacts() -> [Contact] {
@@ -101,7 +89,7 @@ extension VkRepository: IVkRepository {
         guard let object = object else {
             return
         }
-        print("userInfromationObject \(object)")
+
         realm.beginWrite()
         
         let contactDetail = ContactDetail(map: object as AnyObject)
@@ -110,8 +98,7 @@ extension VkRepository: IVkRepository {
         realm.add(rContactDetail, update: true)
         
         try! realm.commitWrite()
-        
-    //    self.userInfoInteractor.loadedUserInfo(info: getSelectedContact(contact: rContactDetail))
+
         successHundler(rContactDetail)
     }
     

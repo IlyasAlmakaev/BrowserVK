@@ -28,16 +28,4 @@ class UserInfoInteractor: UserInfoInteractorInput {
             })
         })
     }
-    
-//    func setUserInfo(object: Any?) {
-//        print("getUserInformation \(String(describing: object))")
-//        self.vkRepository.setSelectedContact(object: object, successHundler: {
-//            
-//        })
-//    }
-    
-//    func loadedUserInfo(info: ContactDetail) {
-//        print("getUserInformation \(info)")
-//        self.output.loadedUserInfo(info: info)
-//    }
 }

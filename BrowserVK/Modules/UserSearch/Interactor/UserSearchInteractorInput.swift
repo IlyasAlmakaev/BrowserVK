@@ -12,12 +12,6 @@ protocol UserSearchInteractorInput {
     
     func loadSearchedContacts(name: String)
     
- //   func setSearchedContacts(objects: Array<Any>?)
-    
- //   func loadedSearchedContacts(contacts: [Contact])
-    
- //   func initVK()
-    
     func resetSearch()
     
     func getNextContacts()

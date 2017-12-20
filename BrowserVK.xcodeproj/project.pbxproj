@@ -16,7 +16,6 @@
 		22FF1D9BC790E57C22A6A5CE /* UserInfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD62FFA75318C5150E0674D /* UserInfoInteractor.swift */; };
 		360ADC336FFC177A65A258D2 /* UserSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C92FAF6FFF5CA0F0BD0B9A /* UserSearchPresenter.swift */; };
 		378349E483F46120FE3E7EEB /* UserInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB4F80E531C13F744172F61 /* UserInfoPresenter.swift */; };
-		37D178B604ABC1DBC9696D45 /* UserInfoInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8FBAA8D13796BBFE2F4F9 /* UserInfoInitializer.swift */; };
 		4A007363BDD4046919D4BB81 /* UserSearchInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEABC2BBB7BC5B9B2C09DC04 /* UserSearchInteractorInput.swift */; };
 		4D978EE443B15A7DFD395C73 /* UserSearchRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087981021BFE327C103D1C69 /* UserSearchRouterInput.swift */; };
 		589C87EF5FE4E05C51AAE24C /* UserSearchModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23301F78D3E6C7620F78EA2E /* UserSearchModuleInput.swift */; };
@@ -59,7 +58,6 @@
 		6710F5FF25FAC2EC41D38116 /* UserInfoModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E5A864BE70EE516E54C80 /* UserInfoModuleInput.swift */; };
 		70273DEC5934A46592C69C0A /* UserInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D459D9311BF76BD6C1B3F3D8 /* UserInfoRouter.swift */; };
 		84D4FC82C46FADF951031D7E /* UserInfoViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FECB3A4BB7E3C94AAB097E /* UserInfoViewInput.swift */; };
-		85861CAC2E779EB27EF08C16 /* UserSearchInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D0CFA15691741B1F1B1185 /* UserSearchInitializer.swift */; };
 		9D403CD9E7BD8585428020B5 /* Pods_BrowserVKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73B94946A1CC6633E656E5 /* Pods_BrowserVKTests.framework */; };
 		BB3C420DDAAB0F8C7D95F756 /* UserSearchViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4985B5180FCC688618486964 /* UserSearchViewInput.swift */; };
 		D671DC6799E43D942307B915 /* UserInfoRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0095A19BDD5757D1B490B4AE /* UserInfoRouterInput.swift */; };
@@ -129,7 +127,6 @@
 		60C2663A1FE001250092CD67 /* Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
 		7A73B94946A1CC6633E656E5 /* Pods_BrowserVKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrowserVKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B279D3A12B16CCBD546865 /* UserSearchInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchInteractorOutput.swift; sourceTree = "<group>"; };
-		90A8FBAA8D13796BBFE2F4F9 /* UserInfoInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserInfoInitializer.swift; sourceTree = "<group>"; };
 		A60E5A864BE70EE516E54C80 /* UserInfoModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserInfoModuleInput.swift; sourceTree = "<group>"; };
 		AA5B07817CD67074091A5E4F /* UserInfoInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserInfoInteractorInput.swift; sourceTree = "<group>"; };
 		B2C92FAF6FFF5CA0F0BD0B9A /* UserSearchPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchPresenter.swift; sourceTree = "<group>"; };
@@ -144,7 +141,6 @@
 		DFD62FFA75318C5150E0674D /* UserInfoInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserInfoInteractor.swift; sourceTree = "<group>"; };
 		EBB4F80E531C13F744172F61 /* UserInfoPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserInfoPresenter.swift; sourceTree = "<group>"; };
 		EDBFDD91E7DD7650671D9EC8 /* UserSearchRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchRouter.swift; sourceTree = "<group>"; };
-		F2D0CFA15691741B1F1B1185 /* UserSearchInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchInitializer.swift; sourceTree = "<group>"; };
 		F65AFFDC6E447B2549DC9CAA /* Pods-BrowserVK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrowserVK.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrowserVK/Pods-BrowserVK.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,7 +188,6 @@
 			isa = PBXGroup;
 			children = (
 				CCA387EDE3E1450A2F438973 /* UserInfoConfigurator.swift */,
-				90A8FBAA8D13796BBFE2F4F9 /* UserInfoInitializer.swift */,
 				605C82121FE7DB3B0026F026 /* UserInfoInputDataModel.swift */,
 			);
 			path = Configurator;
@@ -233,7 +228,6 @@
 			isa = PBXGroup;
 			children = (
 				28F75C5054F82120770B816C /* UserSearchConfigurator.swift */,
-				F2D0CFA15691741B1F1B1185 /* UserSearchInitializer.swift */,
 				605C82021FE7CED60026F026 /* UserSearchInputDataModel.swift */,
 			);
 			path = Configurator;
@@ -748,7 +742,6 @@
 				605F86221FDFEB99002EE9C3 /* Contact.swift in Sources */,
 				605F861D1FDFBB84002EE9C3 /* ApiFacade.swift in Sources */,
 				2012FC6879E7DB094CF63E18 /* UserSearchConfigurator.swift in Sources */,
-				85861CAC2E779EB27EF08C16 /* UserSearchInitializer.swift in Sources */,
 				84D4FC82C46FADF951031D7E /* UserInfoViewInput.swift in Sources */,
 				229FBE7772B0813888C16F54 /* UserInfoViewOutput.swift in Sources */,
 				1E1F8FE3197E15F964DDBDCF /* UserInfoViewController.swift in Sources */,
@@ -774,7 +767,6 @@
 				605C82111FE7D9470026F026 /* MainContainer.swift in Sources */,
 				70273DEC5934A46592C69C0A /* UserInfoRouter.swift in Sources */,
 				5CAB58F7E63A1E35E3C9EE42 /* UserInfoConfigurator.swift in Sources */,
-				37D178B604ABC1DBC9696D45 /* UserInfoInitializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

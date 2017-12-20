@@ -9,8 +9,5 @@
 import Foundation
 
 protocol UserInfoInteractorInput {
-    
     func loadUserInfo(userID: Int)
-//    func setUserInfo(object: Any?)
-//    func loadedUserInfo(info: ContactDetail)
 }

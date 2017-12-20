@@ -14,9 +14,7 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
     var interactor: UserSearchInteractorInput!
     var router: UserSearchRouterInput!
     
-    func viewIsReady() {
- //       interactor.initVK()
-    }
+    func viewIsReady() {}
     
     func search(string: String) {
         resetSearch()

@@ -9,6 +9,5 @@
 import Foundation
 
 protocol UserInfoInteractorOutput: class {
-    
     func loadedUserInfo(info: ContactDetail)
 }
