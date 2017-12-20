@@ -18,16 +18,26 @@ class UserInfoInteractor: UserInfoInteractorInput {
     }
     
     func loadUserInfo(userID: Int) {
-        apiFacade.loadUserInfo(userID: userID)
+        
+        apiFacade.loadUserInfo(userID: userID, successHundler: { [weak self] (successObject) in
+            
+            self?.vkRepository.setSelectedContact(object: successObject, successHundler: { (rContactDetail) in
+                
+                let contact = self?.vkRepository.getSelectedContact(contact: rContactDetail)
+                self?.output.loadedUserInfo(info: contact!)
+            })
+        })
     }
     
-    func setUserInfo(object: Any?) {
-        print("getUserInformation \(String(describing: object))")
-        self.vkRepository.setSelectedContact(object: object)
-    }
+//    func setUserInfo(object: Any?) {
+//        print("getUserInformation \(String(describing: object))")
+//        self.vkRepository.setSelectedContact(object: object, successHundler: {
+//            
+//        })
+//    }
     
-    func loadedUserInfo(info: ContactDetail) {
-        print("getUserInformation \(info)")
-        self.output.loadedUserInfo(info: info)
-    }
+//    func loadedUserInfo(info: ContactDetail) {
+//        print("getUserInformation \(info)")
+//        self.output.loadedUserInfo(info: info)
+//    }
 }

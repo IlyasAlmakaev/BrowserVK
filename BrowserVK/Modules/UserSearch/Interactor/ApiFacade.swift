@@ -130,7 +130,7 @@ class ApiFacade: VKDelegate {
 }
 
 extension ApiFacade: IApiFacade {
-    func loadSearchedContacts(name: String) {
+    func loadSearchedContacts(name: String, successHundler: @escaping (Array<Any>?) -> Void) {
         
         currentName = name
         
@@ -139,29 +139,29 @@ extension ApiFacade: IApiFacade {
                 response in
                 
                 let objects = response["items"].arrayObject
-                
-                if objects?.count == 20 {
-                    self?.userSearchInteractor.hasMore = true
-                } else {
-                    self?.userSearchInteractor.hasMore = false
-                }
+ // TODO: доработать пагинацию в стиле viper
+//                if objects?.count == 20 {
+//                    self?.userSearchInteractor.hasMore = true
+//                } else {
+//                    self?.userSearchInteractor.hasMore = false
+//                }
                 
                 self?.searchResults += objects!
                 
                 DispatchQueue.main.async {
                     //  self!.interactor.loadedSearchedContacts(array: self.searchResults)
-                    self!.userSearchInteractor.setSearchedContacts(objects: self?.searchResults)
+                //    self!.userSearchInteractor.setSearchedContacts(objects: self?.searchResults)
+                    successHundler(self?.searchResults)
                 }
             },
             onError: { print("search user fail \n \($0)") }
         )
     }
     
-    func loadUserInfo(userID: Int) {
+    func loadUserInfo(userID: Int, successHundler: @escaping (Any?) -> Void) {
         
         VK.API.Users.get([.userId: String(userID), .fields: "photo_200,nickname,screen_name,relation,sex"]).send(
-            onSuccess: { [weak self]
-                response in
+            onSuccess: { response in
                                 print("SwiftyVK: friends.get successed with \n \(response))")
                 //                let result = JSON($0).arrayValue
                 //                self.userInfoResults = result[0]
@@ -169,7 +169,8 @@ extension ApiFacade: IApiFacade {
                 let object = response.arrayObject?[0]
                 
                 DispatchQueue.main.async {
-                    self?.userInfoInterator.setUserInfo(object: object)
+         //           self?.userInfoInterator.setUserInfo(object: object)
+                    successHundler(object)
                     //  self.interactorUserInfo.loadedUserInfo(info: self.userInfoResults)
                 }
             },
@@ -179,7 +180,9 @@ extension ApiFacade: IApiFacade {
     
     func getNextContacts() {
         pageNumber += 20
-        loadSearchedContacts(name: currentName)
+        loadSearchedContacts(name: currentName, successHundler: { (successArray) in
+         //   print(successArray ?? 0)
+        })
     }
     
     func resetSearch() {

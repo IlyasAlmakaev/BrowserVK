@@ -34,13 +34,13 @@ class UserInfoConfigurator {
         let interactor = UserInfoInteractor(apiFacade: resolver.resolve(IApiFacade.self)!, vkRepository: resolver.resolve(IVkRepository.self)!)
         interactor.output = presenter
         
-        let apiFacade = ApiFacade()
-        apiFacade.userInfoInterator = interactor
-        interactor.apiFacade = apiFacade
-        
-        let vkRepository = VkRepository()
-        vkRepository.userInfoInteractor = interactor
-        interactor.vkRepository = vkRepository
+//        let apiFacade = ApiFacade()
+//        apiFacade.userInfoInterator = interactor
+//        interactor.apiFacade = apiFacade
+//        
+//        let vkRepository = VkRepository()
+//        vkRepository.userInfoInteractor = interactor
+//        interactor.vkRepository = vkRepository
         
         presenter.interactor = interactor
         userInfoViewController.output = presenter

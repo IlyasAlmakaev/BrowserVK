@@ -12,9 +12,9 @@ protocol UserSearchInteractorInput {
     
     func loadSearchedContacts(name: String)
     
-    func setSearchedContacts(objects: Array<Any>?)
+ //   func setSearchedContacts(objects: Array<Any>?)
     
-    func loadedSearchedContacts(contacts: [Contact])
+ //   func loadedSearchedContacts(contacts: [Contact])
     
  //   func initVK()
     

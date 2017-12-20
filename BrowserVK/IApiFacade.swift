@@ -9,8 +9,8 @@
 import Foundation
 
 protocol IApiFacade: class {
-    func loadSearchedContacts(name: String)
-    func loadUserInfo(userID: Int)
+    func loadSearchedContacts(name: String, successHundler: @escaping (Array<Any>?) -> Void)
+    func loadUserInfo(userID: Int, successHundler: @escaping (Any?) -> Void)
     func getNextContacts()
     func resetSearch()
 }

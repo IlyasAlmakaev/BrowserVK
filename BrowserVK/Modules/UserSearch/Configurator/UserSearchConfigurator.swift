@@ -35,13 +35,13 @@ class UserSearchConfigurator {
         let interactor = UserSearchInteractor(apiFacade: resolver.resolve(IApiFacade.self)!, vkRepository: resolver.resolve(IVkRepository.self)!)
         interactor.output = presenter
         
-        let apiFacade = ApiFacade()
-        apiFacade.userSearchInteractor = interactor
-        interactor.apiFacade = apiFacade
-        
-        let vkRepository = VkRepository()
-        vkRepository.userSearchInteractor = interactor
-        interactor.vkRepository = vkRepository
+//        let apiFacade = ApiFacade()
+//        apiFacade.userSearchInteractor = interactor
+//        interactor.apiFacade = apiFacade
+//        
+//        let vkRepository = VkRepository()
+//        vkRepository.userSearchInteractor = interactor
+//        interactor.vkRepository = vkRepository
         
    //     let navigation = UINavigationController(rootViewController: viewController)
         

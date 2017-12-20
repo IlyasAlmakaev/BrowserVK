@@ -29,16 +29,26 @@ class UserSearchInteractor: UserSearchInteractorInput {
     }
     
     func loadSearchedContacts(name: String) {
-        apiFacade.loadSearchedContacts(name: name)
+        
+        apiFacade.loadSearchedContacts(name: name, successHundler: { [weak self] (successArray) in
+
+            self?.vkRepository.setSearchedContacts(objects: successArray, successHundler:  {
+                
+                let contacts = self?.vkRepository.getSearchedContacts()
+                self?.output.loadedSearchedContacts(contacts: contacts!)
+            })
+        })
     }
     
-    func setSearchedContacts(objects: Array<Any>?) {
-        vkRepository.setSearchedContacts(objects: objects)
-    }
+//    func setSearchedContacts(objects: Array<Any>?) {
+//        vkRepository.setSearchedContacts(objects: objects, successHundler:  {
+//            
+//        })
+//    }
     
-    func loadedSearchedContacts(contacts: [Contact]) {
-        self.output.loadedSearchedContacts(contacts: contacts)
-    }
+//    func loadedSearchedContacts(contacts: [Contact]) {
+//        
+//    }
     
 //    func initVK() {
 //        apiFacade.initVK()
