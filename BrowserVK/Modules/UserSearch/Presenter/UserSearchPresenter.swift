@@ -36,9 +36,9 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
         view.stopRefreshControl()
     }
     
-    func openUserInfoViewController(navigationController: UINavigationController, id: Int) {
-        router.openUserInfoViewController(userID: id)
-    }
+//    func openUserInfoViewController(navigationController: UINavigationController, id: Int) {
+//        router.openUserInfoViewController(userID: id)
+//    }
     
     func checkPagination(index: Int, arrayCount: Int) {
         if index == arrayCount - 1 {

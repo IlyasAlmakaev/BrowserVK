@@ -23,5 +23,5 @@ import UIKit
     
     func checkPagination(index: Int, arrayCount: Int)
     
-    func openUserInfoViewController(navigationController: UINavigationController, id: Int)
+//    func openUserInfoViewController(navigationController: UINavigationController, id: Int)
 }

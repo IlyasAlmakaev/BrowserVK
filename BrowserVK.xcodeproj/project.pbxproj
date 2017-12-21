@@ -127,7 +127,7 @@
 		605F86181FDFBAAE002EE9C3 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
 		605F86191FDFBAAE002EE9C3 /* UserInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoTableViewCell.xib; sourceTree = "<group>"; };
 		605F861C1FDFBB84002EE9C3 /* ApiFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiFacade.swift; path = Modules/UserSearch/Interactor/ApiFacade.swift; sourceTree = "<group>"; };
-		605F861E1FDFBDA0002EE9C3 /* CellObjectFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellObjectFactory.swift; sourceTree = "<group>"; };
+		605F861E1FDFBDA0002EE9C3 /* CellObjectFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellObjectFactory.swift; path = ../View/CellObjectFactory.swift; sourceTree = "<group>"; };
 		605F86211FDFEB99002EE9C3 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		605F86231FDFEBB3002EE9C3 /* ContactMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactMapper.swift; sourceTree = "<group>"; };
 		605F86251FDFEBD9002EE9C3 /* ContactRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactRealm.swift; sourceTree = "<group>"; };
@@ -219,7 +219,6 @@
 				2927F66ECD73379E4B7AAD0D /* UserInfoViewOutput.swift */,
 				C667D6C53ADBB75F957E625C /* UserInfoViewController.swift */,
 				605F86101FDFB429002EE9C3 /* UserInfoViewController.xib */,
-				605F861E1FDFBDA0002EE9C3 /* CellObjectFactory.swift */,
 				605F86171FDFBA93002EE9C3 /* Cell */,
 			);
 			path = View;
@@ -500,6 +499,7 @@
 			children = (
 				A60E5A864BE70EE516E54C80 /* UserInfoModuleInput.swift */,
 				EBB4F80E531C13F744172F61 /* UserInfoPresenter.swift */,
+				605F861E1FDFBDA0002EE9C3 /* CellObjectFactory.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
