@@ -5,7 +5,8 @@
 //  Created by Ilyas on 12/12/2017.
 //  Copyright © 2017 Ilyas. All rights reserved.
 //
-
+import RxSwift
+import RxCocoa
 
 class UserSearchInteractor: UserSearchInteractorInput {
     
@@ -15,6 +16,7 @@ class UserSearchInteractor: UserSearchInteractorInput {
     var hasMore = false
     var countContacts = 0
     var currentName = ""
+    var contactsVariable: Variable<[Contact]> = Variable([])
     
     init(apiFacade: IApiFacade, vkRepository: IVkRepository) {
         self.apiFacade = apiFacade
@@ -44,7 +46,15 @@ class UserSearchInteractor: UserSearchInteractorInput {
             self?.vkRepository.setSearchedContacts(objects: successArray, successHundler:  {
                 
                 let contacts = self?.vkRepository.getSearchedContacts()
-                self?.output.loadedSearchedContacts(contacts: contacts!)
+                
+                self?.contactsVariable.value = contacts!
+                
+//                contactsVariable.subscribe { contactList in
+//                    print(contactList)
+//                }
+             //   contactsVariable = contacts
+
+         //       self?.output.loadedSearchedContacts(contacts: contacts!)
             })
         })
     }

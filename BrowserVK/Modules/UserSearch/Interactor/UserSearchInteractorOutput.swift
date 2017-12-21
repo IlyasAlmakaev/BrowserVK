@@ -10,5 +10,5 @@ import Foundation
 
 protocol UserSearchInteractorOutput: class {
     
-    func loadedSearchedContacts(contacts: [Contact])
+ //   func loadedSearchedContacts(contacts: [Contact])
 }

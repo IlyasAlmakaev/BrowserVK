@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol UserSearchInteractorInput {
     
@@ -17,4 +18,6 @@ protocol UserSearchInteractorInput {
     func getNextContacts()
     
     var hasMore: Bool { get set }
+    
+    var contactsVariable: Variable<[Contact]> { get set }
 }

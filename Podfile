@@ -5,10 +5,12 @@ target 'BrowserVK' do
   use_frameworks!
 
   pod 'Kingfisher', '~> 3.13.1'
-  pod 'SwiftyVK', '2.0.14'
+  pod 'SwiftyVK',   '2.0.14'
   pod 'SwiftyJSON'
   pod 'RealmSwift'
-  pod 'Swinject', '~> 2.1.0'
+  pod 'Swinject',   '~> 2.1.0'
+  pod 'RxSwift',    '~> 3.0'
+  pod 'RxCocoa',    '~> 3.0'
 
   target 'BrowserVKTests' do
     inherit! :search_paths
