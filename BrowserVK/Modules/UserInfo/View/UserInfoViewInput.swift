@@ -15,7 +15,5 @@ protocol UserInfoViewInput: class {
     
     func setupInitialState()
     
-    func loadedUserInfo(info: ContactDetail)
-    
-    func updateTableView()
+    func loadedUserInfo(contact: ContactDetailPresenter)
 }

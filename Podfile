@@ -4,7 +4,7 @@ target 'BrowserVK' do
   
   use_frameworks!
 
-  pod 'SDWebImage', '~> 4.0'
+  pod 'Kingfisher', '~> 3.13.1'
   pod 'SwiftyVK', '2.0.14'
   pod 'SwiftyJSON'
   pod 'RealmSwift'

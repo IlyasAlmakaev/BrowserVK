@@ -22,7 +22,7 @@ class UserInfoPresenter: UserInfoModuleInput, UserInfoViewOutput, UserInfoIntera
     }
     
     func loadedUserInfo(info: ContactDetail) {
-        view.loadedUserInfo(info: info)
-        view.updateTableView()
+        let contactDetailPresenter = ContactDetailPresenter(contactDetail: info)
+        view.loadedUserInfo(contact: contactDetailPresenter)
     }
 }

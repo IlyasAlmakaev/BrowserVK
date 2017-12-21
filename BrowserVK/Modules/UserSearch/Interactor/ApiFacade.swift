@@ -55,14 +55,14 @@ extension ApiFacade: IApiFacade {
             onSuccess: { [weak self]
                 response in
                 
-                let objects = response["items"].arrayObject
+                guard let objects = response["items"].arrayObject else { return }
                 var hasMore = false
 
-                if objects?.count == 20 {
+                if objects.count == 20 {
                     hasMore = true
                 }
                 
-                self?.searchResults += objects!
+                self?.searchResults += objects
                 
                 DispatchQueue.main.async {
                     successHundler(self?.searchResults, hasMore)
@@ -77,7 +77,7 @@ extension ApiFacade: IApiFacade {
         VK.API.Users.get([.userId: String(userID), .fields: "photo_200,nickname,screen_name,relation,sex"]).send(
             onSuccess: { response in
                 
-                let object = response.arrayObject?[0]
+                guard let object = response.arrayObject?[0] else { return }
                 
                 DispatchQueue.main.async {
                     successHundler(object)

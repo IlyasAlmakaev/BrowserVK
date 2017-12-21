@@ -7,14 +7,13 @@
 //
 
 import UIKit
-import SDWebImage
+import Kingfisher
 
 let UserInfoCellID = "UserInfoCell"
 
 class UserInfoViewController: UIViewController, UserInfoViewInput {
     
     var output: UserInfoViewOutput!
-    var userInfoResults = ContactDetail()
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
@@ -32,49 +31,23 @@ class UserInfoViewController: UIViewController, UserInfoViewInput {
     
     
     // MARK: UserInfoViewInput
-    func setupInitialState() {
-        
-        // configurate table view cell
-//        let nibCell = UINib(nibName: String(describing: UserInfoTableViewCell.self), bundle: nil)
-//        tableView.register(nibCell, forCellReuseIdentifier: UserInfoCellID)
-//        
-//        tableView.tableFooterView = UIView(frame: .zero)
-//        
+    func setupInitialState() {     
         self.edgesForExtendedLayout = []
     }
     
-    func loadedUserInfo(info: ContactDetail) {
-        userInfoResults = info
+    func loadedUserInfo(contact: ContactDetailPresenter) {
         
-        navigationItem.title = "\(userInfoResults.lastName) \(userInfoResults.firstName)"
-        // TODO: обработка и отображение данных по viper
-        firstNameLabel.text = userInfoResults.firstName
-        lastNameLabel.text = userInfoResults.lastName
-        nicknameLabel.text = userInfoResults.nickName
-        screennameLabel.text = userInfoResults.screenname
-    //    sexLabel.text = userInfoResults.sex
+        navigationItem.title = "\(contact.lastName) \(contact.firstName)"
         
-        let url = NSURL(string: userInfoResults.urlImageLarge)!
-        avatar.sd_setImage(with: url as URL, completed: nil)
-    }
-    
-    func updateTableView() {
-//        tableView.reloadData()
+        firstNameLabel.text = contact.firstName
+        lastNameLabel.text = contact.lastName
+        nicknameLabel.text = contact.nickName
+        screennameLabel.text = contact.screenname
+        sexLabel.text = contact.sex
+        relationLabel.text = contact.relation
+        
+        let url = URL(string: contact.urlImageLarge)!
+        avatar.kf.setImage(with: url)
     }
 }
 
-//extension UserInfoViewController: UITableViewDataSource {
-//    
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 6
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        
-//        let cell = tableView.dequeueReusableCell(withIdentifier: UserInfoCellID, for: indexPath) as! UserInfoTableViewCell
-//        
-//        CellObjectFactory().configurateCell(cell: cell, row: indexPath.row, info: self.userInfoResults)
-//        
-//        return cell
-//    }
-//}

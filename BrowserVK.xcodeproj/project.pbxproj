@@ -32,6 +32,7 @@
 		6047E6BF1FE8F17B00FB5BE4 /* StartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047E6BE1FE8F17B00FB5BE4 /* StartService.swift */; };
 		6047E6C21FE907F700FB5BE4 /* UserInfoControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047E6C11FE907F700FB5BE4 /* UserInfoControllerFactory.swift */; };
 		6047E6C41FE90B8200FB5BE4 /* FactoriesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047E6C31FE90B8200FB5BE4 /* FactoriesAssembly.swift */; };
+		604C2A9D1FEB68E80019C903 /* ContactDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604C2A9C1FEB68E80019C903 /* ContactDetailPresenter.swift */; };
 		60511D621FE12970007CFABF /* VkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60511D611FE12970007CFABF /* VkRepository.swift */; };
 		605C81FF1FE76CB20026F026 /* ControllersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605C81FE1FE76CB20026F026 /* ControllersAssembly.swift */; };
 		605C82031FE7CED60026F026 /* UserSearchInputDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605C82021FE7CED60026F026 /* UserSearchInputDataModel.swift */; };
@@ -48,10 +49,7 @@
 		605F86111FDFB429002EE9C3 /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 605F86101FDFB429002EE9C3 /* UserInfoViewController.xib */; };
 		605F86151FDFB93A002EE9C3 /* UserSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605F86131FDFB93A002EE9C3 /* UserSearchTableViewCell.swift */; };
 		605F86161FDFB93A002EE9C3 /* UserSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 605F86141FDFB93A002EE9C3 /* UserSearchTableViewCell.xib */; };
-		605F861A1FDFBAAE002EE9C3 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605F86181FDFBAAE002EE9C3 /* UserInfoTableViewCell.swift */; };
-		605F861B1FDFBAAE002EE9C3 /* UserInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 605F86191FDFBAAE002EE9C3 /* UserInfoTableViewCell.xib */; };
 		605F861D1FDFBB84002EE9C3 /* ApiFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605F861C1FDFBB84002EE9C3 /* ApiFacade.swift */; };
-		605F861F1FDFBDA0002EE9C3 /* CellObjectFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605F861E1FDFBDA0002EE9C3 /* CellObjectFactory.swift */; };
 		605F86221FDFEB99002EE9C3 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605F86211FDFEB99002EE9C3 /* Contact.swift */; };
 		605F86241FDFEBB3002EE9C3 /* ContactMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605F86231FDFEBB3002EE9C3 /* ContactMapper.swift */; };
 		605F86261FDFEBD9002EE9C3 /* ContactRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605F86251FDFEBD9002EE9C3 /* ContactRealm.swift */; };
@@ -104,6 +102,7 @@
 		6047E6BE1FE8F17B00FB5BE4 /* StartService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartService.swift; sourceTree = "<group>"; };
 		6047E6C11FE907F700FB5BE4 /* UserInfoControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoControllerFactory.swift; sourceTree = "<group>"; };
 		6047E6C31FE90B8200FB5BE4 /* FactoriesAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactoriesAssembly.swift; sourceTree = "<group>"; };
+		604C2A9C1FEB68E80019C903 /* ContactDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailPresenter.swift; sourceTree = "<group>"; };
 		60511D611FE12970007CFABF /* VkRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkRepository.swift; sourceTree = "<group>"; };
 		605C81FE1FE76CB20026F026 /* ControllersAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ControllersAssembly.swift; path = UserSearch/Configurator/ControllersAssembly.swift; sourceTree = "<group>"; };
 		605C82021FE7CED60026F026 /* UserSearchInputDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchInputDataModel.swift; sourceTree = "<group>"; };
@@ -124,10 +123,7 @@
 		605F86101FDFB429002EE9C3 /* UserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoViewController.xib; sourceTree = "<group>"; };
 		605F86131FDFB93A002EE9C3 /* UserSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchTableViewCell.swift; sourceTree = "<group>"; };
 		605F86141FDFB93A002EE9C3 /* UserSearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserSearchTableViewCell.xib; sourceTree = "<group>"; };
-		605F86181FDFBAAE002EE9C3 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
-		605F86191FDFBAAE002EE9C3 /* UserInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoTableViewCell.xib; sourceTree = "<group>"; };
 		605F861C1FDFBB84002EE9C3 /* ApiFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiFacade.swift; path = Modules/UserSearch/Interactor/ApiFacade.swift; sourceTree = "<group>"; };
-		605F861E1FDFBDA0002EE9C3 /* CellObjectFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellObjectFactory.swift; path = ../View/CellObjectFactory.swift; sourceTree = "<group>"; };
 		605F86211FDFEB99002EE9C3 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		605F86231FDFEBB3002EE9C3 /* ContactMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactMapper.swift; sourceTree = "<group>"; };
 		605F86251FDFEBD9002EE9C3 /* ContactRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactRealm.swift; sourceTree = "<group>"; };
@@ -219,7 +215,6 @@
 				2927F66ECD73379E4B7AAD0D /* UserInfoViewOutput.swift */,
 				C667D6C53ADBB75F957E625C /* UserInfoViewController.swift */,
 				605F86101FDFB429002EE9C3 /* UserInfoViewController.xib */,
-				605F86171FDFBA93002EE9C3 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,6 +292,14 @@
 				6047E6C11FE907F700FB5BE4 /* UserInfoControllerFactory.swift */,
 			);
 			name = Factories;
+			sourceTree = "<group>";
+		};
+		604C2A9B1FEB68980019C903 /* ContactDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				604C2A9C1FEB68E80019C903 /* ContactDetailPresenter.swift */,
+			);
+			name = ContactDetailView;
 			sourceTree = "<group>";
 		};
 		60511D601FE1293B007CFABF /* Repositories */ = {
@@ -386,6 +389,7 @@
 		605F85FC1FDF9E5A002EE9C3 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				604C2A9B1FEB68980019C903 /* ContactDetailView */,
 				60474D641FE0CF26001AC76A /* Base */,
 				60474D5D1FE0C3CE001AC76A /* ContactDetail */,
 				60474D5C1FE0C39B001AC76A /* Contact */,
@@ -426,15 +430,6 @@
 			children = (
 				605F86131FDFB93A002EE9C3 /* UserSearchTableViewCell.swift */,
 				605F86141FDFB93A002EE9C3 /* UserSearchTableViewCell.xib */,
-			);
-			name = Cell;
-			sourceTree = "<group>";
-		};
-		605F86171FDFBA93002EE9C3 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				605F86181FDFBAAE002EE9C3 /* UserInfoTableViewCell.swift */,
-				605F86191FDFBAAE002EE9C3 /* UserInfoTableViewCell.xib */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -499,7 +494,6 @@
 			children = (
 				A60E5A864BE70EE516E54C80 /* UserInfoModuleInput.swift */,
 				EBB4F80E531C13F744172F61 /* UserInfoPresenter.swift */,
-				605F861E1FDFBDA0002EE9C3 /* CellObjectFactory.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -619,7 +613,6 @@
 				605F85F41FDF9DF2002EE9C3 /* LaunchScreen.storyboard in Resources */,
 				605F85F11FDF9DF1002EE9C3 /* Assets.xcassets in Resources */,
 				609425721FE11A00005E7492 /* UserSearchViewController.xib in Resources */,
-				605F861B1FDFBAAE002EE9C3 /* UserInfoTableViewCell.xib in Resources */,
 				605F86161FDFB93A002EE9C3 /* UserSearchTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -659,18 +652,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BrowserVK/Pods-BrowserVK-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyVK/SwiftyVK.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyVK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
@@ -787,16 +780,15 @@
 				600F43121FEA4A1E00C005C2 /* SectionDataBuilder.swift in Sources */,
 				60474D631FE0C423001AC76A /* ContactDetailRealm.swift in Sources */,
 				378349E483F46120FE3E7EEB /* UserInfoPresenter.swift in Sources */,
-				605F861F1FDFBDA0002EE9C3 /* CellObjectFactory.swift in Sources */,
 				60C2663B1FE001250092CD67 /* Mappable.swift in Sources */,
 				605C82131FE7DB3B0026F026 /* UserInfoInputDataModel.swift in Sources */,
 				609425711FE11A00005E7492 /* UserSearchViewController.swift in Sources */,
 				600F43151FEA654C00C005C2 /* UITableViewCell+Identifier.swift in Sources */,
+				604C2A9D1FEB68E80019C903 /* ContactDetailPresenter.swift in Sources */,
 				E881FAF9F93DE01C39AC9AB5 /* UserInfoInteractorInput.swift in Sources */,
 				600F430E1FEA4A0A00C005C2 /* AbstractSectionDataBuilder.swift in Sources */,
 				0B01131739F66B56F138B284 /* UserInfoInteractorOutput.swift in Sources */,
 				60511D621FE12970007CFABF /* VkRepository.swift in Sources */,
-				605F861A1FDFBAAE002EE9C3 /* UserInfoTableViewCell.swift in Sources */,
 				22FF1D9BC790E57C22A6A5CE /* UserInfoInteractor.swift in Sources */,
 				605C81FF1FE76CB20026F026 /* ControllersAssembly.swift in Sources */,
 				D671DC6799E43D942307B915 /* UserInfoRouterInput.swift in Sources */,

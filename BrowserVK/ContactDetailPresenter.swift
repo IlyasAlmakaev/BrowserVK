@@ -1,45 +1,39 @@
 //
-//  CellObjectFactory.swift
+//  ContactDetailView.swift
 //  BrowserVK
 //
-//  Created by Ильяс on 12.12.17.
+//  Created by Ильяс on 21.12.17.
 //  Copyright © 2017 Ильяс. All rights reserved.
 //
 
-import Foundation
-
-class CellObjectFactory {
+class ContactDetailPresenter {
     
-    func configurateCell(cell: UserInfoTableViewCell, row: Int, info: ContactDetail) {
-        
-        var text = ""
-        var detailText = ""
-        
-        switch row {
-        case 0:
-            text = "Имя"
-            detailText = info.firstName
-        case 1:
-            text = "Фамилия"
-            detailText = info.lastName
-        case 2:
-            text = "Отчество"
-            detailText = info.nickName
-        case 3:
-            text = "screenname"
-            detailText = info.screenname
-        case 4:
-            text = "Пол"
-            detailText = sex(sex: info.sex)
-        case 5:
-            text = "Семейное положение"
-            detailText = relation(relation: info.relation, sex:info.sex)
-        default:
-            break
-        }
-        
-        cell.textLabel?.text = text
-        cell.detailTextLabel?.text = detailText
+    /** id Контакта */
+    var id: Int = 0
+    /** Фамилия */
+    var lastName: String = ""
+    /** Имя */
+    var firstName: String = ""
+    /** Отчество */
+    var nickName: String = ""
+    /** screenname */
+    var screenname: String = ""
+    /** Пол */
+    var sex: String = ""
+    /** Семейное положение */
+    var relation: String = ""
+    /** Ссылка на картинку */
+    var urlImageLarge: String = ""
+    
+    init(contactDetail: ContactDetail?) {
+        guard let contactDetail = contactDetail else { return }
+        self.lastName = contactDetail.lastName
+        self.firstName = contactDetail.firstName
+        self.nickName = contactDetail.nickName
+        self.screenname = contactDetail.screenname
+        self.sex = sex(sex: contactDetail.sex)
+        self.relation = relation(relation: contactDetail.relation, sex:contactDetail.sex)
+        self.urlImageLarge = contactDetail.urlImageLarge
     }
     
     func sex(sex: Int) -> String {
