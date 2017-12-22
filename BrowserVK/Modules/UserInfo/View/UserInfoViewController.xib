@@ -47,7 +47,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Szh-Mr-wY4" customClass="UIBottomSep">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Szh-Mr-wY4">
                             <rect key="frame" x="15" y="43" width="360" height="1"/>
                             <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
@@ -85,7 +85,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSg-4H-cjg" customClass="UIBottomSep">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSg-4H-cjg">
                             <rect key="frame" x="15" y="43" width="360" height="1"/>
                             <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
@@ -123,7 +123,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Pg-hV-rHP" customClass="UIBottomSep">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Pg-hV-rHP">
                             <rect key="frame" x="15" y="43" width="360" height="1"/>
                             <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
@@ -161,7 +161,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BwZ-m1-sY3" customClass="UIBottomSep">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BwZ-m1-sY3">
                             <rect key="frame" x="15" y="43" width="360" height="1"/>
                             <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
@@ -198,7 +198,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9Z-7E-9Bj" customClass="UIBottomSep">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9Z-7E-9Bj">
                             <rect key="frame" x="15" y="43" width="360" height="1"/>
                             <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
@@ -235,7 +235,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q1t-9V-NoW" customClass="UIBottomSep">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q1t-9V-NoW">
                             <rect key="frame" x="15" y="43" width="360" height="1"/>
                             <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
