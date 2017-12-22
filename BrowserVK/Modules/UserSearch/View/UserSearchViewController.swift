@@ -99,33 +99,6 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     }
 }
 
-//extension UserSearchViewController: UITableViewDataSource, UITableViewDelegate {
-//    
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return searchResults.count
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        
-//        let cell = tableView.dequeueReusableCell(withIdentifier: UserSearchCellID, for: indexPath) as! UserSearchTableViewCell
-//        
-//        let contact = searchResults[indexPath.row]
-//        cell.contact = contact
-//        
-//        return cell
-//    }
-//    
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        output.checkPagination(index: indexPath.row, arrayCount: searchResults.count)
-//    }
-//    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let row = indexPath.row
-//        let id = searchResults[row].id
-//        output.openUserInfoViewController(navigationController: self.navigationController!, id: id)
-//    }
-//}
-
 extension UserSearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
