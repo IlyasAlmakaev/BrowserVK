@@ -47,8 +47,9 @@ class UserSearchInteractor: UserSearchInteractorInput {
                 let contacts = strongSelf.vkRepository.getSearchedContacts()
                 strongSelf.contactsVariable.value = contacts
             })
-            }, errorHundler: { error in
-                
+            }, errorHundler: { [weak self] (error) in
+                guard let strongSelf = self else { return }
+                strongSelf.output.showError(error)
         })
     }
 }

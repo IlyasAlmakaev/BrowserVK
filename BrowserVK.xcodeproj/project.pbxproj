@@ -25,6 +25,8 @@
 		600F43121FEA4A1E00C005C2 /* SectionDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600F43111FEA4A1E00C005C2 /* SectionDataBuilder.swift */; };
 		600F43151FEA654C00C005C2 /* UITableViewCell+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600F43141FEA654C00C005C2 /* UITableViewCell+Identifier.swift */; };
 		600F43171FEA6CD500C005C2 /* UITableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600F43161FEA6CD500C005C2 /* UITableView+Register.swift */; };
+		6045A19C1FED005A0051F3F4 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6045A19B1FED005A0051F3F4 /* BaseRouter.swift */; };
+		6045A19E1FED1C620051F3F4 /* BaseRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6045A19D1FED1C620051F3F4 /* BaseRouterInput.swift */; };
 		60474D5F1FE0C3F3001AC76A /* ContactDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60474D5E1FE0C3F3001AC76A /* ContactDetail.swift */; };
 		60474D611FE0C40A001AC76A /* ContactDetailMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60474D601FE0C40A001AC76A /* ContactDetailMapper.swift */; };
 		60474D631FE0C423001AC76A /* ContactDetailRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60474D621FE0C423001AC76A /* ContactDetailRealm.swift */; };
@@ -95,6 +97,8 @@
 		600F43111FEA4A1E00C005C2 /* SectionDataBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionDataBuilder.swift; sourceTree = "<group>"; };
 		600F43141FEA654C00C005C2 /* UITableViewCell+Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Identifier.swift"; sourceTree = "<group>"; };
 		600F43161FEA6CD500C005C2 /* UITableView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Register.swift"; sourceTree = "<group>"; };
+		6045A19B1FED005A0051F3F4 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		6045A19D1FED1C620051F3F4 /* BaseRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouterInput.swift; sourceTree = "<group>"; };
 		60474D5E1FE0C3F3001AC76A /* ContactDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetail.swift; sourceTree = "<group>"; };
 		60474D601FE0C40A001AC76A /* ContactDetailMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailMapper.swift; sourceTree = "<group>"; };
 		60474D621FE0C423001AC76A /* ContactDetailRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailRealm.swift; sourceTree = "<group>"; };
@@ -202,6 +206,7 @@
 		1B87A76893A4F6279201DB77 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6045A19A1FECFFF60051F3F4 /* Base */,
 				839BAC907BEB5FF84BF63E5F /* UserSearch */,
 				B7B100E56E0F72E0F55936E1 /* UserInfo */,
 			);
@@ -254,6 +259,15 @@
 				600F43161FEA6CD500C005C2 /* UITableView+Register.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		6045A19A1FECFFF60051F3F4 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				6045A19B1FED005A0051F3F4 /* BaseRouter.swift */,
+				6045A19D1FED1C620051F3F4 /* BaseRouterInput.swift */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		60474D5C1FE0C39B001AC76A /* Contact */ = {
@@ -660,6 +674,7 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyVK/SwiftyVK.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -671,6 +686,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyVK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -765,6 +781,7 @@
 				60474D661FE0D096001AC76A /* Refflectable.swift in Sources */,
 				05EB4FFA1C26DE746B66754B /* UserSearchInteractor.swift in Sources */,
 				605F86261FDFEBD9002EE9C3 /* ContactRealm.swift in Sources */,
+				6045A19E1FED1C620051F3F4 /* BaseRouterInput.swift in Sources */,
 				4D978EE443B15A7DFD395C73 /* UserSearchRouterInput.swift in Sources */,
 				605C820F1FE7D81D0026F026 /* RepositoriesAssembly.swift in Sources */,
 				0F35B3089FBD6A1920388AD7 /* UserSearchRouter.swift in Sources */,
@@ -775,6 +792,7 @@
 				84D4FC82C46FADF951031D7E /* UserInfoViewInput.swift in Sources */,
 				229FBE7772B0813888C16F54 /* UserInfoViewOutput.swift in Sources */,
 				1E1F8FE3197E15F964DDBDCF /* UserInfoViewController.swift in Sources */,
+				6045A19C1FED005A0051F3F4 /* BaseRouter.swift in Sources */,
 				6710F5FF25FAC2EC41D38116 /* UserInfoModuleInput.swift in Sources */,
 				605C82091FE7D23C0026F026 /* IApiFacade.swift in Sources */,
 				605F86241FDFEBB3002EE9C3 /* ContactMapper.swift in Sources */,
