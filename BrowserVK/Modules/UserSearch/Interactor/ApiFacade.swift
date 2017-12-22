@@ -54,15 +54,15 @@ extension ApiFacade: IApiFacade {
         VK.API.Users.search([.q: name, .offset: String(countContacts), .limit: "20", .fields: "photo_50, nickname"]).send(
             onSuccess: { [weak self]
                 response in
-                
+                guard let strongSelf = self else { return }
                 guard let objects = response["items"].arrayObject else { return }
                 var hasMore = false
-
+                
                 if objects.count == 20 {
                     hasMore = true
                 }
                 
-                self?.searchResults += objects
+                strongSelf.searchResults += objects
                 
                 DispatchQueue.main.async {
                     successHundler(self?.searchResults, hasMore)
@@ -70,7 +70,7 @@ extension ApiFacade: IApiFacade {
             },
             onError: { error in
                 errorHundler(error)
-                print("search user fail \n \(error.localizedDescription)") }
+        }
         )
     }
     
@@ -84,13 +84,13 @@ extension ApiFacade: IApiFacade {
                 DispatchQueue.main.async {
                     successHundler(object)
                 }
-            },
+        },
             onError: { error in
                 errorHundler(error)
-                print("SwiftyVK: friends.get failed with \n \(error.localizedDescription)") }
+        }
         )
     }
-
+    
     func resetSearch() {
         searchResults = []
     }

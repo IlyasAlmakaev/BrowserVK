@@ -22,9 +22,9 @@ class UserInfoInteractor: UserInfoInteractorInput {
         apiFacade.loadUserInfo(userID: userID, successHundler: { [weak self] (successObject) in
             
             self?.vkRepository.setSelectedContact(object: successObject, successHundler: { (rContactDetail) in
-                
-                let contact = self?.vkRepository.getSelectedContact(contact: rContactDetail)
-                self?.output.loadedUserInfo(info: contact!)
+                guard let strongSelf = self else { return }
+                let contact = strongSelf.vkRepository.getSelectedContact(contact: rContactDetail)
+                strongSelf.output.loadedUserInfo(info: contact)
             })
             }, errorHundler: { error in
                 
