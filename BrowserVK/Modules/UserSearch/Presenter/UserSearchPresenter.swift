@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSearchInteractorOutput {
     
@@ -14,24 +15,15 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
     var interactor: UserSearchInteractorInput!
     var router: UserSearchRouterInput!
     var tableDatasource: AnyTableDataSource = AnyTableDataSource()
+    var disposedBag: DisposeBag = DisposeBag()
+
     
     func viewIsReady() {
         interactor.contactsVariable.asObservable().subscribe(onNext: { (contacts) in
             self.provideDataSource(contacts)
             self.view.stopAnimatingActivityIndicator()
             self.view.stopRefreshControl()
-        }, onError: { (error) in
-            print("error \(error)")
-        }, onCompleted: {
-            
-        }) { 
-            print("dispose")
-        }
- //       interactor.contactsVariable.asObservable().subscribe( (contacts) in
-            
-        
-//        )
-  
+        }).addDisposableTo(disposedBag)
     }
     
     func search(string: String) {
@@ -43,14 +35,8 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
         interactor.resetSearch()
     }
     
-//    func loadedSearchedContacts(contacts: [Contact]) {
-//        provideDataSource(contacts)
-//        view.stopAnimatingActivityIndicator()
-//        view.stopRefreshControl()
-//    }
-    
     func checkPagination(index: Int, arrayCount: Int) {
-        if index == arrayCount - 1 {
+        if index == arrayCount - 5 {
             if interactor.hasMore {
                 view.startAnimatingActivityIndicator()
                 interactor.getNextContacts()
@@ -63,8 +49,10 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
     func provideDataSource(_ contactList: [Contact]) {
         tableDatasource.clear()
         let contactFactory: (Contact, UserSearchTableViewCell, Int, Int) -> UserSearchTableViewCell =
-        { (item, cell, section, row) -> UserSearchTableViewCell in
+        { [weak self] (item, cell, section, row) -> UserSearchTableViewCell in
             cell.contact = item
+            self?.checkPagination(index: row, arrayCount: contactList.count)
+            
             return cell
         }
         let selectRowAction: ((Contact) -> Void) = { [weak self] (item) -> Void in

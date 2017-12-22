@@ -19,5 +19,5 @@ protocol UserSearchInteractorInput {
     
     var hasMore: Bool { get set }
     
-    var contactsVariable: Variable<[Contact]> { get set }
+    var contactsVariable: Variable<[Contact]> { get }
 }

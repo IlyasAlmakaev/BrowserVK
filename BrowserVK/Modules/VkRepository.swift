@@ -8,7 +8,6 @@
 
 import Foundation
 import RealmSwift
-import SwiftyJSON
 
 class VkRepository {
     
@@ -19,11 +18,7 @@ class VkRepository {
     var userInfoInteractor: UserInfoInteractorInput!
     
     init() {
- //       Realm.Configuration.defaultConfiguration.deleteRealmIfMigrationNeeded = true
         realm = try! Realm()
-//        try! realm.write {
-//            realm.deleteAll()
-//        }
     }
    
     func deleteAll() {
@@ -58,11 +53,7 @@ extension VkRepository: IVkRepository {
             
             var rContact = RContact()
             rContact = contactMapper.mapFrom(item: contact!)!
-            //            cont.append(contact!)
             realm.add(rContact, update: true)
-            
-            print("firstCheck -- \(rContact)")
-            
         }
   
         try! realm.commitWrite()

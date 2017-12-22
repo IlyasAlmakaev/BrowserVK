@@ -44,17 +44,10 @@ class UserSearchInteractor: UserSearchInteractorInput {
             
             self?.hasMore = hasMore
             self?.vkRepository.setSearchedContacts(objects: successArray, successHundler:  {
+                guard let strongSelf = self else { return }
+                let contacts = strongSelf.vkRepository.getSearchedContacts() 
                 
-                let contacts = self?.vkRepository.getSearchedContacts()
-                
-                self?.contactsVariable.value = contacts!
-                
-//                contactsVariable.subscribe { contactList in
-//                    print(contactList)
-//                }
-             //   contactsVariable = contacts
-
-         //       self?.output.loadedSearchedContacts(contacts: contacts!)
+                strongSelf.contactsVariable.value = contacts
             })
             }, errorHundler: { error in
                 

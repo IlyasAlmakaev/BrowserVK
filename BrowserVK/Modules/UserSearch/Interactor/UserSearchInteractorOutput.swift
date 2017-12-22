@@ -9,6 +9,4 @@
 import Foundation
 
 protocol UserSearchInteractorOutput: class {
-    
- //   func loadedSearchedContacts(contacts: [Contact])
 }
