@@ -56,6 +56,8 @@ class UserSearchInteractor: UserSearchInteractorInput {
 
          //       self?.output.loadedSearchedContacts(contacts: contacts!)
             })
+            }, errorHundler: { error in
+                
         })
     }
 }

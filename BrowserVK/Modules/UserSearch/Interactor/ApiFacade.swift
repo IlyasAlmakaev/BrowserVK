@@ -49,7 +49,7 @@ class ApiFacade: VKDelegate {
 }
 
 extension ApiFacade: IApiFacade {
-    func loadSearchedContacts(name: String, countContacts: Int, successHundler: @escaping (Array<Any>?, Bool) -> Void) {
+    func loadSearchedContacts(name: String, countContacts: Int, successHundler: @escaping (Array<Any>?, Bool) -> Void, errorHundler: @escaping (Error) -> Void) {
         
         VK.API.Users.search([.q: name, .offset: String(countContacts), .limit: "20", .fields: "photo_50, nickname"]).send(
             onSuccess: { [weak self]
@@ -68,11 +68,13 @@ extension ApiFacade: IApiFacade {
                     successHundler(self?.searchResults, hasMore)
                 }
             },
-            onError: { print("search user fail \n \($0)") }
+            onError: { error in
+                errorHundler(error)
+                print("search user fail \n \(error.localizedDescription)") }
         )
     }
     
-    func loadUserInfo(userID: Int, successHundler: @escaping (Any?) -> Void) {
+    func loadUserInfo(userID: Int, successHundler: @escaping (Any?) -> Void, errorHundler: @escaping (Error) -> Void) {
         
         VK.API.Users.get([.userId: String(userID), .fields: "photo_200,nickname,screen_name,relation,sex"]).send(
             onSuccess: { response in
@@ -83,7 +85,9 @@ extension ApiFacade: IApiFacade {
                     successHundler(object)
                 }
             },
-            onError: { print("SwiftyVK: friends.get failed with \n \($0)") }
+            onError: { error in
+                errorHundler(error)
+                print("SwiftyVK: friends.get failed with \n \(error.localizedDescription)") }
         )
     }
 

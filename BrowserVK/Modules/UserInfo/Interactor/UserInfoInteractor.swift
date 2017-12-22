@@ -26,6 +26,8 @@ class UserInfoInteractor: UserInfoInteractorInput {
                 let contact = self?.vkRepository.getSelectedContact(contact: rContactDetail)
                 self?.output.loadedUserInfo(info: contact!)
             })
+            }, errorHundler: { error in
+                
         })
     }
 }
