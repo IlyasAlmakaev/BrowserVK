@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "158261843CF22F0ED2479BABD4C706D3"
-               BuildableName = "Pods_BrowserVK.framework"
-               BlueprintName = "Pods-BrowserVK"
+               BlueprintIdentifier = "7886B592E3913B6401BC0C76D7C464D7"
+               BuildableName = "Toast_Swift.framework"
+               BlueprintName = "Toast-Swift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "158261843CF22F0ED2479BABD4C706D3"
-            BuildableName = "Pods_BrowserVK.framework"
-            BlueprintName = "Pods-BrowserVK"
+            BlueprintIdentifier = "7886B592E3913B6401BC0C76D7C464D7"
+            BuildableName = "Toast_Swift.framework"
+            BlueprintName = "Toast-Swift"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -50,6 +50,7 @@ class UserSearchInteractor: UserSearchInteractorInput {
             }, errorHundler: { [weak self] (error) in
                 guard let strongSelf = self else { return }
                 strongSelf.output.showError(error)
+                
         })
     }
 }

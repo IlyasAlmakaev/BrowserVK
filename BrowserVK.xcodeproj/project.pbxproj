@@ -14,6 +14,7 @@
 		2012FC6879E7DB094CF63E18 /* UserSearchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F75C5054F82120770B816C /* UserSearchConfigurator.swift */; };
 		229FBE7772B0813888C16F54 /* UserInfoViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2927F66ECD73379E4B7AAD0D /* UserInfoViewOutput.swift */; };
 		22FF1D9BC790E57C22A6A5CE /* UserInfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD62FFA75318C5150E0674D /* UserInfoInteractor.swift */; };
+		28FDA1DC1FEFBF880095B5D5 /* CocoaLumberjackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FDA1DB1FEFBF880095B5D5 /* CocoaLumberjackService.swift */; };
 		360ADC336FFC177A65A258D2 /* UserSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C92FAF6FFF5CA0F0BD0B9A /* UserSearchPresenter.swift */; };
 		378349E483F46120FE3E7EEB /* UserInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB4F80E531C13F744172F61 /* UserInfoPresenter.swift */; };
 		4A007363BDD4046919D4BB81 /* UserSearchInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEABC2BBB7BC5B9B2C09DC04 /* UserSearchInteractorInput.swift */; };
@@ -88,6 +89,7 @@
 		131A3A400FB63372C9D10CD0 /* Pods-BrowserVKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrowserVKTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrowserVKTests/Pods-BrowserVKTests.release.xcconfig"; sourceTree = "<group>"; };
 		23301F78D3E6C7620F78EA2E /* UserSearchModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchModuleInput.swift; sourceTree = "<group>"; };
 		28F75C5054F82120770B816C /* UserSearchConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchConfigurator.swift; sourceTree = "<group>"; };
+		28FDA1DB1FEFBF880095B5D5 /* CocoaLumberjackService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaLumberjackService.swift; sourceTree = "<group>"; };
 		2927F66ECD73379E4B7AAD0D /* UserInfoViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserInfoViewOutput.swift; sourceTree = "<group>"; };
 		3578945ACB0EDA07022B7734 /* UserSearchViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchViewOutput.swift; sourceTree = "<group>"; };
 		4985B5180FCC688618486964 /* UserSearchViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchViewInput.swift; sourceTree = "<group>"; };
@@ -224,6 +226,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		28FDA1DA1FEFBF480095B5D5 /* CocoaLumberjackService */ = {
+			isa = PBXGroup;
+			children = (
+				28FDA1DB1FEFBF880095B5D5 /* CocoaLumberjackService.swift */,
+			);
+			name = CocoaLumberjackService;
+			sourceTree = "<group>";
+		};
 		4DC0CEA245ADC64C4CAAB77C /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +350,7 @@
 		605C82051FE7D1B60026F026 /* Servises */ = {
 			isa = PBXGroup;
 			children = (
+				28FDA1DA1FEFBF480095B5D5 /* CocoaLumberjackService */,
 				605C82061FE7D1EB0026F026 /* ApiFacade */,
 				6047E6BE1FE8F17B00FB5BE4 /* StartService.swift */,
 			);
@@ -666,6 +677,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BrowserVK/Pods-BrowserVK-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -678,6 +690,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -803,6 +816,7 @@
 				60474D631FE0C423001AC76A /* ContactDetailRealm.swift in Sources */,
 				378349E483F46120FE3E7EEB /* UserInfoPresenter.swift in Sources */,
 				60C2663B1FE001250092CD67 /* Mappable.swift in Sources */,
+				28FDA1DC1FEFBF880095B5D5 /* CocoaLumberjackService.swift in Sources */,
 				605C82131FE7DB3B0026F026 /* UserInfoInputDataModel.swift in Sources */,
 				609425711FE11A00005E7492 /* UserSearchViewController.swift in Sources */,
 				600F43151FEA654C00C005C2 /* UITableViewCell+Identifier.swift in Sources */,
