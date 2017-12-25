@@ -29,7 +29,8 @@ class UserInfoInteractor: UserInfoInteractorInput {
             }, errorHundler: { [weak self] (error) in
                 guard let strongSelf = self else { return }
                 strongSelf.output.showError(error)
-                
+                CocoaLumberjackService.error(error.localizedDescription)
+                print(CocoaLumberjackService.stringLogs())
         })
     }
 }

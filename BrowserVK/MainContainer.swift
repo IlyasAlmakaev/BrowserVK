@@ -25,6 +25,8 @@ class MainContainer
         
         let viewController = c.resolve(UserSearchConfigurator.self, argument: UserSearchInputDataModel())?.viewController
         
-        StartService().start(window: window, viewController: viewController!)
+        let startService = StartService()
+        startService.start(window: window, viewController: viewController!)
+        startService.startLogger()
     }
 }
