@@ -46,9 +46,13 @@ class UserSearchInteractor: UserSearchInteractorInput {
             strongSelf.vkRepository.setSearchedContacts(objects: successArray, successHundler:  {
                 let contacts = strongSelf.vkRepository.getSearchedContacts()
                 strongSelf.contactsVariable.value = contacts
-            })
-            }, errorHundler: { error in
                 
+            })
+            }, errorHundler: { [weak self] (error) in
+                guard let strongSelf = self else { return }
+                strongSelf.output.showError(error)
+                CocoaLumberjackService.error(error.localizedDescription)
+                print(CocoaLumberjackService.stringLogs())
         })
     }
 }

@@ -26,8 +26,11 @@ class UserInfoInteractor: UserInfoInteractorInput {
                 let contact = strongSelf.vkRepository.getSelectedContact(contact: rContactDetail)
                 strongSelf.output.loadedUserInfo(info: contact)
             })
-            }, errorHundler: { error in
-                
+            }, errorHundler: { [weak self] (error) in
+                guard let strongSelf = self else { return }
+                strongSelf.output.showError(error)
+                CocoaLumberjackService.error(error.localizedDescription)
+                print(CocoaLumberjackService.stringLogs())
         })
     }
 }

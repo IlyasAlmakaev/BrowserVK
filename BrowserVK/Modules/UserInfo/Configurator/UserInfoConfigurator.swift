@@ -17,7 +17,7 @@ class UserInfoConfigurator {
     init(resolver: Resolver, input: UserInfoInputDataModel) {
 
         let userInfoViewController = UserInfoViewController()
-        let router = UserInfoRouter()
+        let router = UserInfoRouter(viewController: userInfoViewController)
         
         let presenter = UserInfoPresenter(userID: input.userID)
         presenter.view = userInfoViewController

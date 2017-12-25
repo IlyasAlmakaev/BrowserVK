@@ -10,4 +10,5 @@ import Foundation
 
 protocol UserInfoInteractorOutput: class {
     func loadedUserInfo(info: ContactDetail)
+    func showError(_ error: Error)
 }

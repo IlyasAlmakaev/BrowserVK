@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
-protocol UserSearchRouterInput {
+protocol UserSearchRouterInput: BaseRouterInput {
     func openUserInfoViewController(userID: Int)
+    
 }

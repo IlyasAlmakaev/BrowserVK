@@ -25,4 +25,8 @@ class UserInfoPresenter: UserInfoModuleInput, UserInfoViewOutput, UserInfoIntera
         let contactDetailPresenter = ContactDetailPresenter(contactDetail: info)
         view.loadedUserInfo(contact: contactDetailPresenter)
     }
+    
+    func showError(_ error: Error) {
+        router.showErrorAlert(errorDescription: error.localizedDescription)
+    }
 }

@@ -63,13 +63,19 @@ extension ApiFacade: IApiFacade {
                 }
                 
                 strongSelf.searchResults += objects
+//                
+//                let errorTemp = NSError(domain:"", code:404, userInfo:nil)
+//                
+//                errorHundler(errorTemp)
                 
                 DispatchQueue.main.async {
                     successHundler(self?.searchResults, hasMore)
                 }
             },
             onError: { error in
-                errorHundler(error)
+                DispatchQueue.main.async {
+                    errorHundler(error)
+                }   
         }
         )
     }
@@ -86,7 +92,9 @@ extension ApiFacade: IApiFacade {
                 }
         },
             onError: { error in
-                errorHundler(error)
+                DispatchQueue.main.async {
+                    errorHundler(error)
+                }
         }
         )
     }

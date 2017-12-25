@@ -6,6 +6,8 @@
 //  Copyright © 2017 Ilyas. All rights reserved.
 //
 
-class UserInfoRouter: UserInfoRouterInput {
+import UIKit
+
+class UserInfoRouter: BaseRouter, UserInfoRouterInput {
 
 }

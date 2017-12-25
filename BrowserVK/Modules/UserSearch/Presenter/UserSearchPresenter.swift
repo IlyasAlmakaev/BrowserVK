@@ -14,16 +14,20 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
     weak var view: UserSearchViewInput!
     var interactor: UserSearchInteractorInput!
     var router: UserSearchRouterInput!
-    var tableDatasource: AnyTableDataSource = AnyTableDataSource()
+    private var tableDatasource: AnyTableDataSource = AnyTableDataSource()
     var disposedBag: DisposeBag = DisposeBag()
 
     
     func viewIsReady() {
         interactor.contactsVariable.asObservable().subscribe(onNext: { (contacts) in
             self.provideDataSource(contacts)
-            self.view.stopAnimatingActivityIndicator()
-            self.view.stopRefreshControl()
+            self.stopAnimateUpdate()
         }).addDisposableTo(disposedBag)
+    }
+    
+    func stopAnimateUpdate() {
+        self.view.stopAnimatingActivityIndicator()
+        self.view.stopRefreshControl()
     }
     
     func search(string: String) {
@@ -56,10 +60,18 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
             return cell
         }
         let selectRowAction: ((Contact) -> Void) = { [weak self] (item) -> Void in
-            self?.router.openUserInfoViewController(userID: item.id)
+            guard let strongSelf = self else { return }
+            strongSelf.router.openUserInfoViewController(userID: item.id)
         }
         tableDatasource.registerSection(for: UserSearchTableViewCell.self, for: Contact.self, with: contactList, factory: contactFactory, selectAction: selectRowAction)
         view.provideTableDataSource(datasource: tableDatasource)
         view.updateTableView()
+    }
+    
+    // Mark: Error
+    
+    func showError(_ error: Error) {
+        router.showErrorAlert(errorDescription: error.localizedDescription)
+        stopAnimateUpdate()
     }
 }
