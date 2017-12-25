@@ -14,11 +14,12 @@ class UserSearchTableViewCell: UITableViewCell {
     @IBOutlet weak var fullName: UILabel!
     @IBOutlet weak var avatar: UIImageView!
     
-    var contact = Contact() {
+    var contact = ContactPresenter() {
         didSet {
             fullName.text = "\(contact.lastName) \(contact.firstName)"
-            let url = URL(string: contact.urlImage)!
-            avatar.kf.setImage(with: url)
+            let image = UIImage(named: "contact_default@50")
+            avatar.kf.setImage(with: contact.urlImage, placeholder: image)
+            
         }
     }
     

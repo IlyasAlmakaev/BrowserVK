@@ -44,8 +44,8 @@ class UserInfoViewController: UIViewController, UserInfoViewInput {
         sexLabel.text = contact.sex
         relationLabel.text = contact.relation
         
-        let url = URL(string: contact.urlImageLarge)!
-        avatar.kf.setImage(with: url)
+        let image = UIImage(named: "contact_default@100")
+        avatar.kf.setImage(with: contact.urlImageLarge, placeholder: image)
     }
 }
 

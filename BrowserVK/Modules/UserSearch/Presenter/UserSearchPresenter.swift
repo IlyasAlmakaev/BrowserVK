@@ -19,7 +19,8 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
     
     func viewIsReady() {
         interactor.contactsVariable.asObservable().subscribe(onNext: { (contacts) in
-            self.provideDataSource(contacts)
+            let contactsPresenter = self.prepareContactsPresenter(contacts: contacts)
+            self.provideDataSource(contactsPresenter)
             self.stopAnimateUpdate()
         }).addDisposableTo(disposedBag)
     }
@@ -47,22 +48,31 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
         }
     }
     
+    func prepareContactsPresenter(contacts: [Contact]) -> [ContactPresenter] {
+        var contactsPresenter: [ContactPresenter] = []
+        for contact in contacts {
+            let contactPresenter = ContactPresenter(contact: contact)
+            contactsPresenter.append(contactPresenter)
+        }
+        return contactsPresenter
+    }
+    
     // Mark: TableView
     
-    func provideDataSource(_ contactList: [Contact]) {
+    func provideDataSource(_ contactList: [ContactPresenter]) {
         tableDatasource.clear()
-        let contactFactory: (Contact, UserSearchTableViewCell, Int, Int) -> UserSearchTableViewCell =
+        let contactFactory: (ContactPresenter, UserSearchTableViewCell, Int, Int) -> UserSearchTableViewCell =
         { [weak self] (item, cell, section, row) -> UserSearchTableViewCell in
             cell.contact = item
             self?.checkPagination(index: row, arrayCount: contactList.count)
             
             return cell
         }
-        let selectRowAction: ((Contact) -> Void) = { [weak self] (item) -> Void in
+        let selectRowAction: ((ContactPresenter) -> Void) = { [weak self] (item) -> Void in
             guard let strongSelf = self else { return }
             strongSelf.router.openUserInfoViewController(userID: item.id)
         }
-        tableDatasource.registerSection(for: UserSearchTableViewCell.self, for: Contact.self, with: contactList, factory: contactFactory, selectAction: selectRowAction)
+        tableDatasource.registerSection(for: UserSearchTableViewCell.self, for: ContactPresenter.self, with: contactList, factory: contactFactory, selectAction: selectRowAction)
         view.provideTableDataSource(datasource: tableDatasource)
         view.updateTableView()
     }

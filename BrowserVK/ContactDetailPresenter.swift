@@ -6,6 +6,8 @@
 //  Copyright © 2017 Ильяс. All rights reserved.
 //
 
+import Foundation
+
 class ContactDetailPresenter {
     
     /** id Контакта */
@@ -22,8 +24,8 @@ class ContactDetailPresenter {
     var sex: String = ""
     /** Семейное положение */
     var relation: String = ""
-    /** Ссылка на картинку */
-    var urlImageLarge: String = ""
+    /** Url-адрес картинки */
+    var urlImageLarge: URL?
     
     init(contactDetail: ContactDetail?) {
         guard let contactDetail = contactDetail else { return }
@@ -33,7 +35,7 @@ class ContactDetailPresenter {
         self.screenname = contactDetail.screenname
         self.sex = sex(sex: contactDetail.sex)
         self.relation = relation(relation: contactDetail.relation, sex:contactDetail.sex)
-        self.urlImageLarge = contactDetail.urlImageLarge
+        self.urlImageLarge = URL(string: contactDetail.urlImageLarge) ?? nil
     }
     
     func sex(sex: Int) -> String {
