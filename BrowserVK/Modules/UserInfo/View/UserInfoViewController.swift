@@ -9,8 +9,6 @@
 import UIKit
 import Kingfisher
 
-let UserInfoCellID = "UserInfoCell"
-
 class UserInfoViewController: UIViewController, UserInfoViewInput {
     
     var output: UserInfoViewOutput!

@@ -48,9 +48,7 @@ extension VkRepository: IVkRepository {
         realm.beginWrite()
         
         for object in objects {
-            
             let contact = Contact(map: object as AnyObject)
-            
             var rContact = RContact()
             rContact = contactMapper.mapFrom(item: contact!)!
             realm.add(rContact, update: true)

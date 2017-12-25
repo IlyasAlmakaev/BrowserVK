@@ -6,13 +6,11 @@
 //  Copyright © 2017 E-Lite-Telecom. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class AnyTableDataSource: NSObject {
     
     internal var section: Int = 0
-    
     internal var builders: [AbstractSectionDataBuilder]!
     internal var scrollListener: ((Float, Float) -> Void)?
     

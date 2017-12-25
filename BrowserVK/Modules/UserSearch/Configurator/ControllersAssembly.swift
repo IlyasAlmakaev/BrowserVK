@@ -9,8 +9,7 @@
 import Foundation
 import Swinject
 
-class ControllersAssembly: Assembly {
-    
+class ControllersAssembly: Assembly {    
     func assemble(container: Container) {
         container.register(UserSearchConfigurator.self) { (r, moduleInput) in
             UserSearchConfigurator(resolver: r, input: moduleInput)

@@ -7,5 +7,4 @@
 //
 
 protocol UserSearchModuleInput: class {
-
 }

@@ -6,7 +6,6 @@
 //  Copyright © 2017 Ilyas. All rights reserved.
 //
 import RxSwift
-import RxCocoa
 
 class UserSearchInteractor: UserSearchInteractorInput {
     

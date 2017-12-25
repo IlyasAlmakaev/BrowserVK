@@ -16,8 +16,6 @@
 
 import UIKit
 
-let UserSearchCellID = "UserSearchCell"
-
 class UserSearchViewController: UIViewController, UserSearchViewInput {
     
     var output: UserSearchViewOutput!

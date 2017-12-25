@@ -18,7 +18,6 @@ class UserSearchTableViewCell: UITableViewCell {
         didSet {
             fullName.text = "\(contact.lastName) \(contact.firstName)"
             let url = URL(string: contact.urlImage)!
-        //    avatar.sd_setImage(with: url as URL, completed: nil)
             avatar.kf.setImage(with: url)
         }
     }
@@ -30,8 +29,5 @@ class UserSearchTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
-    
 }

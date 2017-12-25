@@ -16,7 +16,6 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
     var router: UserSearchRouterInput!
     private var tableDatasource: AnyTableDataSource = AnyTableDataSource()
     var disposedBag: DisposeBag = DisposeBag()
-
     
     func viewIsReady() {
         interactor.contactsVariable.asObservable().subscribe(onNext: { (contacts) in

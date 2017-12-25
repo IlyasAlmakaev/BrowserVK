@@ -17,7 +17,7 @@ protocol UserSearchInteractorInput {
     
     func getNextContacts()
     
-    var hasMore: Bool { get set }
+    var hasMore: Bool { get }
     
     var contactsVariable: Variable<[Contact]> { get }
 }

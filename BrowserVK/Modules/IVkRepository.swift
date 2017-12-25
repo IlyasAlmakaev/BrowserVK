@@ -9,9 +9,14 @@
 import Foundation
 
 protocol IVkRepository: class {
+    
     func setSearchedContacts(objects: Array<Any>?, successHundler: @escaping() -> Void)
+    
     func getSearchedContacts() -> [Contact]
+    
     func deleteAll()
+    
     func setSelectedContact(object: Any?, successHundler: @escaping(RContactDetail) -> Void)
+    
     func getSelectedContact(contact: RContactDetail) -> ContactDetail
 }
