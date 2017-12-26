@@ -39,7 +39,9 @@ class UserSearchInteractor: UserSearchInteractorInput {
     }
     
     func loadContacts() {
-        apiFacade.loadSearchedContacts(name: currentName, countContacts: countContacts, successHundler: { [weak self] (successArray, hasMore) in
+        apiFacade.loadSearchedContacts(name: currentName,
+                                       countContacts: countContacts,
+                                       successHundler: { [weak self] (successArray, hasMore) in
             guard let strongSelf = self else { return }
             strongSelf.hasMore = hasMore
             strongSelf.vkRepository.setSearchedContacts(objects: successArray, successHundler:  {

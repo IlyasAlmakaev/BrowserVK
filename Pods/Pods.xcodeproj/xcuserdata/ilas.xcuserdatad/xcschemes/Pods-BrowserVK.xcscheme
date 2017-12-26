@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1012EFDEB664A9A7A9AE40D389A1E003"
+               BlueprintIdentifier = "158261843CF22F0ED2479BABD4C706D3"
                BuildableName = "Pods_BrowserVK.framework"
                BlueprintName = "Pods-BrowserVK"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1012EFDEB664A9A7A9AE40D389A1E003"
+            BlueprintIdentifier = "158261843CF22F0ED2479BABD4C706D3"
             BuildableName = "Pods_BrowserVK.framework"
             BlueprintName = "Pods-BrowserVK"
             ReferencedContainer = "container:Pods.xcodeproj">

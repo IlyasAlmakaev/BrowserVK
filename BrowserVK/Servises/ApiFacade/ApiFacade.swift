@@ -57,7 +57,7 @@ extension ApiFacade: IApiFacade {
                              .offset: String(countContacts),
                              .limit: "20",
                              .fields: "photo_50, nickname"]).send(
-            onSuccess: { [weak self] response in
+            onSuccess: { [weak self] (response) in
                 guard let strongSelf = self else { return }
                 guard let objects = response["items"].arrayObject else { return }
                 var hasMore = false
@@ -71,7 +71,7 @@ extension ApiFacade: IApiFacade {
                     successHundler(self?.searchResults, hasMore)
                 }
             },
-            onError: { error in
+            onError: { (error) in
                 DispatchQueue.main.async {
                     CocoaLumberjackService.error(error.localizedDescription)
                     print(CocoaLumberjackService.stringLogs())
@@ -87,14 +87,14 @@ extension ApiFacade: IApiFacade {
                       errorHundler: @escaping (Error) -> Void) {
         VK.API.Users.get([.userId: String(userID),
                           .fields: "photo_200,nickname,screen_name,relation,sex"]).send(
-            onSuccess: { response in
+            onSuccess: { (response) in
                 guard let object = response.arrayObject?[0] else { return }
                 
                 DispatchQueue.main.async {
                     successHundler(object)
                 }
         },
-            onError: { error in
+            onError: { (error) in
                 DispatchQueue.main.async {
                     CocoaLumberjackService.error(error.localizedDescription)
                     print(CocoaLumberjackService.stringLogs())

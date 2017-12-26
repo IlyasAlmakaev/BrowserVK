@@ -43,30 +43,24 @@ extension VkRepository: IVkRepository {
         guard let objects = objects else {
             return
         }
-        
         realm.beginWrite()
-        
         for object in objects {
             let contact = Contact(map: object as AnyObject)
             var rContact = RContact()
             rContact = contactMapper.mapFrom(item: contact!)!
             realm.add(rContact, update: true)
         }
-  
         try! realm.commitWrite()
-
         successHundler()
     }
     
     func getSearchedContacts() -> [Contact] {
         var contacts = [Contact]()
         let objects = realm.objects(RContact.self)
-        
         for object in objects {
             let contact = contactMapper.mapTo(item: object)
             contacts.append(contact!)
         }
-        
         return contacts
     }
     
@@ -76,23 +70,17 @@ extension VkRepository: IVkRepository {
         guard let object = object else {
             return
         }
-
         realm.beginWrite()
-        
         let contactDetail = ContactDetail(map: object as AnyObject)
         let rContactDetail = contactDetailMapper.mapFrom(item: contactDetail!)!
-        
         realm.add(rContactDetail, update: true)
-        
         try! realm.commitWrite()
-
         successHundler(rContactDetail)
     }
     
     func getSelectedContact(contact: RContactDetail) -> ContactDetail {
         var contactDetail = ContactDetail()
         let object = realm.objects(RContactDetail.self).filter("id = %@", contact.id)
-        
         contactDetail = contactDetailMapper.mapTo(item: object.first!)!
         
         return contactDetail
