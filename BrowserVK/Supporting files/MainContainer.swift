@@ -10,6 +10,11 @@ import Foundation
 import Swinject
 import RealmSwift
 
+/**
+ @author Ilyas Almakaev
+ Сборка модулей
+ */
+
 class MainContainer
 {
     
