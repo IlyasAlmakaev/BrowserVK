@@ -9,6 +9,11 @@
 import Foundation
 import Swinject
 
+/**
+ @author Ilyas Almakaev
+ Фабрика для контроллера
+ */
+
 class UserInfoControllerFactory  {
     
     private var container: Resolver!

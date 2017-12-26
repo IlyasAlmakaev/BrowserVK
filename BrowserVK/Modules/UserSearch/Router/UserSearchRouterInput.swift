@@ -9,5 +9,11 @@
 import UIKit
 
 protocol UserSearchRouterInput: BaseRouterInput {
+    
+    /**
+     @author Ilyas Almakaev
+     Метод показа UserInfoViewController
+     */
+    
     func openUserInfoViewController(userID: Int)
 }

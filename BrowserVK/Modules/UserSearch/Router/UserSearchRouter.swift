@@ -9,6 +9,11 @@
 import UIKit
 
 class UserSearchRouter: BaseRouter, UserSearchRouterInput {
+    
+    /**
+     @author Ilyas Almakaev
+     Модуль для отображения контроллеров
+     */
 
     var factory: UserInfoControllerFactory!
     

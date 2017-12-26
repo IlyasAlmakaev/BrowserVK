@@ -9,6 +9,11 @@
 import UIKit
 import CocoaLumberjack
 
+/**
+ @author Ilyas Almakaev
+ Сервис при старте приложения
+ */
+
 class StartService {
     
     func start(window: UIWindow, viewController: UIViewController) {

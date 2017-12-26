@@ -9,9 +9,9 @@
 protocol UserInfoViewOutput {
 
     /**
-        @author Ilyas
-        Notify presenter that view is ready
-    */
+     @author Ilyas Almakaev
+     Метод сообщает presenter'y что view загрузилась
+     */
 
     func viewIsReady()
 }

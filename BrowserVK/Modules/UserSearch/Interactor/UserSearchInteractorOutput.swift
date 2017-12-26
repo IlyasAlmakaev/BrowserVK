@@ -9,5 +9,13 @@
 import Foundation
 
 protocol UserSearchInteractorOutput: class {
+    
+    /**
+     @author Ilyas Almakaev
+     Метод показа ошибки при загрузке контактов
+     
+     @return Ошибка
+     */
+    
     func showError(_ error: Error)
 }

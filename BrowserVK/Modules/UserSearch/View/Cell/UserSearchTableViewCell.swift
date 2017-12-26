@@ -9,6 +9,11 @@
 import UIKit
 import Kingfisher
 
+/**
+ @author Ilyas Almakaev
+Ячейка для отображения контакта в списке
+ */
+
 class UserSearchTableViewCell: UITableViewCell {
     
     @IBOutlet weak var fullName: UILabel!

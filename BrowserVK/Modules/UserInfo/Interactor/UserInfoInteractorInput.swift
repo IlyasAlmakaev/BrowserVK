@@ -9,5 +9,11 @@
 import Foundation
 
 protocol UserInfoInteractorInput {
+    
+    /**
+     @author Ilyas Almakaev
+     Метод запроса детальной информации о контакте по id-контакта
+     */
+    
     func loadUserInfo(userID: Int)
 }

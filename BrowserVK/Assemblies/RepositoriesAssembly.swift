@@ -9,6 +9,11 @@
 import Foundation
 import Swinject
 
+/**
+ @author Ilyas Almakaev
+ Сборка для создания репозитория
+ */
+
 class RepositoriesAssembly: Assembly {
     func assemble(container: Container) {
         container.register(IVkRepository.self) { (r) in

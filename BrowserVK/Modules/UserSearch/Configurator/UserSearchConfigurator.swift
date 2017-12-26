@@ -8,6 +8,10 @@
 
 import UIKit
 import Swinject
+/**
+ @author Ilyas Almakaev
+ Сборка компонетов для модуля UserSearch
+ */
 
 class UserSearchConfigurator {
     

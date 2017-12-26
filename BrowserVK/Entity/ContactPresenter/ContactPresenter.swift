@@ -8,6 +8,11 @@
 
 import Foundation
 
+/**
+ @author Ilyas Almakaev
+ Модель контакта для presenter-слоя
+ */
+
 class ContactPresenter {
     
     /** id Контакта */

@@ -10,10 +10,15 @@ protocol UserInfoViewInput: class {
     
     /**
      @author Ilyas Almakaev
-     Setup initial state of the view
+     Метод инициализации view
      */
     
     func setupInitialState()
+    
+    /**
+     @author Ilyas Almakaev
+     Метод принимает детальную информацию о выбранном контакте
+     */
     
     func loadedUserInfo(contact: ContactDetailPresenter)
 }

@@ -9,6 +9,11 @@
 import Foundation
 import RealmSwift
 
+/**
+ @author Ilyas Almakaev
+ Модель детальной информации о контакте для сохранения в Realm
+ */
+
 class RContactDetail: Object {
     
     /** id Контакта */

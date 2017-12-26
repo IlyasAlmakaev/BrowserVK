@@ -8,6 +8,11 @@
 
 import Foundation
 
+/**
+ @author Ilyas Almakaev
+ Входные данные для модуля UserInfo
+ */
+
 struct UserInfoInputDataModel {
     var userID: Int
 }

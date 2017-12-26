@@ -9,6 +9,11 @@
 import Foundation
 import RealmSwift
 
+/**
+ @author Ilyas Almakaev
+ Конвертер для модели контакта
+ */
+
 class ContactMapper: Mapper<Contact,RContact> {
     
     override func mapTo(item: RContact) -> Contact? {

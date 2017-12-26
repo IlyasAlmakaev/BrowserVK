@@ -9,7 +9,12 @@
 import Foundation
 import Swinject
 
-class ControllersAssembly: Assembly {    
+/**
+ @author Ilyas Almakaev
+ Сборка для создания контроллеров
+ */
+
+class ControllersAssembly: Assembly {
     func assemble(container: Container) {
         container.register(UserSearchConfigurator.self) { (r, moduleInput) in
             UserSearchConfigurator(resolver: r, input: moduleInput)

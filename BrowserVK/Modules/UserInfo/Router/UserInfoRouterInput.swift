@@ -9,5 +9,13 @@
 import Foundation
 
 protocol UserInfoRouterInput: BaseRouterInput {
+    
+    /**
+     @author Ilyas Almakaev
+     Метод показа ошибки при загрузке подробной информации о контакте
+     
+     @return Ошибка
+     */
+    
     func showErrorAlert(errorDescription: String)
 }

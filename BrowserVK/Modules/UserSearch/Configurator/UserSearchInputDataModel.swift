@@ -8,5 +8,10 @@
 
 import Foundation
 
+/**
+ @author Ilyas Almakaev
+ Входные данные для модуля UserSearch
+ */
+
 struct UserSearchInputDataModel {
 }

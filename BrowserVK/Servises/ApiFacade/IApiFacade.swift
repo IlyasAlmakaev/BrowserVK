@@ -10,9 +10,24 @@ import Foundation
 
 protocol IApiFacade: class {
     
+    /**
+     @author Ilyas Almakaev
+     Метод получения списка контактов
+     */
+    
     func loadSearchedContacts(name: String, countContacts: Int, successHundler: @escaping (Array<Any>?, Bool) -> Void, errorHundler: @escaping (Error) -> Void)
     
+    /**
+     @author Ilyas Almakaev
+     Метод получения детальной информации о выбранном контакте
+     */
+    
     func loadUserInfo(userID: Int, successHundler: @escaping (Any?) -> Void, errorHundler: @escaping (Error) -> Void)
+    
+    /**
+     @author Ilyas Almakaev
+     Метод для очистки поисковых данных
+     */
     
     func resetSearch()
 }

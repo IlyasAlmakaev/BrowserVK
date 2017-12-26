@@ -11,9 +11,24 @@ import RxSwift
 
 protocol UserSearchInteractorInput {
     
+    /**
+     @author Ilyas Almakaev
+     Метод загрузки списка контактов
+     */
+    
     func loadSearchedContacts(name: String)
     
+    /**
+     @author Ilyas Almakaev
+     Метод для очистки поисковых данных
+     */
+    
     func resetSearch()
+    
+    /**
+     @author Ilyas Almakaev
+     Метод для загрузки данных для следующей страницы списка контактов
+     */
     
     func getNextContacts()
     

@@ -9,6 +9,11 @@
 import UIKit
 import Swinject
 
+/**
+ @author Ilyas Almakaev
+ Сборка компонетов для модуля UserInfo
+ */
+
 class UserInfoConfigurator {
     
     public var viewController: UserInfoViewController!

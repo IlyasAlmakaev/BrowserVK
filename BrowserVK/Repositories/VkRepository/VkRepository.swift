@@ -9,6 +9,11 @@
 import Foundation
 import RealmSwift
 
+/**
+ @author Ilyas Almakaev
+ Репозитория для сохранения данных о контакте в Realm
+ */
+
 class VkRepository {
     
     var userSearchInteractor: UserSearchInteractorInput!

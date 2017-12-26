@@ -11,6 +11,11 @@ import CocoaLumberjack
 
 let defaultLogLevel: DDLogLevel = DDLogLevel.all
 
+/**
+ @author Ilyas Almakaev
+ Сервис для логирования данных
+ */
+
 class CocoaLumberjackService {   
     
     static func error(_ text: String?,

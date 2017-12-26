@@ -8,6 +8,11 @@
 
 import Foundation
 
+/**
+ @author Ilyas Almakaev
+ Модель детальной информации о контакте для interactor-слоя
+ */
+
 class ContactDetail: Mappable {
     
     /** id Контакта */

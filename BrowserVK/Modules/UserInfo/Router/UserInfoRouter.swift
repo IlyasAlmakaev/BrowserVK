@@ -8,5 +8,10 @@
 
 import UIKit
 
+/**
+ @author Ilyas Almakaev
+ Модуль для отображения контроллеров
+ */
+
 class UserInfoRouter: BaseRouter, UserInfoRouterInput {
 }

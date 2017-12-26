@@ -9,6 +9,11 @@
 import Foundation
 import RealmSwift
 
+/**
+ @author Ilyas Almakaev
+ Конвертер для модели детальной информации о контакте
+ */
+
 class ContactDetailMapper: Mapper<ContactDetail,RContactDetail> {
     
     override func mapTo(item: RContactDetail) -> ContactDetail? {

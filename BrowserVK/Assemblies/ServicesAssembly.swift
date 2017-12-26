@@ -9,6 +9,11 @@
 import Foundation
 import Swinject
 
+/**
+ @author Ilyas Almakaev
+ Сборка для создания сервисов
+ */
+
 class ServicesAssembly: Assembly {
     func assemble(container: Container) {
         container.register(IApiFacade.self) { (r) in

@@ -6,6 +6,11 @@
 //  Copyright © 2017 Ilyas. All rights reserved.
 //
 
+/**
+ @author Ilyas Almakaev
+ Входные данные для prenenter'а
+ */
+
 protocol UserInfoModuleInput: class {
     var userID: Int { get }
 }

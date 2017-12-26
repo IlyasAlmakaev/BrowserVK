@@ -9,6 +9,11 @@
 import Foundation
 import SwiftyVK
 
+/**
+ @author Ilyas Almakaev
+ Фасад по vk api
+ */
+
 class ApiFacade: VKDelegate {
     
     var userSearchInteractor: UserSearchInteractorInput!

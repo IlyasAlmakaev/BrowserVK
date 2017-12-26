@@ -9,6 +9,11 @@
 import Foundation
 import Swinject
 
+/**
+ @author Ilyas Almakaev
+ Сборка для создания фабрики
+ */
+
 class FactoriesAssembly: Assembly {
     func assemble(container: Container) {
         container.register(UserInfoControllerFactory.self) { (r) in
