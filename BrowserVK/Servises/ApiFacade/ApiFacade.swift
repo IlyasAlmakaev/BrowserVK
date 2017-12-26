@@ -73,6 +73,9 @@ extension ApiFacade: IApiFacade {
             },
             onError: { error in
                 DispatchQueue.main.async {
+                    CocoaLumberjackService.error(error.localizedDescription)
+                    print(CocoaLumberjackService.stringLogs())
+                    
                     errorHundler(error)
                 }   
         }
@@ -93,6 +96,9 @@ extension ApiFacade: IApiFacade {
         },
             onError: { error in
                 DispatchQueue.main.async {
+                    CocoaLumberjackService.error(error.localizedDescription)
+                    print(CocoaLumberjackService.stringLogs())
+                    
                     errorHundler(error)
                 }
         }

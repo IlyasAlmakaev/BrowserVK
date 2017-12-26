@@ -39,6 +39,7 @@ class ContactDetailPresenter {
     }
     
     func sex(sex: Int) -> String {
+        
         var sexText = ""
         
         switch sex {
@@ -56,6 +57,7 @@ class ContactDetailPresenter {
     }
     
     func relation(relation: Int?, sex: Int) -> String {
+        
         var relationText = ""
         
         switch relation ?? 0 {
