@@ -42,8 +42,6 @@ class VkRepository {
 
 extension VkRepository: IVkRepository {
     
-    // MARK: UserSearchInteractorInput
-    
     func setSearchedContacts(objects: Array<Any>?, successHundler: @escaping() -> Void) {
         guard let objects = objects else {
             return
@@ -68,8 +66,6 @@ extension VkRepository: IVkRepository {
         }
         return contacts
     }
-    
-    // MARK: UserInfoInteractorInput
     
     func setSelectedContact(object: Any?, successHundler: @escaping(RContactDetail) -> Void) {
         guard let object = object else {
