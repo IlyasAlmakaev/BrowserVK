@@ -15,9 +15,7 @@ import RealmSwift
  Сборка модулей
  */
 
-class MainContainer
-{
-    
+class MainContainer {
     var c: Container!
     
     init(window: UIWindow) {
@@ -27,8 +25,9 @@ class MainContainer
                                      ServicesAssembly(),
                                      ControllersAssembly(),
                                      FactoriesAssembly()])
-        
-        let viewController = c.resolve(UserSearchConfigurator.self, argument: UserSearchInputDataModel())?.viewController
+
+        let viewController = c.resolve(UserSearchConfigurator.self,
+                                       argument: UserSearchInputDataModel())?.viewController
         
         let startService = StartService()
         startService.start(window: window, viewController: viewController!)
