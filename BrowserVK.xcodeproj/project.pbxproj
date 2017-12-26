@@ -26,7 +26,6 @@
 		600F43121FEA4A1E00C005C2 /* SectionDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600F43111FEA4A1E00C005C2 /* SectionDataBuilder.swift */; };
 		600F43151FEA654C00C005C2 /* UITableViewCell+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600F43141FEA654C00C005C2 /* UITableViewCell+Identifier.swift */; };
 		600F43171FEA6CD500C005C2 /* UITableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600F43161FEA6CD500C005C2 /* UITableView+Register.swift */; };
-		6019AA941FF111640022A70F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 605F85F51FDF9DF2002EE9C3 /* Info.plist */; };
 		6019AA951FF111790022A70F /* UserInfoControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047E6C11FE907F700FB5BE4 /* UserInfoControllerFactory.swift */; };
 		6045A19C1FED005A0051F3F4 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6045A19B1FED005A0051F3F4 /* BaseRouter.swift */; };
 		6045A19E1FED1C620051F3F4 /* BaseRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6045A19D1FED1C620051F3F4 /* BaseRouterInput.swift */; };
@@ -649,7 +648,6 @@
 			files = (
 				605F86111FDFB429002EE9C3 /* UserInfoViewController.xib in Resources */,
 				605F85F41FDF9DF2002EE9C3 /* LaunchScreen.storyboard in Resources */,
-				6019AA941FF111640022A70F /* Info.plist in Resources */,
 				605F85F11FDF9DF1002EE9C3 /* Assets.xcassets in Resources */,
 				609425721FE11A00005E7492 /* UserSearchViewController.xib in Resources */,
 				605F86161FDFB93A002EE9C3 /* UserSearchTableViewCell.xib in Resources */,
