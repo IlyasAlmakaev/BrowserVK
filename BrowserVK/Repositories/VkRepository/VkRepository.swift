@@ -40,7 +40,6 @@ extension VkRepository: IVkRepository {
     // MARK: UserSearchInteractorInput
     
     func setSearchedContacts(objects: Array<Any>?, successHundler: @escaping() -> Void) {
-        
         guard let objects = objects else {
             return
         }
@@ -74,7 +73,6 @@ extension VkRepository: IVkRepository {
     // MARK: UserInfoInteractorInput
     
     func setSelectedContact(object: Any?, successHundler: @escaping(RContactDetail) -> Void) {
-        
         guard let object = object else {
             return
         }
@@ -92,7 +90,6 @@ extension VkRepository: IVkRepository {
     }
     
     func getSelectedContact(contact: RContactDetail) -> ContactDetail {
-        
         var contactDetail = ContactDetail()
         let object = realm.objects(RContactDetail.self).filter("id = %@", contact.id)
         

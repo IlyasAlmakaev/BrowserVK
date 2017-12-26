@@ -20,7 +20,8 @@ class UserInfoInteractor: UserInfoInteractorInput {
     func loadUserInfo(userID: Int) {
         apiFacade.loadUserInfo(userID: userID, successHundler: { [weak self] (successObject) in
             
-            self?.vkRepository.setSelectedContact(object: successObject, successHundler: { (rContactDetail) in
+            self?.vkRepository.setSelectedContact(object: successObject,
+                                                  successHundler: { (rContactDetail) in
                 guard let strongSelf = self else { return }
                 let contact = strongSelf.vkRepository.getSelectedContact(contact: rContactDetail)
                 strongSelf.output.loadedUserInfo(info: contact)

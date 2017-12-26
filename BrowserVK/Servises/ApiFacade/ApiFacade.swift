@@ -53,7 +53,10 @@ extension ApiFacade: IApiFacade {
                               countContacts: Int,
                               successHundler: @escaping (Array<Any>?, Bool) -> Void,
                               errorHundler: @escaping (Error) -> Void) {
-        VK.API.Users.search([.q: name, .offset: String(countContacts), .limit: "20", .fields: "photo_50, nickname"]).send(
+        VK.API.Users.search([.q: name,
+                             .offset: String(countContacts),
+                             .limit: "20",
+                             .fields: "photo_50, nickname"]).send(
             onSuccess: { [weak self] response in
                 guard let strongSelf = self else { return }
                 guard let objects = response["items"].arrayObject else { return }
@@ -79,7 +82,8 @@ extension ApiFacade: IApiFacade {
     func loadUserInfo(userID: Int,
                       successHundler: @escaping (Any?) -> Void,
                       errorHundler: @escaping (Error) -> Void) {
-        VK.API.Users.get([.userId: String(userID), .fields: "photo_200,nickname,screen_name,relation,sex"]).send(
+        VK.API.Users.get([.userId: String(userID),
+                          .fields: "photo_200,nickname,screen_name,relation,sex"]).send(
             onSuccess: { response in
                 guard let object = response.arrayObject?[0] else { return }
                 

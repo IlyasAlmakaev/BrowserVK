@@ -34,7 +34,6 @@ class UserInfoViewController: UIViewController, UserInfoViewInput {
     }
     
     func loadedUserInfo(contact: ContactDetailPresenter) {
-        
         navigationItem.title = "\(contact.lastName) \(contact.firstName)"
         
         firstNameLabel.text = contact.firstName

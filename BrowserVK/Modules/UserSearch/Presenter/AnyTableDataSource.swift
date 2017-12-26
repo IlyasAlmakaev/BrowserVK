@@ -24,7 +24,11 @@ class AnyTableDataSource: NSObject {
                                 with data: [Data],
                                 factory: @escaping (Data, Cell, Int, Int) -> Cell,
                                 selectAction: ((Data) -> Void)?) {
-        let builder = SectionDataBuilder<Data, Cell>(section: section, data: data, factory: factory, selectAction: selectAction, header: nil)
+        let builder = SectionDataBuilder<Data, Cell>(section: section,
+                                                     data: data,
+                                                     factory: factory,
+                                                     selectAction: selectAction,
+                                                     header: nil)
         builders.append(builder)
         section += 1
     }
@@ -33,7 +37,11 @@ class AnyTableDataSource: NSObject {
                                 with data: Data,
                                 factory: @escaping (Data, Cell, Int, Int) -> Cell,
                                 selectAction: ((Data) -> Void)?) {
-        let builder = SectionDataBuilder<Data, Cell>(section: section, data: [data], factory: factory, selectAction: selectAction, header: nil)
+        let builder = SectionDataBuilder<Data, Cell>(section: section,
+                                                     data: [data],
+                                                     factory: factory,
+                                                     selectAction: selectAction,
+                                                     header: nil)
         builders.append(builder)
         section += 1
     }
@@ -43,7 +51,11 @@ class AnyTableDataSource: NSObject {
                                 factory: @escaping (Data, Cell, Int, Int) -> Cell,
                                 selectAction: ((Data) -> Void)?,
                                 header: String?) {
-        let builder = SectionDataBuilder<Data, Cell>(section: section, data: data, factory: factory, selectAction: selectAction, header: header)
+        let builder = SectionDataBuilder<Data, Cell>(section: section,
+                                                     data: data,
+                                                     factory: factory,
+                                                     selectAction: selectAction,
+                                                     header: header)
         builders.append(builder)
         section += 1
     }

@@ -43,7 +43,6 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     
     // MARK: UserSearchViewInput
     func setupInitialState() {
-        
         // configurate table view cell
         tableView.register(cell: UserSearchTableViewCell.self)
         tableView.registerHeight(cell: UserSearchTableViewCell.self)

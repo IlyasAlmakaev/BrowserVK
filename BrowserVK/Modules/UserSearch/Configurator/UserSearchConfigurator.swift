@@ -17,13 +17,15 @@ class UserSearchConfigurator {
     init(resolver: Resolver, input: UserSearchInputDataModel) {
 
         let userSearchViewController = UserSearchViewController()
-        let router = UserSearchRouter(controller: userSearchViewController, factory: resolver.resolve(UserInfoControllerFactory.self)!)
+        let router = UserSearchRouter(controller: userSearchViewController,
+                                      factory: resolver.resolve(UserInfoControllerFactory.self)!)
         
         let presenter = UserSearchPresenter()
         presenter.view = userSearchViewController
         presenter.router = router
         
-        let interactor = UserSearchInteractor(apiFacade: resolver.resolve(IApiFacade.self)!, vkRepository: resolver.resolve(IVkRepository.self)!)
+        let interactor = UserSearchInteractor(apiFacade: resolver.resolve(IApiFacade.self)!,
+                                              vkRepository: resolver.resolve(IVkRepository.self)!)
         interactor.output = presenter
         
         presenter.interactor = interactor

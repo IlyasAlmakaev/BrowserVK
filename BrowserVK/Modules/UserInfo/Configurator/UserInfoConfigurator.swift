@@ -23,7 +23,8 @@ class UserInfoConfigurator {
         presenter.view = userInfoViewController
         presenter.router = router
         
-        let interactor = UserInfoInteractor(apiFacade: resolver.resolve(IApiFacade.self)!, vkRepository: resolver.resolve(IVkRepository.self)!)
+        let interactor = UserInfoInteractor(apiFacade: resolver.resolve(IApiFacade.self)!,
+                                            vkRepository: resolver.resolve(IVkRepository.self)!)
         interactor.output = presenter
         
         presenter.interactor = interactor
