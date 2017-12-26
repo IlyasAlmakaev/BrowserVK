@@ -11,11 +11,11 @@ import RealmSwift
 
 class VkRepository {
     
-    fileprivate var realm: Realm!
-    var contactMapper = ContactMapper()
-    var contactDetailMapper = ContactDetailMapper()
     var userSearchInteractor: UserSearchInteractorInput!
     var userInfoInteractor: UserInfoInteractorInput!
+    fileprivate var realm: Realm!
+    fileprivate var contactMapper = ContactMapper()
+    fileprivate var contactDetailMapper = ContactDetailMapper()
     
     init() {
         realm = try! Realm()

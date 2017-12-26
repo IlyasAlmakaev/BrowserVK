@@ -13,9 +13,9 @@ class UserSearchInteractor: UserSearchInteractorInput {
     var apiFacade: IApiFacade!
     var vkRepository: IVkRepository!
     var hasMore = false
-    var countContacts = 0
-    var currentName = ""
     var contactsVariable: Variable<[Contact]> = Variable([])
+    private var countContacts = 0
+    private var currentName = ""
     
     init(apiFacade: IApiFacade, vkRepository: IVkRepository) {
         self.apiFacade = apiFacade

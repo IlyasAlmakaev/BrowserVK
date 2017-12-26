@@ -19,10 +19,10 @@ import UIKit
 class UserSearchViewController: UIViewController, UserSearchViewInput {
     
     var output: UserSearchViewOutput!
-    var searchResults = [Contact]()
-    let searchController = UISearchController(searchResultsController: nil)
-    let refreshControl = UIRefreshControl()
-    var nameContact = ""
+    fileprivate var nameContact = ""
+    private var searchResults = [Contact]()
+    private let searchController = UISearchController(searchResultsController: nil)
+    private let refreshControl = UIRefreshControl()
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!

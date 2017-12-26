@@ -11,13 +11,12 @@ import SwiftyVK
 
 class ApiFacade: VKDelegate {
     
-    let vkAppID = "6265118"
-    let scopes: Set<VK.Scope> = [.messages,.offline,.friends,.wall,.photos,.audio,.video,.docs,.market,.email]
-    var searchResults: [Any] = []
-    var userInfoResults = Contact()
-    
     var userSearchInteractor: UserSearchInteractorInput!
     var userInfoInterator: UserInfoInteractorInput!
+    fileprivate var searchResults: [Any] = []
+    private var userInfoResults = Contact()
+    private let vkAppID = "6265118"
+    private let scopes: Set<VK.Scope> = [.messages,.offline,.friends,.wall,.photos,.audio,.video,.docs,.market,.email]
 
     init() {
         VK.config.logToConsole = true
@@ -33,15 +32,15 @@ class ApiFacade: VKDelegate {
     }
 
     func vkAutorizationFailedWith(error: AuthError) {
-        print("Autorization failed with error: \n\(error)")
+        CocoaLumberjackService.error(error.localizedDescription)
+        print(CocoaLumberjackService.stringLogs())
+        
         NotificationCenter.default.post(name: Notification.Name(rawValue: "TestVkDidNotAuthorize"), object: nil)
     }
 
     func vkDidUnauthorize() {}
 
-    func vkShouldUseTokenPath() -> String? {
-        return nil
-    }
+    func vkShouldUseTokenPath() -> String? { return nil }
     
     func vkWillPresentView() -> UIViewController {
         return UIApplication.shared.delegate!.window!!.rootViewController!
@@ -50,11 +49,12 @@ class ApiFacade: VKDelegate {
 
 extension ApiFacade: IApiFacade {
     
-    func loadSearchedContacts(name: String, countContacts: Int, successHundler: @escaping (Array<Any>?, Bool) -> Void, errorHundler: @escaping (Error) -> Void) {
-        
+    func loadSearchedContacts(name: String,
+                              countContacts: Int,
+                              successHundler: @escaping (Array<Any>?, Bool) -> Void,
+                              errorHundler: @escaping (Error) -> Void) {
         VK.API.Users.search([.q: name, .offset: String(countContacts), .limit: "20", .fields: "photo_50, nickname"]).send(
             onSuccess: { [weak self] response in
-                
                 guard let strongSelf = self else { return }
                 guard let objects = response["items"].arrayObject else { return }
                 var hasMore = false
@@ -62,7 +62,6 @@ extension ApiFacade: IApiFacade {
                 if objects.count == 20 {
                     hasMore = true
                 }
-                
                 strongSelf.searchResults += objects
                 
                 DispatchQueue.main.async {
@@ -77,11 +76,11 @@ extension ApiFacade: IApiFacade {
         )
     }
     
-    func loadUserInfo(userID: Int, successHundler: @escaping (Any?) -> Void, errorHundler: @escaping (Error) -> Void) {
-        
+    func loadUserInfo(userID: Int,
+                      successHundler: @escaping (Any?) -> Void,
+                      errorHundler: @escaping (Error) -> Void) {
         VK.API.Users.get([.userId: String(userID), .fields: "photo_200,nickname,screen_name,relation,sex"]).send(
             onSuccess: { response in
-                
                 guard let object = response.arrayObject?[0] else { return }
                 
                 DispatchQueue.main.async {
