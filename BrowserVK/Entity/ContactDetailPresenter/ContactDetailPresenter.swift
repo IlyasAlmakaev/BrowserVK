@@ -38,86 +38,53 @@ class ContactDetailPresenter {
         self.firstName = contactDetail.firstName
         self.nickName = contactDetail.nickName
         self.screenname = contactDetail.screenname
-        self.sex = sex(sex: contactDetail.sex)
-        self.relation = relation(relation: contactDetail.relation, sex:contactDetail.sex)
+        
+        let sexEnum = Sex(rawValue: contactDetail.sex)
+        guard let sex = sexEnum?.description else { return }
+        self.sex = sex
+        
+        let relationEnum = Relation(rawValue: contactDetail.relation ?? 0)
+        guard let relation = relationEnum?.description else { return }
+        self.relation = relation
+        
         self.urlImageLarge = URL(string: contactDetail.urlImageLarge) ?? nil
     }
     
-    func sex(sex: Int) -> String {
-        
-        var sexText = ""
-        // REVIEW: Реализовать через Enum
-        switch sex {
-        case 0:
-            sexText = "Пол не указан"
-        case 1:
-            sexText = "Женщина"
-        case 2:
-            sexText = "Мужик"
-        default:
-            break
+    enum Sex: Int {
+        case Unknown, Female, Male
+        var description: String {
+            switch self {
+            case .Unknown:
+                return "Пол не указан"
+            case .Female:
+                return "Женщина"
+            case .Male:
+                return "Мужик"
+            }
         }
-        
-        return sexText
     }
     
-    func relation(relation: Int?, sex: Int) -> String {
-        
-        var relationText = ""
-        // REVIEW: Реализовать через Enum
-        switch relation ?? 0 {
-        case 0:
-            relationText = "Не указано"
-        case 1:
-            if sex == 0 {
-                relationText = "Не женат/не замужем"
-            } else if sex == 1 {
-                relationText = "Не замужем"
-            } else {
-                relationText = "Не женат"
+    enum Relation: Int {
+        case NoneSelected, Single, InARelationship, Engaged, Married, ItsComplicated, InLove, InACivilUnion
+        var description: String {
+            switch self {
+            case .NoneSelected:
+                return "Не указано"
+            case .Single:
+                return "Не женат/не замужем"
+            case .InARelationship:
+                return "Есть друг/есть подруга"
+            case .Engaged:
+                return "Помолвлен/помолвлена"
+            case .Married:
+                return "Женат/замужем"
+            case .ItsComplicated:
+                return "Всё сложно"
+            case .InLove:
+                return "Влюблён/влюблена"
+            case .InACivilUnion:
+                return "В гражданском браке"
             }
-        case 2:
-            if sex == 0 {
-                relationText = "Есть друг/есть подруга"
-            } else if sex == 1 {
-                relationText = "Есть друг"
-            } else {
-                relationText = "Есть подруга"
-            }
-        case 3:
-            if sex == 0 {
-                relationText = "Помолвлен/помолвлена"
-            } else if sex == 1 {
-                relationText = "Помолвлена"
-            } else {
-                relationText = "Помолвлен"
-            }
-        case 4:
-            if sex == 0 {
-                relationText = "Женат/замужем"
-            } else if sex == 1 {
-                relationText = "Замужем"
-            } else {
-                relationText = "Женат"
-            }
-        case 5:
-            relationText = "Всё сложно"
-        case 6:
-            relationText = "В активном поиске"
-        case 7:
-            if sex == 0 {
-                relationText = "Влюблён/влюблена"
-            } else if sex == 1 {
-                relationText = "Влюблена"
-            } else {
-                relationText = "Влюблён"
-            }
-        case 8:
-            relationText = "В гражданском браке"
-        default:
-            break
         }
-        
-        return relationText
     }
 }

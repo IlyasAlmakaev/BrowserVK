@@ -36,6 +36,7 @@
 		6047E6BF1FE8F17B00FB5BE4 /* StartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047E6BE1FE8F17B00FB5BE4 /* StartService.swift */; };
 		6047E6C21FE907F700FB5BE4 /* UserInfoControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047E6C11FE907F700FB5BE4 /* UserInfoControllerFactory.swift */; };
 		6047E6C41FE90B8200FB5BE4 /* FactoriesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047E6C31FE90B8200FB5BE4 /* FactoriesAssembly.swift */; };
+		604960651FF3A18000F39449 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604960641FF3A18000F39449 /* Const.swift */; };
 		604C2A9D1FEB68E80019C903 /* ContactDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604C2A9C1FEB68E80019C903 /* ContactDetailPresenter.swift */; };
 		60511D621FE12970007CFABF /* VkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60511D611FE12970007CFABF /* VkRepository.swift */; };
 		605C81FF1FE76CB20026F026 /* ControllersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605C81FE1FE76CB20026F026 /* ControllersAssembly.swift */; };
@@ -110,6 +111,7 @@
 		6047E6BE1FE8F17B00FB5BE4 /* StartService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartService.swift; path = Servises/StartService.swift; sourceTree = "<group>"; };
 		6047E6C11FE907F700FB5BE4 /* UserInfoControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInfoControllerFactory.swift; path = Factories/UserInfoControllerFactory.swift; sourceTree = "<group>"; };
 		6047E6C31FE90B8200FB5BE4 /* FactoriesAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FactoriesAssembly.swift; path = ../Assemblies/FactoriesAssembly.swift; sourceTree = "<group>"; };
+		604960641FF3A18000F39449 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Const.swift; path = Constants/Const.swift; sourceTree = "<group>"; };
 		604C2A9C1FEB68E80019C903 /* ContactDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactDetailPresenter.swift; path = Entity/ContactDetailPresenter/ContactDetailPresenter.swift; sourceTree = "<group>"; };
 		60511D611FE12970007CFABF /* VkRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VkRepository.swift; path = ../Repositories/VkRepository/VkRepository.swift; sourceTree = "<group>"; };
 		605C81FE1FE76CB20026F026 /* ControllersAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ControllersAssembly.swift; path = ../Assemblies/ControllersAssembly.swift; sourceTree = "<group>"; };
@@ -321,6 +323,14 @@
 			name = Factories;
 			sourceTree = "<group>";
 		};
+		604960611FF39DB500F39449 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				604960641FF3A18000F39449 /* Const.swift */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 		604C2A9B1FEB68980019C903 /* ContactDetailPresenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +411,7 @@
 		605F85E81FDF9DF1002EE9C3 /* BrowserVK */ = {
 			isa = PBXGroup;
 			children = (
+				604960611FF39DB500F39449 /* Constants */,
 				600F43131FEA651100C005C2 /* Extensions */,
 				6047E6C01FE907B500FB5BE4 /* Factories */,
 				605C82051FE7D1B60026F026 /* Servises */,
@@ -808,6 +819,7 @@
 				605F86261FDFEBD9002EE9C3 /* ContactRealm.swift in Sources */,
 				6045A19E1FED1C620051F3F4 /* BaseRouterInput.swift in Sources */,
 				4D978EE443B15A7DFD395C73 /* UserSearchRouterInput.swift in Sources */,
+				604960651FF3A18000F39449 /* Const.swift in Sources */,
 				605C820F1FE7D81D0026F026 /* RepositoriesAssembly.swift in Sources */,
 				0F35B3089FBD6A1920388AD7 /* UserSearchRouter.swift in Sources */,
 				60474D5F1FE0C3F3001AC76A /* ContactDetail.swift in Sources */,
