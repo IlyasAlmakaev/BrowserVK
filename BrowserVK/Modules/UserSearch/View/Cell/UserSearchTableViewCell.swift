@@ -32,8 +32,4 @@ class UserSearchTableViewCell: UITableViewCell {
         super.awakeFromNib()
         selectionStyle = .none // REVIEW: Можно указать в .xib и не писать тут
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) { // REVIEW: не используемые методы стираем
-        super.setSelected(selected, animated: animated)
-    }
 }
