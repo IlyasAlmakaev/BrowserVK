@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import RealmSwift
+import RealmSwift // REVIEW: Вынест и работу с Realm в отдельный сервис
 
 /**
  @author Ilyas Almakaev
@@ -67,7 +67,7 @@ extension VkRepository: IVkRepository {
         return contacts
     }
     
-    func setSelectedContact(object: Any?, successHundler: @escaping(RContactDetail) -> Void) {
+    func setSelectedContact(object: Any?, successHundler: @escaping(RContactDetail) -> Void) { // REVIEW: Модели Realm не должны выходить за пределы репозитория/сервиса
         guard let object = object else {
             return
         }
@@ -79,10 +79,10 @@ extension VkRepository: IVkRepository {
         successHundler(rContactDetail)
     }
     
-    func getSelectedContact(contact: RContactDetail) -> ContactDetail {
+    func getSelectedContact(contact: RContactDetail) -> ContactDetail { // REVIEW: Откуда interactor знает Realm-модель? Правильнее сразу передавать id
         var contactDetail = ContactDetail()
         let object = realm.objects(RContactDetail.self).filter("id = %@", contact.id)
-        contactDetail = contactDetailMapper.mapTo(item: object.first!)!
+        contactDetail = contactDetailMapper.mapTo(item: object.first!)! // REVIEW: Надо проверять опционалы, а то неменуем краш
         
         return contactDetail
     }

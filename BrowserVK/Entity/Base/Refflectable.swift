@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+// REVIEW: А нужно ли оно вообще в приложении?
 protocol Refflectable {
     func toJSON() -> [String : AnyObject]
 }

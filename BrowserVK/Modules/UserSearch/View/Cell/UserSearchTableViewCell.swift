@@ -21,7 +21,7 @@ class UserSearchTableViewCell: UITableViewCell {
     
     var contact = ContactPresenter() {
         didSet {
-            fullName.text = "\(contact.lastName) \(contact.firstName)"
+            fullName.text = "\(contact.lastName) \(contact.firstName)" // REVIEW: Объединять поля надо в моделе презентации
             let image = UIImage(named: "contact_default@50")
             avatar.kf.setImage(with: contact.urlImage, placeholder: image)
             
@@ -30,10 +30,10 @@ class UserSearchTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectionStyle = .none
+        selectionStyle = .none // REVIEW: Можно указать в .xib и не писать тут
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) { // REVIEW: не используемые методы стираем
         super.setSelected(selected, animated: animated)
     }
 }

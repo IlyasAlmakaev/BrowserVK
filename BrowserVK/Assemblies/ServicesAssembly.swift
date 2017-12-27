@@ -19,7 +19,7 @@ class ServicesAssembly: Assembly {
         container.register(IApiFacade.self) { (r) in
             ApiFacade()
             }.inObjectScope(.container)
-        
+         // REVIEW: Класс содержит только статические ф-ии и не требует инициализации. Регистрировать его не имеет смысла.
         container.register(CocoaLumberjackService.self) { (r) in
             CocoaLumberjackService()
             }.inObjectScope(.container)

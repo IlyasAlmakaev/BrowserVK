@@ -46,7 +46,7 @@ class ContactDetailPresenter {
     func sex(sex: Int) -> String {
         
         var sexText = ""
-        
+        // REVIEW: Реализовать через Enum
         switch sex {
         case 0:
             sexText = "Пол не указан"
@@ -64,7 +64,7 @@ class ContactDetailPresenter {
     func relation(relation: Int?, sex: Int) -> String {
         
         var relationText = ""
-        
+        // REVIEW: Реализовать через Enum
         switch relation ?? 0 {
         case 0:
             relationText = "Не указано"

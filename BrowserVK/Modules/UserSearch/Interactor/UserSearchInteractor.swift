@@ -10,8 +10,8 @@ import RxSwift
 class UserSearchInteractor: UserSearchInteractorInput {
     
     weak var output: UserSearchInteractorOutput!
-    var apiFacade: IApiFacade!
-    var vkRepository: IVkRepository!
+    var apiFacade: IApiFacade! // REVIEW: приватным
+    var vkRepository: IVkRepository! // REVIEW:приватным
     var hasMore = false
     var contactsVariable: Variable<[Contact]> = Variable([])
     private var countContacts = 0
@@ -38,7 +38,7 @@ class UserSearchInteractor: UserSearchInteractorInput {
         loadContacts()
     }
     
-    func loadContacts() {
+    func loadContacts() { // REVIEW: Перед запросом отправить отображаться данные из кэша (в этом весь смысл).
         apiFacade.loadSearchedContacts(name: currentName,
                                        countContacts: countContacts,
                                        successHundler: { [weak self] (successArray, hasMore) in

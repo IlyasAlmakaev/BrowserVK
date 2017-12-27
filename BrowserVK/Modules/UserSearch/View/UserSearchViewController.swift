@@ -20,7 +20,7 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     
     var output: UserSearchViewOutput!
     fileprivate var nameContact = ""
-    private var searchResults = [Contact]()
+    private var searchResults = [Contact]() // REVIEW: Это не должно быть во view, и ф-ий с этим связанных, тоже.
     private let searchController = UISearchController(searchResultsController: nil)
     private let refreshControl = UIRefreshControl()
     
@@ -43,7 +43,7 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     
     // MARK: UserSearchViewInput
     func setupInitialState() {
-        // configurate table view cell
+        // configurate table view cell // REVIEW: настройку элементов view реализовать во viewDidLoad
         tableView.register(cell: UserSearchTableViewCell.self)
         tableView.registerHeight(cell: UserSearchTableViewCell.self)
         tableView.tableFooterView = UIView(frame: .zero)
@@ -74,11 +74,11 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     func updateTableView() {
         tableView.reloadData()
     }
-    
+     // REVIEW: Не нужный метод
     func loadedSearchedContacts(contacts: [Contact]) {
         searchResults = contacts
     }
-    
+     // REVIEW: Можно объединить два метода в один с передачей Bool
     func startAnimatingActivityIndicator() {
         activityIndicator.startAnimating()
     }
