@@ -53,19 +53,3 @@ extension ContactDetail: Equatable {
         return lhs.id == rhs.id && rhs.id == lhs.id
     }
 }
-// REVIEW: А нужно ли оно вообще в приложении?
-extension ContactDetail: Refflectable {
-    func toJSON() -> [String : AnyObject] {
-        var d = [String : AnyObject]()
-        d["id"] = id as AnyObject?
-        d["last_name"] = lastName as AnyObject?
-        d["first_name"] = firstName as AnyObject?
-        d["nickname"] = nickName as AnyObject?
-        d["screen_name"] = screenname as AnyObject?
-        d["sex"] = sex as AnyObject?
-        d["relation"] = relation as AnyObject?
-        d["photo_200"] = urlImageLarge as AnyObject?
-        
-        return d
-    }
-}
