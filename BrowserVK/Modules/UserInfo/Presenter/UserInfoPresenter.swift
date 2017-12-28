@@ -11,7 +11,7 @@ class UserInfoPresenter: UserInfoModuleInput, UserInfoViewOutput, UserInfoIntera
     weak var view: UserInfoViewInput!
     var interactor: UserInfoInteractorInput!
     var router: UserInfoRouterInput!
-    var userID: Int // REVIEW: приватный
+    private var userID: Int 
     
     init(userID: Int) {
         self.userID = userID

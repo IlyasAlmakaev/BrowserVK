@@ -12,5 +12,4 @@
  */
 
 protocol UserInfoModuleInput: class {
-    var userID: Int { get } // REVIEW: Зачем этот тут?
 }
