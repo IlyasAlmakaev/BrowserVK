@@ -31,7 +31,7 @@ protocol IVkRepository: class {
      Метод сохранения списка подробной информации о контакте
      */
     
-    func setSelectedContact(object: Any?, successHundler: @escaping(RContactDetail) -> Void)
+    func setSelectedContact(object: Any?, successHandler: @escaping(ContactDetail) -> Void)
     
     /**
      @author Ilyas Almakaev
@@ -40,5 +40,5 @@ protocol IVkRepository: class {
      @return Детальная информация о контакте
      */
     
-    func getSelectedContact(contact: RContactDetail) -> ContactDetail
+    func getSelectedContact(contactID: Int) -> ContactDetail
 }

@@ -19,5 +19,9 @@ class ServicesAssembly: Assembly {
         container.register(IApiFacade.self) { (r) in
             ApiFacade()
             }.inObjectScope(.container)
+        //TODO: узнать как инициализировать если надо
+//        container.register(IRealmService.self) { (r) in
+//            RealmService()
+//            }.inObjectScope(.container)
     }
 }
