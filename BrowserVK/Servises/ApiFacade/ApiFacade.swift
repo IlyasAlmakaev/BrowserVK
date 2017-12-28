@@ -18,12 +18,11 @@ class ApiFacade: VKDelegate {
     
     var userSearchInteractor: UserSearchInteractorInput!
     var userInfoInterator: UserInfoInteractorInput!
-    private let vkAppID = "6265118" // REVIEW: Вынести в константы (Const.VK.appID)
     private let scopes: Set<VK.Scope> = [.messages,.offline,.friends,.wall,.photos,.audio,.video,.docs,.market,.email] // REVIEW: Вынести в константы
 
     init() {
         VK.config.logToConsole = true
-        VK.configure(withAppId: vkAppID, delegate: self)
+        VK.configure(withAppId: Const.VK.appID, delegate: self)
     }
     
     func vkWillAuthorize() -> Set<VK.Scope> {
@@ -82,7 +81,7 @@ extension ApiFacade: IApiFacade {
                       successHundler: @escaping (Any?) -> Void,
                       errorHundler: @escaping (Error) -> Void) {
         VK.API.Users.get([.userId: String(userID),
-                          .fields: "photo_200,nickname,screen_name,relation,sex"]).send( // REVIEW: fields вынести в константы
+                          .fields: Const.VK.userFields]).send(
             onSuccess: { (response) in
                 guard let object = response.arrayObject?[0] else { return }
                 

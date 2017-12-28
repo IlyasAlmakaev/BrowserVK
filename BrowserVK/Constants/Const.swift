@@ -6,8 +6,9 @@
 //  Copyright © 2017 Ильяс. All rights reserved.
 //
 
-import Foundation
-
-class Const {
-
+struct Const {
+    struct VK {
+        static let appID = "6265118"
+        static let userFields = "photo_200,nickname,screen_name,relation,sex"
+    }
 }
