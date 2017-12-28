@@ -15,7 +15,7 @@ class UserSearchRouter: BaseRouter, UserSearchRouterInput {
      Модуль для отображения контроллеров
      */
 
-    var factory: UserInfoControllerFactory! // REVIEW: приватный
+    private var factory: UserInfoControllerFactory! 
     
     init(controller: UIViewController, factory: UserInfoControllerFactory) {
         super.init(viewController: controller)
