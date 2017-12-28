@@ -42,28 +42,14 @@ class VkRepository {
 
 extension VkRepository: IVkRepository {
     
-    func setSearchedContacts(objects: Array<Any>?, successHundler: @escaping() -> Void) {
-        guard let objects = objects else {
-            return
-        }
-        realm.beginWrite()
+    func getSearchedContacts(objects: Array<Any>?) -> [Contact] {
+        guard let objects = objects else { return [Contact()] }
+        var contacts: [Contact] = []
         for object in objects {
-            let contact = Contact(map: object as AnyObject)
-            var rContact = RContact()
-            rContact = contactMapper.mapFrom(item: contact!)!
-            realm.add(rContact, update: true)
+            guard let contact = Contact(map: object as AnyObject) else { return [Contact()] }
+            contacts.append(contact)
         }
-        try! realm.commitWrite()
-        successHundler()
-    }
-    
-    func getSearchedContacts() -> [Contact] {
-        var contacts = [Contact]()
-        let objects = realm.objects(RContact.self)
-        for object in objects {
-            let contact = contactMapper.mapTo(item: object)
-            contacts.append(contact!)
-        }
+        
         return contacts
     }
     

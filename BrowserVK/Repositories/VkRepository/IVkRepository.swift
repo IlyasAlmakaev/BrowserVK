@@ -12,19 +12,12 @@ protocol IVkRepository: class {
     
     /**
      @author Ilyas Almakaev
-     Метод сохранения списка контактов
-     */
-    
-    func setSearchedContacts(objects: Array<Any>?, successHundler: @escaping() -> Void)
-    
-    /**
-     @author Ilyas Almakaev
-     Метод возвращает список контактов
+     Метод возвращает контакты
      
      @return Контакты
      */
     
-    func getSearchedContacts() -> [Contact]
+    func getSearchedContacts(objects: Array<Any>?) -> [Contact]
     
     /**
      @author Ilyas Almakaev

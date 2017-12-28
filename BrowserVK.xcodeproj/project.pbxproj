@@ -29,6 +29,7 @@
 		6019AA951FF111790022A70F /* UserInfoControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047E6C11FE907F700FB5BE4 /* UserInfoControllerFactory.swift */; };
 		6045A19C1FED005A0051F3F4 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6045A19B1FED005A0051F3F4 /* BaseRouter.swift */; };
 		6045A19E1FED1C620051F3F4 /* BaseRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6045A19D1FED1C620051F3F4 /* BaseRouterInput.swift */; };
+		604690621FF4D3100077EBF5 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604690611FF4D3100077EBF5 /* RealmService.swift */; };
 		60474D5F1FE0C3F3001AC76A /* ContactDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60474D5E1FE0C3F3001AC76A /* ContactDetail.swift */; };
 		60474D611FE0C40A001AC76A /* ContactDetailMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60474D601FE0C40A001AC76A /* ContactDetailMapper.swift */; };
 		60474D631FE0C423001AC76A /* ContactDetailRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60474D621FE0C423001AC76A /* ContactDetailRealm.swift */; };
@@ -103,6 +104,7 @@
 		600F43161FEA6CD500C005C2 /* UITableView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableView+Register.swift"; path = "Extensions/UITableView+Register.swift"; sourceTree = "<group>"; };
 		6045A19B1FED005A0051F3F4 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseRouter.swift; path = /Users/ilas/Desktop/BrowserVK/BrowserVK/Modules/Base/BaseRouter.swift; sourceTree = "<absolute>"; };
 		6045A19D1FED1C620051F3F4 /* BaseRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseRouterInput.swift; path = /Users/ilas/Desktop/BrowserVK/BrowserVK/Modules/Base/BaseRouterInput.swift; sourceTree = "<absolute>"; };
+		604690611FF4D3100077EBF5 /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmService.swift; path = Servises/RealmService.swift; sourceTree = "<group>"; };
 		60474D5E1FE0C3F3001AC76A /* ContactDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactDetail.swift; path = Entity/ContactDetail/ContactDetail.swift; sourceTree = "<group>"; };
 		60474D601FE0C40A001AC76A /* ContactDetailMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactDetailMapper.swift; path = Entity/ContactDetail/ContactDetailMapper.swift; sourceTree = "<group>"; };
 		60474D621FE0C423001AC76A /* ContactDetailRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactDetailRealm.swift; path = Entity/ContactDetail/ContactDetailRealm.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				28FDA1DA1FEFBF480095B5D5 /* CocoaLumberjackService */,
 				605C82061FE7D1EB0026F026 /* ApiFacade */,
 				6047E6BE1FE8F17B00FB5BE4 /* StartService.swift */,
+				604690611FF4D3100077EBF5 /* RealmService.swift */,
 			);
 			name = Servises;
 			sourceTree = "<group>";
@@ -848,6 +851,7 @@
 				60511D621FE12970007CFABF /* VkRepository.swift in Sources */,
 				22FF1D9BC790E57C22A6A5CE /* UserInfoInteractor.swift in Sources */,
 				605C81FF1FE76CB20026F026 /* ControllersAssembly.swift in Sources */,
+				604690621FF4D3100077EBF5 /* RealmService.swift in Sources */,
 				D671DC6799E43D942307B915 /* UserInfoRouterInput.swift in Sources */,
 				605C82111FE7D9470026F026 /* MainContainer.swift in Sources */,
 				70273DEC5934A46592C69C0A /* UserInfoRouter.swift in Sources */,
