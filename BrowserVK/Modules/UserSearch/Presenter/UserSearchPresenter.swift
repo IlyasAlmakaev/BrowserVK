@@ -18,10 +18,11 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
     private var disposedBag: DisposeBag = DisposeBag()
     
     func viewIsReady() {
-        interactor.contactsVariable.asObservable().subscribe(onNext: { (contacts) in // REVIEW: [weak self]
-            let contactsPresenter = self.prepareContactsPresenter(contacts: contacts)
-            self.provideDataSource(contactsPresenter)
-            self.stopAnimateUpdate()
+        interactor.contactsVariable.asObservable().subscribe(onNext: { [weak self] (contacts) in 
+            guard let strongSelf = self else { return } //Возвращать ли замыкание?
+            let contactsPresenter = strongSelf.prepareContactsPresenter(contacts: contacts)
+            strongSelf.provideDataSource(contactsPresenter)
+            strongSelf.stopAnimateUpdate()
         }).addDisposableTo(disposedBag)
     }
     

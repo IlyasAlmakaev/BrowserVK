@@ -26,7 +26,7 @@ class UserSearchTableViewCell: UITableViewCell {
             avatar.kf.setImage(with: contact.urlImage, placeholder: image)
         }
     }
-    
+    //TODO: возможно, надо удалить
     override func awakeFromNib() {
         super.awakeFromNib()
     }
