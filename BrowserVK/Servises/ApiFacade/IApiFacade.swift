@@ -15,7 +15,7 @@ protocol IApiFacade: class {
      Метод получения списка контактов
      */
     
-    func loadSearchedContacts(name: String, countContacts: Int, successHundler: @escaping (Array<Any>?, Bool) -> Void, errorHundler: @escaping (Error) -> Void)
+    func loadSearchedContacts(name: String, countContacts: Int, successHundler: @escaping (Array<Any>?) -> Void, errorHundler: @escaping (Error) -> Void)
     
     /**
      @author Ilyas Almakaev
@@ -23,11 +23,4 @@ protocol IApiFacade: class {
      */
     
     func loadUserInfo(userID: Int, successHundler: @escaping (Any?) -> Void, errorHundler: @escaping (Error) -> Void)
-    
-    /**
-     @author Ilyas Almakaev
-     Метод для очистки поисковых данных
-     */
-    
-    func resetSearch()
 }

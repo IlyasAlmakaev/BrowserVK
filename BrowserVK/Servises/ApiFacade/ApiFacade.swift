@@ -18,8 +18,6 @@ class ApiFacade: VKDelegate {
     
     var userSearchInteractor: UserSearchInteractorInput!
     var userInfoInterator: UserInfoInteractorInput!
-    fileprivate var searchResults: [Any] = [] // REVIEW: Перенести работу с результатами в interactor
-    private var userInfoResults = Contact() // REVIEW: Не используется - убрать
     private let vkAppID = "6265118" // REVIEW: Вынести в константы (Const.VK.appID)
     private let scopes: Set<VK.Scope> = [.messages,.offline,.friends,.wall,.photos,.audio,.video,.docs,.market,.email] // REVIEW: Вынести в константы
 
@@ -48,7 +46,8 @@ class ApiFacade: VKDelegate {
     func vkShouldUseTokenPath() -> String? { return nil }
     
     func vkWillPresentView() -> UIViewController {
-        return UIApplication.shared.delegate!.window!!.rootViewController! // REVIEW: Не надо так. Всегда проверяем опционалы.
+        guard let rootViewController = UIApplication.shared.delegate?.window??.rootViewController else { return UIViewController() }
+        return rootViewController
     }
 }
 
@@ -56,24 +55,16 @@ extension ApiFacade: IApiFacade {
     
     func loadSearchedContacts(name: String,
                               countContacts: Int,
-                              successHundler: @escaping (Array<Any>?, Bool) -> Void,
+                              successHundler: @escaping (Array<Any>?) -> Void,
                               errorHundler: @escaping (Error) -> Void) {
         VK.API.Users.search([.q: name,
                              .offset: String(countContacts),
                              .limit: "20",
                              .fields: "photo_50, nickname"]).send(
-            onSuccess: { [weak self] (response) in
-                guard let strongSelf = self else { return } // REVIEW: Просто закрывать ф-ию не стоит. Обязательно надо вернуть одно из замыканий.
-                guard let objects = response["items"].arrayObject else { return } // REVIEW: оба guard можно объединить в один, условия пишутся через запятую
-                var hasMore = false // REVIEW: Работу с hasMore можно вынести за пределы apiFacade. Это логика приложения, а не работы с VK
-                
-                if objects.count == 20 {
-                    hasMore = true
-                }
-                strongSelf.searchResults += objects // REVIEW: Перенести работу с результатами в interactor
-                
+            onSuccess: { (response) in
+                guard let objects = response["items"].arrayObject else { return successHundler(nil) }
                 DispatchQueue.main.async {
-                    successHundler(self?.searchResults, hasMore)
+                    successHundler(objects)
                 }
             },
             onError: { (error) in
@@ -108,9 +99,5 @@ extension ApiFacade: IApiFacade {
                 }
         }
         )
-    }
-    
-    func resetSearch() {
-        searchResults = [] // REVIEW: Перенести работу с результатами в interactor
     }
 }

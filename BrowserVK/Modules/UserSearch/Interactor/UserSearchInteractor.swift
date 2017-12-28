@@ -16,6 +16,7 @@ class UserSearchInteractor: UserSearchInteractorInput {
     private var vkRepository: IVkRepository!
     private var countContacts = 0
     private var currentName = ""
+    private var searchResults: [Any] = []
     
     init(apiFacade: IApiFacade, vkRepository: IVkRepository) {
         self.apiFacade = apiFacade
@@ -29,7 +30,7 @@ class UserSearchInteractor: UserSearchInteractorInput {
     
     func resetSearch() {
         countContacts = 0
-        apiFacade.resetSearch()
+        searchResults = []
         vkRepository.deleteAll()
     }
     
@@ -41,14 +42,17 @@ class UserSearchInteractor: UserSearchInteractorInput {
     func loadContacts() { // REVIEW: Перед запросом отправить отображаться данные из кэша (в этом весь смысл).
         apiFacade.loadSearchedContacts(name: currentName,
                                        countContacts: countContacts,
-                                       successHundler: { [weak self] (successArray, hasMore) in
-            guard let strongSelf = self else { return }
-            strongSelf.hasMore = hasMore
-            strongSelf.vkRepository.setSearchedContacts(objects: successArray, successHundler:  {
-                let contacts = strongSelf.vkRepository.getSearchedContacts()
-                strongSelf.contactsVariable.value = contacts
-                
-            })
+                                       successHundler: { [weak self] (successArray) in
+                                        guard let strongSelf = self, let successArray = successArray else { return }
+                                        if successArray.count == 20 {
+                                            strongSelf.hasMore = true
+                                        }
+                                        strongSelf.searchResults += successArray
+                                        
+                                        strongSelf.vkRepository.setSearchedContacts(objects: successArray, successHundler:  {
+                                            let contacts = strongSelf.vkRepository.getSearchedContacts()
+                                            strongSelf.contactsVariable.value = contacts
+                                        })
             }, errorHundler: { [weak self] (error) in
                 guard let strongSelf = self else { return }
                 strongSelf.output.showError(error)
