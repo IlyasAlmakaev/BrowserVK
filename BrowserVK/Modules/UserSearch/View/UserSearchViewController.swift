@@ -31,19 +31,7 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupInitialState()
-        output.viewIsReady()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        self.searchController.searchBar.becomeFirstResponder()
-    }
-    
-    // MARK: UserSearchViewInput
-    func setupInitialState() {
-        // configurate table view cell // REVIEW: настройку элементов view реализовать во viewDidLoad
+        // configurate table view cell
         tableView.register(cell: UserSearchTableViewCell.self)
         tableView.registerHeight(cell: UserSearchTableViewCell.self)
         tableView.tableFooterView = UIView(frame: .zero)
@@ -64,6 +52,20 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
         refreshControl.addTarget(self, action: #selector(searchWithRefreshControl), for: .valueChanged)
         
         definesPresentationContext = true
+        
+        setupInitialState()
+        output.viewIsReady()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.searchController.searchBar.becomeFirstResponder()
+    }
+    
+    // MARK: UserSearchViewInput
+    //TODO: возможно, удалить надо
+    func setupInitialState() {
     }
     
     func provideTableDataSource(datasource: AnyTableDataSource) {
