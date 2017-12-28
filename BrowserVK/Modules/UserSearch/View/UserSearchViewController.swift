@@ -71,29 +71,27 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     func updateTableView() {
         tableView.reloadData()
     }
-
-     // REVIEW: Можно объединить два метода в один с передачей Bool
-    func startAnimatingActivityIndicator() {
-        activityIndicator.startAnimating()
-    }
     
-    func stopAnimatingActivityIndicator() {
-        activityIndicator.stopAnimating()
+    func animateLoadingIndicators(isLoad: Bool) {
+        if isLoad {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+            refreshControl.endRefreshing()
+        }
     }
     
     @objc func searchWithRefreshControl() {
         output.search(string: nameContact)
     }
     
-    func stopRefreshControl() {
-        refreshControl.endRefreshing()
-    }
+
 }
 
 extension UserSearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        startAnimatingActivityIndicator()
+        animateLoadingIndicators(isLoad: true)
         nameContact = searchBar.text!
         output.search(string: nameContact)
     }

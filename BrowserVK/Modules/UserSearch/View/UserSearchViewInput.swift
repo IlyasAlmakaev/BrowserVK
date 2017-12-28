@@ -21,25 +21,11 @@ protocol UserSearchViewInput: class {
      */
     
     func updateTableView()
-
-    /**
-     @author Ilyas Almakaev
-     Метод отображения анимации загрузочного индикатора
-     */
-    
-    func startAnimatingActivityIndicator()
     
     /**
      @author Ilyas Almakaev
-     Метод скрытия анимации загрузочного индикатора
+     Метод работы индикаторов загрузки
      */
     
-    func stopAnimatingActivityIndicator()
-    
-    /**
-     @author Ilyas Almakaev
-     Метод скрытия refreshControl
-     */
-    
-    func stopRefreshControl()
+    func animateLoadingIndicators(isLoad: Bool)
 }

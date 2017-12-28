@@ -16,22 +16,20 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
     var router: UserSearchRouterInput!
     private var tableDatasource: AnyTableDataSource = AnyTableDataSource()
     private var disposedBag: DisposeBag = DisposeBag()
+    private var isLoad: Bool!
     
     func viewIsReady() {
         interactor.contactsVariable.asObservable().subscribe(onNext: { [weak self] (contacts) in 
-            guard let strongSelf = self else { return } //Возвращать ли замыкание?
+            guard let strongSelf = self else { return }
+            strongSelf.isLoad = false
             let contactsPresenter = strongSelf.prepareContactsPresenter(contacts: contacts)
             strongSelf.provideDataSource(contactsPresenter)
-            strongSelf.stopAnimateUpdate()
+            strongSelf.view.animateLoadingIndicators(isLoad: strongSelf.isLoad)
         }).addDisposableTo(disposedBag)
     }
     
-    func stopAnimateUpdate() {
-        self.view.stopAnimatingActivityIndicator()
-        self.view.stopRefreshControl()
-    }
-    
     func search(string: String) {
+        isLoad = true
         resetSearch()
         interactor.loadSearchedContacts(name: string)
     }
@@ -42,8 +40,9 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
     
     func checkPagination(index: Int, arrayCount: Int) {
         if index == arrayCount - 5 {
+            isLoad = true
             if interactor.hasMore {
-                view.startAnimatingActivityIndicator()
+                view.animateLoadingIndicators(isLoad: isLoad)
                 interactor.getNextContacts()
             }
         }
@@ -82,6 +81,7 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
     
     func showError(_ error: Error) {
         router.showErrorAlert(errorDescription: error.localizedDescription)
-        stopAnimateUpdate()
+        isLoad = false
+        view.animateLoadingIndicators(isLoad: isLoad)
     }
 }
