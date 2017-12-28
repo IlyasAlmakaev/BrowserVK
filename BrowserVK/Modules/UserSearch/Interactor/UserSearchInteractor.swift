@@ -10,10 +10,10 @@ import RxSwift
 class UserSearchInteractor: UserSearchInteractorInput {
     
     weak var output: UserSearchInteractorOutput!
-    var apiFacade: IApiFacade! // REVIEW: приватным
-    var vkRepository: IVkRepository! // REVIEW:приватным
     var hasMore = false
     var contactsVariable: Variable<[Contact]> = Variable([])
+    private var apiFacade: IApiFacade!
+    private var vkRepository: IVkRepository!
     private var countContacts = 0
     private var currentName = ""
     
