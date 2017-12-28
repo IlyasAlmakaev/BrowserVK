@@ -17,6 +17,8 @@ class ContactDetailPresenter {
     
     /** id Контакта */
     var id: Int = 0
+    /** Фамилия и Имя */
+    var fullName: String = ""
     /** Фамилия */
     var lastName: String = ""
     /** Имя */
@@ -34,6 +36,7 @@ class ContactDetailPresenter {
     
     init(contactDetail: ContactDetail?) {
         guard let contactDetail = contactDetail else { return }
+        self.fullName = "\(contactDetail.lastName) \(contactDetail.firstName)"
         self.lastName = contactDetail.lastName
         self.firstName = contactDetail.firstName
         self.nickName = contactDetail.nickName

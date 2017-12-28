@@ -34,7 +34,7 @@ class UserInfoViewController: UIViewController, UserInfoViewInput {
     }
     
     func loadedUserInfo(contact: ContactDetailPresenter) {
-        navigationItem.title = "\(contact.lastName) \(contact.firstName)"  // REVIEW: Объединить в моделе презентации
+        navigationItem.title = contact.fullName
         
         firstNameLabel.text = contact.firstName
         lastNameLabel.text = contact.lastName
