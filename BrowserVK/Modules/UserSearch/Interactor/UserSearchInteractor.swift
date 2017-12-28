@@ -39,7 +39,7 @@ class UserSearchInteractor: UserSearchInteractorInput {
         loadContacts()
     }
     
-    func loadContacts() { 
+    func loadContacts() { // REVIEW: Перед запросом отправить отображаться данные из кэша (в этом весь смысл).
         apiFacade.loadSearchedContacts(name: currentName,
                                        countContacts: countContacts,
                                        successHundler: { [weak self] (successArray) in
@@ -48,7 +48,7 @@ class UserSearchInteractor: UserSearchInteractorInput {
                                             strongSelf.hasMore = true
                                         }
                                         strongSelf.searchResults += successArray
-                                        strongSelf.contactsVariable.value = strongSelf.vkRepository.getSearchedContacts(objects: successArray)
+                                        strongSelf.contactsVariable.value = strongSelf.vkRepository.getSearchedContacts(objects: strongSelf.searchResults)
 
             }, errorHundler: { [weak self] (error) in
                 guard let strongSelf = self else { return }
