@@ -21,10 +21,9 @@ class UserSearchTableViewCell: UITableViewCell {
     
     var contact = ContactPresenter() {
         didSet {
-            fullName.text = "\(contact.lastName) \(contact.firstName)" // REVIEW: Объединять поля надо в моделе презентации
+            fullName.text = contact.fullName
             let image = UIImage(named: "contact_default@50")
             avatar.kf.setImage(with: contact.urlImage, placeholder: image)
-            
         }
     }
     

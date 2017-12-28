@@ -17,6 +17,8 @@ class ContactPresenter {
     
     /** id Контакта */
     var id: Int = 0
+    /** Фамилия и имя */
+    var fullName: String = ""
     /** Фамилия */
     var lastName: String = ""
     /** Имя */
@@ -29,8 +31,7 @@ class ContactPresenter {
     required init(contact: Contact?) {
         guard let contact = contact else { return }
         self.id = contact.id
-        self.lastName = contact.lastName
-        self.firstName = contact.firstName
+        self.fullName = "\(contact.lastName) \(contact.firstName)"
         self.urlImage = URL(string: contact.urlImage) ?? nil
     }
 }
