@@ -20,7 +20,6 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     
     var output: UserSearchViewOutput!
     fileprivate var nameContact = ""
-    private var searchResults = [Contact]() // REVIEW: Это не должно быть во view, и ф-ий с этим связанных, тоже.
     private let searchController = UISearchController(searchResultsController: nil)
     private let refreshControl = UIRefreshControl()
     
