@@ -7,13 +7,6 @@
 //
 
 protocol UserSearchViewInput: class {
-
-    /**
-        @author Ilyas Almakaev
-        Метод инициализации view
-    */
-    
-    func setupInitialState()
     
     /**
      @author Anton Skorodumov
@@ -28,14 +21,7 @@ protocol UserSearchViewInput: class {
      */
     
     func updateTableView()
-    
-    /**
-     @author Ilyas Almakaev
-     Метод принимает загруженый список контактов
-     */
-    
-    func loadedSearchedContacts(contacts: [Contact])
-    
+
     /**
      @author Ilyas Almakaev
      Метод отображения анимации загрузочного индикатора

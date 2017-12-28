@@ -52,8 +52,7 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
         refreshControl.addTarget(self, action: #selector(searchWithRefreshControl), for: .valueChanged)
         
         definesPresentationContext = true
-        
-        setupInitialState()
+
         output.viewIsReady()
     }
     
@@ -64,9 +63,6 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     }
     
     // MARK: UserSearchViewInput
-    //TODO: возможно, удалить надо
-    func setupInitialState() {
-    }
     
     func provideTableDataSource(datasource: AnyTableDataSource) {
         tableView.delegate = datasource
@@ -76,10 +72,7 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     func updateTableView() {
         tableView.reloadData()
     }
-     // REVIEW: Не нужный метод
-    func loadedSearchedContacts(contacts: [Contact]) {
-        searchResults = contacts
-    }
+
      // REVIEW: Можно объединить два метода в один с передачей Bool
     func startAnimatingActivityIndicator() {
         activityIndicator.startAnimating()
