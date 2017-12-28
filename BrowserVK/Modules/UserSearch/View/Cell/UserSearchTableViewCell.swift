@@ -30,6 +30,5 @@ class UserSearchTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectionStyle = .none // REVIEW: Можно указать в .xib и не писать тут
     }
 }
