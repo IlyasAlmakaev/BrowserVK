@@ -21,10 +21,8 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
     func viewIsReady() {
         interactor.contactsVariable.asObservable().subscribe(onNext: { [weak self] (contacts) in 
             guard let strongSelf = self else { return }
-            strongSelf.isLoad = false
             let contactsPresenter = strongSelf.prepareContactsPresenter(contacts: contacts)
-            strongSelf.provideDataSource(contactsPresenter)
-            strongSelf.view.animateLoadingIndicators(isLoad: strongSelf.isLoad)
+            strongSelf.loadContacts(contactsPresenter)
         }).addDisposableTo(disposedBag)
     }
     
@@ -32,10 +30,20 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
         interactor.checkOnAuthorization()
     }
     
+    func loadContacts(_ contacts: [ContactPresenter]) {
+        isLoad = false
+        provideDataSource(contacts)
+        view.animateLoadingIndicators(isLoad: isLoad)
+    }
+    
     func search(string: String) {
         isLoad = true
         resetSearch()
-        interactor.loadSearchedContacts(name: string)
+        if string.isEmpty {
+            loadContacts([])
+        } else {
+            interactor.loadSearchedContacts(name: string)
+        }
     }
     
     func resetSearch() {

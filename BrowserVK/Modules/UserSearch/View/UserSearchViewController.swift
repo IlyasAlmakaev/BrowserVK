@@ -32,7 +32,8 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //TODO: перенести в интерактор, если оставить данную логику
+        output.checkOnAuthorization()
         // configurate table view cell
         tableView.register(cell: UserSearchTableViewCell.self)
         tableView.registerHeight(cell: UserSearchTableViewCell.self)
@@ -79,7 +80,7 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        output.checkOnAuthorization()
+        
     }
     
     // MARK: UserSearchViewInput
@@ -118,5 +119,15 @@ extension UserSearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text else { return }
         getContacts(text: text)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            getContacts(text: "")
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        getContacts(text: "")
     }
 }
