@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  BrowserVK
+
+  Created by Ильяс on 29.12.17.
+  Copyright © 2017 Ильяс. All rights reserved.
+*/
+
+FIRST_NAME="Имя";
+LAST_NAME="Фамилия";
+MIDDLE_NAME="Отчество";
+GENDER="Пол";
+RELATIONSHIP_STATUS = "Семейное положение";

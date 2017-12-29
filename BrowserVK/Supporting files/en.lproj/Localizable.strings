@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  BrowserVK
+
+  Created by Ильяс on 29.12.17.
+  Copyright © 2017 Ильяс. All rights reserved.
+*/
+
+FIRST_NAME="First name";
+LAST_NAME="Last name";
+MIDDLE_NAME="Middle name";
+GENDER="Gender";
+RELATIONSHIP_STATUS = "Relationship status";
