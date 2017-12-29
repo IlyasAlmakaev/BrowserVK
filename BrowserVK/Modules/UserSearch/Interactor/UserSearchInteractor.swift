@@ -21,6 +21,7 @@ class UserSearchInteractor: UserSearchInteractorInput {
     init(apiFacade: IApiFacade, vkRepository: IVkRepository) {
         self.apiFacade = apiFacade
         self.vkRepository = vkRepository
+   //     self.apiFacade.checkOnAuthorization()
     }
     
     func getNextContacts() {

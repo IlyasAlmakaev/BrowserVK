@@ -18,7 +18,7 @@ import RealmSwift
 class MainContainer {
     var c: Container!
     
-    init(window: UIWindow) {
+    init() {
         c = Container()
         let assembler = Assembler(container: c)
         assembler.apply(assemblies: [RepositoriesAssembly(),

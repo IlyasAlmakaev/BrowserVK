@@ -23,6 +23,7 @@ class ApiFacade: VKDelegate {
     init() {
         VK.config.logToConsole = true
         VK.configure(withAppId: Const.VK.appID, delegate: self)
+        checkOnAuthorization() 
     }
     
     func vkWillAuthorize() -> Set<VK.Scope> {

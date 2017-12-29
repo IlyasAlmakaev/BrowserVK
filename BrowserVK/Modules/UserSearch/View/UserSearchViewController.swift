@@ -33,7 +33,7 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     override func viewDidLoad() {
         super.viewDidLoad()
         //TODO: перенести в интерактор, если оставить данную логику
-        output.checkOnAuthorization()
+     //   output.checkOnAuthorization()
         // configurate table view cell
         tableView.register(cell: UserSearchTableViewCell.self)
         tableView.registerHeight(cell: UserSearchTableViewCell.self)
@@ -41,6 +41,7 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
         
         // configurate search controller
         searchController.searchBar.delegate = self
+        searchController.searchBar.autocapitalizationType = .words
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation = false
         navigationItem.titleView = searchController.searchBar
