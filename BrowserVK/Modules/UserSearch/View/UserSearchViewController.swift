@@ -15,6 +15,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class UserSearchViewController: UIViewController, UserSearchViewInput {
     
@@ -22,6 +24,7 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     fileprivate var nameContact = ""
     private let searchController = UISearchController(searchResultsController: nil)
     private let refreshControl = UIRefreshControl()
+    private var disposedBag: DisposeBag = DisposeBag()
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -40,6 +43,17 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation = false
         navigationItem.titleView = searchController.searchBar
+        
+        searchController.searchBar
+            .rx.text
+            .orEmpty
+            .debounce(3, scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .filter { !$0.isEmpty }
+            .subscribe(onNext: { [unowned self] (text) in
+                self.getContacts(text: text)
+            })
+            .addDisposableTo(disposedBag)
         
         // cofigurate refresh control
         if #available(iOS 10.0, *) {
@@ -92,14 +106,17 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
         output.search(string: nameContact)
     }
     
-
+    func getContacts(text: String) {
+        animateLoadingIndicators(isLoad: true)
+        nameContact = text
+        output.search(string: nameContact)
+    }
 }
 
 extension UserSearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        animateLoadingIndicators(isLoad: true)
-        nameContact = searchBar.text!
-        output.search(string: nameContact)
+        guard let text = searchBar.text else { return }
+        getContacts(text: text)
     }
 }
