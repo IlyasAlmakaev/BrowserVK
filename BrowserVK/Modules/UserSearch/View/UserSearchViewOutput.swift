@@ -19,6 +19,13 @@ import UIKit
     
     /**
      @author Ilyas Almakaev
+     Метод проверки авторизации в вк
+     */
+    
+    func checkOnAuthorization()
+    
+    /**
+     @author Ilyas Almakaev
      Метод для очистки поисковых данных
      */
     

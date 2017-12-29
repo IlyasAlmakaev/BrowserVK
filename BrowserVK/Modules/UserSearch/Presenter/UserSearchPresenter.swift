@@ -28,6 +28,10 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
         }).addDisposableTo(disposedBag)
     }
     
+    func checkOnAuthorization() {
+        interactor.checkOnAuthorization()
+    }
+    
     func search(string: String) {
         isLoad = true
         resetSearch()

@@ -59,6 +59,13 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
         super.viewDidAppear(animated)
         
         self.searchController.searchBar.becomeFirstResponder()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        output.checkOnAuthorization()
     }
     
     // MARK: UserSearchViewInput

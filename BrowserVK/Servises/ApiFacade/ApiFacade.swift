@@ -99,4 +99,11 @@ extension ApiFacade: IApiFacade {
         }
         )
     }
+    
+    func checkOnAuthorization() {
+        if VK.state != .authorized {
+            VK.logOut()
+            VK.logIn()
+        }
+    }
 }

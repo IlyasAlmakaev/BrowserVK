@@ -57,4 +57,8 @@ class UserSearchInteractor: UserSearchInteractorInput {
                 print(CocoaLumberjackService.stringLogs())
         })
     }
+    
+    func checkOnAuthorization() {
+        apiFacade.checkOnAuthorization()
+    }
 }

@@ -23,4 +23,11 @@ protocol IApiFacade: class {
      */
     
     func loadUserInfo(userID: Int, successHundler: @escaping (Any?) -> Void, errorHundler: @escaping (Error) -> Void)
+    
+    /**
+     @author Ilyas Almakaev
+     Метод проверки авторизации в вк
+     */
+    
+    func checkOnAuthorization()
 }
