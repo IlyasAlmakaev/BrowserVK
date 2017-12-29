@@ -26,10 +26,6 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
         }).addDisposableTo(disposedBag)
     }
     
-    func checkOnAuthorization() {
-        interactor.checkOnAuthorization()
-    }
-    
     func loadContacts(_ contacts: [ContactPresenter]) {
         isLoad = false
         provideDataSource(contacts)

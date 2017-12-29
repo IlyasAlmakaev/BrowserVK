@@ -13,13 +13,6 @@ protocol UserSearchInteractorInput {
     
     /**
      @author Ilyas Almakaev
-     Метод проверки авторизации в вк
-     */
-    
-    func checkOnAuthorization()
-    
-    /**
-     @author Ilyas Almakaev
      Метод загрузки списка контактов
      */
     

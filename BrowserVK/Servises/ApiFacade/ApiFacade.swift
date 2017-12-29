@@ -36,7 +36,6 @@ class ApiFacade: VKDelegate {
 
     func vkAutorizationFailedWith(error: AuthError) {
         CocoaLumberjackService.error(error.localizedDescription)
-        print(CocoaLumberjackService.stringLogs())
         
         NotificationCenter.default.post(name: Notification.Name(rawValue: "TestVkDidNotAuthorize"), object: nil)
     }
@@ -70,7 +69,6 @@ extension ApiFacade: IApiFacade {
             onError: { (error) in
                 DispatchQueue.main.async {
                     CocoaLumberjackService.error(error.localizedDescription)
-                    print(CocoaLumberjackService.stringLogs())
                     
                     errorHundler(error)
                 }   
@@ -93,7 +91,6 @@ extension ApiFacade: IApiFacade {
             onError: { (error) in
                 DispatchQueue.main.async {
                     CocoaLumberjackService.error(error.localizedDescription)
-                    print(CocoaLumberjackService.stringLogs())
                     
                     errorHundler(error)
                 }

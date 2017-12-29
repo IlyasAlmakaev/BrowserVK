@@ -21,7 +21,6 @@ class UserSearchInteractor: UserSearchInteractorInput {
     init(apiFacade: IApiFacade, vkRepository: IVkRepository) {
         self.apiFacade = apiFacade
         self.vkRepository = vkRepository
-   //     self.apiFacade.checkOnAuthorization()
     }
     
     func getNextContacts() {
@@ -40,7 +39,7 @@ class UserSearchInteractor: UserSearchInteractorInput {
         loadContacts()
     }
     
-    func loadContacts() { // REVIEW: Перед запросом отправить отображаться данные из кэша (в этом весь смысл).
+    func loadContacts() { 
         apiFacade.loadSearchedContacts(name: currentName,
                                        countContacts: countContacts,
                                        successHundler: { [weak self] (successArray) in
@@ -55,11 +54,6 @@ class UserSearchInteractor: UserSearchInteractorInput {
                 guard let strongSelf = self else { return }
                 strongSelf.output.showError(error)
                 CocoaLumberjackService.error(error.localizedDescription)
-                print(CocoaLumberjackService.stringLogs())
         })
-    }
-    
-    func checkOnAuthorization() {
-        apiFacade.checkOnAuthorization()
     }
 }

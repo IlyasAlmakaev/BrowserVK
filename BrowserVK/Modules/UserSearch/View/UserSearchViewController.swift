@@ -32,8 +32,7 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        //TODO: перенести в интерактор, если оставить данную логику
-     //   output.checkOnAuthorization()
+
         // configurate table view cell
         tableView.register(cell: UserSearchTableViewCell.self)
         tableView.registerHeight(cell: UserSearchTableViewCell.self)
