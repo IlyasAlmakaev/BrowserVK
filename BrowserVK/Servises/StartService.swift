@@ -15,15 +15,6 @@ import CocoaLumberjack
  */
 
 class StartService {
-    
-    func start(window: UIWindow, viewController: UIViewController) {
-        let navigation = UINavigationController(rootViewController: viewController)
-        
-        window.backgroundColor = UIColor.white
-        window.rootViewController = navigation
-        window.makeKeyAndVisible()
-    }
-    
     func startLogger() {
         DDLog.add(DDTTYLogger.sharedInstance)
         DDLog.add(DDASLLogger.sharedInstance)

@@ -40,6 +40,7 @@
 		604960651FF3A18000F39449 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604960641FF3A18000F39449 /* Const.swift */; };
 		604C2A9D1FEB68E80019C903 /* ContactDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604C2A9C1FEB68E80019C903 /* ContactDetailPresenter.swift */; };
 		60511D621FE12970007CFABF /* VkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60511D611FE12970007CFABF /* VkRepository.swift */; };
+		60513CEA1FF5DC6400B22A90 /* WindowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60513CE91FF5DC6400B22A90 /* WindowService.swift */; };
 		605C81FF1FE76CB20026F026 /* ControllersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605C81FE1FE76CB20026F026 /* ControllersAssembly.swift */; };
 		605C82031FE7CED60026F026 /* UserSearchInputDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605C82021FE7CED60026F026 /* UserSearchInputDataModel.swift */; };
 		605C82091FE7D23C0026F026 /* IApiFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605C82081FE7D23C0026F026 /* IApiFacade.swift */; };
@@ -116,6 +117,7 @@
 		604960641FF3A18000F39449 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Const.swift; path = Constants/Const.swift; sourceTree = "<group>"; };
 		604C2A9C1FEB68E80019C903 /* ContactDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactDetailPresenter.swift; path = Entity/ContactDetailPresenter/ContactDetailPresenter.swift; sourceTree = "<group>"; };
 		60511D611FE12970007CFABF /* VkRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VkRepository.swift; path = ../Repositories/VkRepository/VkRepository.swift; sourceTree = "<group>"; };
+		60513CE91FF5DC6400B22A90 /* WindowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WindowService.swift; path = Servises/WindowService.swift; sourceTree = "<group>"; };
 		605C81FE1FE76CB20026F026 /* ControllersAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ControllersAssembly.swift; path = ../Assemblies/ControllersAssembly.swift; sourceTree = "<group>"; };
 		605C82021FE7CED60026F026 /* UserSearchInputDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchInputDataModel.swift; sourceTree = "<group>"; };
 		605C82081FE7D23C0026F026 /* IApiFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IApiFacade.swift; path = Servises/ApiFacade/IApiFacade.swift; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 				28FDA1DA1FEFBF480095B5D5 /* CocoaLumberjackService */,
 				605C82061FE7D1EB0026F026 /* ApiFacade */,
 				6047E6BE1FE8F17B00FB5BE4 /* StartService.swift */,
+				60513CE91FF5DC6400B22A90 /* WindowService.swift */,
 			);
 			name = Servises;
 			sourceTree = "<group>";
@@ -839,6 +842,7 @@
 				2012FC6879E7DB094CF63E18 /* UserSearchConfigurator.swift in Sources */,
 				84D4FC82C46FADF951031D7E /* UserInfoViewInput.swift in Sources */,
 				229FBE7772B0813888C16F54 /* UserInfoViewOutput.swift in Sources */,
+				60513CEA1FF5DC6400B22A90 /* WindowService.swift in Sources */,
 				1E1F8FE3197E15F964DDBDCF /* UserInfoViewController.swift in Sources */,
 				6045A19C1FED005A0051F3F4 /* BaseRouter.swift in Sources */,
 				6710F5FF25FAC2EC41D38116 /* UserInfoModuleInput.swift in Sources */,

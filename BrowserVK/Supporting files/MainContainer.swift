@@ -30,7 +30,8 @@ class MainContainer {
                                        argument: UserSearchInputDataModel())?.viewController
         
         let startService = StartService()
-        startService.start(window: window, viewController: viewController!)
+        let windowService = WindowService()
+        windowService.openRootController(window: window, viewController: viewController!)
         startService.startLogger()
     }
 }
