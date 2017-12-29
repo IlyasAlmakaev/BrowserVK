@@ -8,6 +8,7 @@
 
 import UIKit
 import CocoaLumberjack
+import Swinject
 
 /**
  @author Ilyas Almakaev
@@ -15,6 +16,14 @@ import CocoaLumberjack
  */
 
 class StartService {
+    
+    func initRootController(container: Container) {
+        guard let viewController = container.resolve(UserSearchConfigurator.self,
+                                                     argument: UserSearchInputDataModel())?.viewController else { return }
+        let windowService = WindowService()
+        windowService.openRootController(viewController: viewController)
+    }
+    
     func startLogger() {
         DDLog.add(DDTTYLogger.sharedInstance)
         DDLog.add(DDASLLogger.sharedInstance)

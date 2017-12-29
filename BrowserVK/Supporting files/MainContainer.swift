@@ -26,12 +26,8 @@ class MainContainer {
                                      ControllersAssembly(),
                                      FactoriesAssembly()])
 
-        let viewController = c.resolve(UserSearchConfigurator.self,
-                                       argument: UserSearchInputDataModel())?.viewController
-        
         let startService = StartService()
-        let windowService = WindowService()
-        windowService.openRootController(window: window, viewController: viewController!)
+        startService.initRootController(container: c)
         startService.startLogger()
     }
 }

@@ -14,7 +14,15 @@ import UIKit
  */
 
 class WindowService {
-    func openRootController(window: UIWindow, viewController: UIViewController) {
+    
+    var window: UIWindow!
+    
+    init() {
+        guard let application = UIApplication.shared.delegate as? AppDelegate, let window = application.window else { return }
+        self.window = window
+    }
+    
+    func openRootController(viewController: UIViewController) {
         let navigation = UINavigationController(rootViewController: viewController)
         
         window.backgroundColor = UIColor.white
