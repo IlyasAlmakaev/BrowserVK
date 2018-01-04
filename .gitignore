@@ -51,3 +51,6 @@ fastlane/test_output
 ## Playgrounds
 timeline.xctimeline
 playground.xcworkspace
+
+# Generamba
+Templates/
