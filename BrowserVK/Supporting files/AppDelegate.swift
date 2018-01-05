@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         let app = options[.sourceApplication] as? String
         VK.process(url: url, sourceApplication: app)
-        print("authhh")
         return true
     }
     

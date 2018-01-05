@@ -77,12 +77,6 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
-    }
-    
     // MARK: UserSearchViewInput
     
     func provideTableDataSource(datasource: AnyTableDataSource) {
