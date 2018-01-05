@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var container: MainContainer!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {        
-        window = UIWindow(frame: UIScreen.main.bounds) // REVIEW: Вынести работу с window в отдельный сервис
+        window = UIWindow(frame: UIScreen.main.bounds)
         container = MainContainer()
         
         return true
@@ -28,9 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         VK.process(url: url, sourceApplication: app)
         return true
     }
-    
-    
-    
+
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         VK.process(url: url, sourceApplication: sourceApplication)
         return true
