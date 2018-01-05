@@ -19,9 +19,9 @@ class VkRepository {
     var userInfoInteractor: UserInfoInteractorInput!
     var realmService: RealmService!
     fileprivate var contactDetailMapper = ContactDetailMapper()
-    //TODO: использовать ли swinjet, если да, то как инициализировать?
-    init() {
-        realmService = RealmService()
+
+    init(realmService: RealmService) {
+        self.realmService = realmService
     }
    
     func deleteAll() {

@@ -17,7 +17,9 @@ import Swinject
 class RepositoriesAssembly: Assembly {
     func assemble(container: Container) {
         container.register(IVkRepository.self) { (r) in
-            VkRepository()
+            let realmService = RealmService()
+            let vkRepository = VkRepository(realmService: realmService)
+            return vkRepository
         }.inObjectScope(.container)
     }
 }
