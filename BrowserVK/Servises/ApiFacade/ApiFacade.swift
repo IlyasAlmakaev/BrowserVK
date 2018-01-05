@@ -23,7 +23,7 @@ class ApiFacade: VKDelegate {
     init() {
         VK.config.logToConsole = true
         VK.configure(withAppId: Const.VK.appID, delegate: self)
-        checkOnAuthorization() 
+        VK.logIn()
     }
     
     func vkWillAuthorize() -> Set<VK.Scope> {
@@ -96,12 +96,5 @@ extension ApiFacade: IApiFacade {
                 }
         }
         )
-    }
-    
-    func checkOnAuthorization() {
-        if VK.state != .authorized {
-            VK.logOut()
-            VK.logIn()
-        }
     }
 }
