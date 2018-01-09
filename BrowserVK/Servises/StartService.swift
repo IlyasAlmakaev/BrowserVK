@@ -14,7 +14,7 @@ import Swinject
  @author Ilyas Almakaev
  Сервис при старте приложения
  */
-
+// REVIEW: StartService ни как не относится к ApiFacade, как он оказался в его группе?
 class StartService {
     
     func initRootController(container: Container) {

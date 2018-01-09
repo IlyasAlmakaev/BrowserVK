@@ -17,5 +17,5 @@ protocol UserInfoRouterInput: BaseRouterInput {
      @return Ошибка
      */
     
-    func showErrorAlert(errorDescription: String)
+    func showErrorAlert(errorDescription: String) // REVIEW: Дублирование. В BaseRouterInput уже описано
 }

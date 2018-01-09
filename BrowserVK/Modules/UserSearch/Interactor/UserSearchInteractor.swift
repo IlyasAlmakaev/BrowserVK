@@ -16,7 +16,7 @@ class UserSearchInteractor: UserSearchInteractorInput {
     private var vkRepository: IVkRepository!
     private var countContacts = 0
     private var currentName = ""
-    private var searchResults: [Any] = []
+    private var searchResults: [Any] = [] // REVIEW: Any? Мы же точно знаем, с какими моделями работаем в этом классе
     
     init(apiFacade: IApiFacade, vkRepository: IVkRepository) {
         self.apiFacade = apiFacade
@@ -52,7 +52,7 @@ class UserSearchInteractor: UserSearchInteractorInput {
 
             }, errorHundler: { [weak self] (error) in
                 guard let strongSelf = self else { return }
-                strongSelf.output.showError(error)
+                strongSelf.output.showError(error) // REVIEW: Можно обойтись self?.
                 CocoaLumberjackService.error(error.localizedDescription)
         })
     }

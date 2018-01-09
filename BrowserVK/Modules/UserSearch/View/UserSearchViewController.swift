@@ -21,7 +21,7 @@ import RxCocoa
 class UserSearchViewController: UIViewController, UserSearchViewInput {
     
     var output: UserSearchViewOutput!
-    fileprivate var nameContact = ""
+    fileprivate var nameContact = "" // REVIEW: View не должен хранить состояния, перенести в presenter
     private let searchController = UISearchController(searchResultsController: nil)
     private let refreshControl = UIRefreshControl()
     private var disposedBag: DisposeBag = DisposeBag()

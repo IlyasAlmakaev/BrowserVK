@@ -15,10 +15,10 @@ import Foundation
 
 class VkRepository {
     
-    var userSearchInteractor: UserSearchInteractorInput!
-    var userInfoInteractor: UserInfoInteractorInput!
+    var userSearchInteractor: UserSearchInteractorInput! // REVIEW: не используется
+    var userInfoInteractor: UserInfoInteractorInput! // REVIEW: не используется
     var realmService: RealmService!
-    fileprivate var contactDetailMapper = ContactDetailMapper()
+    fileprivate var contactDetailMapper = ContactDetailMapper() // REVIEW: не используется
 
     init(realmService: RealmService) {
         self.realmService = realmService
@@ -35,7 +35,7 @@ extension VkRepository: IVkRepository {
         guard let objects = objects else { return [] }
         var contacts: [Contact] = []
         for object in objects {
-            guard let contact = Contact(map: object as AnyObject) else { return [] }
+            guard let contact = Contact(map: object as AnyObject) else { return [] } // REVIEW: не return, а continue. Из-за одной косячной модели не стоит гробить все
             contacts.append(contact)
         }
         

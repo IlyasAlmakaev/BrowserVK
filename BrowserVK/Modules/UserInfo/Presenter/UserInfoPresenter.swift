@@ -26,7 +26,7 @@ class UserInfoPresenter: UserInfoModuleInput, UserInfoViewOutput, UserInfoIntera
         view.loadedUserInfo(contact: contactDetailPresenter)
     }
     
-    func showError(_ error: Error) {
+    func showError(_ error: Error) { // REVIEW: Ошибки могут возникнуть везде. Лучше вынести в базовый класс
         router.showErrorAlert(errorDescription: error.localizedDescription)
     }
 }

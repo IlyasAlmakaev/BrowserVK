@@ -13,7 +13,8 @@ import RealmSwift
  @author Ilyas Almakaev
  Сервис по работе с Realm
  */
-
+// REVIEW: Сервис жестко завязан на конкретных моделях, чего быть не должно
+// Сделать более универсальным. Для этого у наз есть интерфейсы Mappable и Object
 class RealmService {
 
     fileprivate var realm: Realm!
