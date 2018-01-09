@@ -6,11 +6,10 @@
 //  Copyright © 2017 Ilyas. All rights reserved.
 //
 
-class UserInfoPresenter: UserInfoModuleInput, UserInfoViewOutput, UserInfoInteractorOutput {
+class UserInfoPresenter: BasePresenter, UserInfoModuleInput, UserInfoViewOutput, UserInfoInteractorOutput {
     
     weak var view: UserInfoViewInput!
     var interactor: UserInfoInteractorInput!
-    var router: UserInfoRouterInput!
     private var userID: Int 
     
     init(userID: Int) {
@@ -24,9 +23,5 @@ class UserInfoPresenter: UserInfoModuleInput, UserInfoViewOutput, UserInfoIntera
     func loadedUserInfo(info: ContactDetail) {
         let contactDetailPresenter = ContactDetailPresenter(contactDetail: info)
         view.loadedUserInfo(contact: contactDetailPresenter)
-    }
-    
-    func showError(_ error: Error) { // REVIEW: Ошибки могут возникнуть везде. Лучше вынести в базовый класс
-        router.showErrorAlert(errorDescription: error.localizedDescription)
     }
 }

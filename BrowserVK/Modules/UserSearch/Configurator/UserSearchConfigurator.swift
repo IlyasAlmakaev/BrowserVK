@@ -8,6 +8,7 @@
 
 import UIKit
 import Swinject
+
 /**
  @author Ilyas Almakaev
  Сборка компонетов для модуля UserSearch
@@ -24,9 +25,8 @@ class UserSearchConfigurator {
         let router = UserSearchRouter(controller: userSearchViewController,
                                       factory: resolver.resolve(UserInfoControllerFactory.self)!)
         
-        let presenter = UserSearchPresenter()
+        let presenter = UserSearchPresenter(router: router)
         presenter.view = userSearchViewController
-        presenter.router = router
         
         let interactor = UserSearchInteractor(apiFacade: resolver.resolve(IApiFacade.self)!,
                                               vkRepository: resolver.resolve(IVkRepository.self)!)

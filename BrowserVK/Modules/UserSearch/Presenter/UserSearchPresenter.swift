@@ -9,14 +9,18 @@
 import UIKit
 import RxSwift
 
-class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSearchInteractorOutput {
+class UserSearchPresenter: BasePresenter, UserSearchModuleInput, UserSearchViewOutput, UserSearchInteractorOutput {
     
     weak var view: UserSearchViewInput!
     var interactor: UserSearchInteractorInput!
-    var router: UserSearchRouterInput!
+    var userSearchRouter: UserSearchRouterInput!
     private var tableDatasource: AnyTableDataSource = AnyTableDataSource()
     private var disposedBag: DisposeBag = DisposeBag()
     private var isLoad: Bool!
+    
+    init(router: UserSearchRouterInput) {
+        userSearchRouter = router
+    }
     
     func viewIsReady() {
         interactor.contactsVariable.asObservable().subscribe(onNext: { [weak self] (contacts) in 
@@ -78,7 +82,7 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
         }
         let selectRowAction: ((ContactPresenter) -> Void) = { [weak self] (item) -> Void in
             guard let strongSelf = self else { return }
-            strongSelf.router.openUserInfoViewController(userID: item.id)
+            strongSelf.userSearchRouter.openUserInfoViewController(userID: item.id)
         }
         tableDatasource.registerSection(for: UserSearchTableViewCell.self, for: ContactPresenter.self, with: contactList, factory: contactFactory, selectAction: selectRowAction)
         view.provideTableDataSource(datasource: tableDatasource)
@@ -87,8 +91,8 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
     
     // Mark: Error
     
-    func showError(_ error: Error) {
-        router.showErrorAlert(errorDescription: error.localizedDescription)
+    override func showError(_ error: Error) {
+        userSearchRouter.showErrorAlert(errorDescription: error.localizedDescription)
         isLoad = false
         view.animateLoadingIndicators(isLoad: isLoad)
     }

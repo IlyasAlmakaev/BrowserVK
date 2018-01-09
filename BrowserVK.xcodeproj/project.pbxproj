@@ -65,6 +65,7 @@
 		6073EAFF1FF0DE7400BFA8D7 /* ContactPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6073EAFE1FF0DE7400BFA8D7 /* ContactPresenter.swift */; };
 		609425711FE11A00005E7492 /* UserSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6094256F1FE11A00005E7492 /* UserSearchViewController.swift */; };
 		609425721FE11A00005E7492 /* UserSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 609425701FE11A00005E7492 /* UserSearchViewController.xib */; };
+		60B3CD392004C0FE009441C4 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B3CD382004C0FE009441C4 /* BasePresenter.swift */; };
 		60C266391FE0003E0092CD67 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C266381FE0003E0092CD67 /* Mapper.swift */; };
 		60C2663B1FE001250092CD67 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C2663A1FE001250092CD67 /* Mappable.swift */; };
 		619A332E88A43A9926FDC4FE /* UserSearchInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B279D3A12B16CCBD546865 /* UserSearchInteractorOutput.swift */; };
@@ -150,6 +151,7 @@
 		6073EAFE1FF0DE7400BFA8D7 /* ContactPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactPresenter.swift; path = Entity/ContactPresenter/ContactPresenter.swift; sourceTree = "<group>"; };
 		6094256F1FE11A00005E7492 /* UserSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchViewController.swift; sourceTree = "<group>"; };
 		609425701FE11A00005E7492 /* UserSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserSearchViewController.xib; sourceTree = "<group>"; };
+		60B3CD382004C0FE009441C4 /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasePresenter.swift; path = Base/BasePresenter.swift; sourceTree = "<group>"; };
 		60C266381FE0003E0092CD67 /* Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Mapper.swift; path = Entity/Base/Mapper.swift; sourceTree = "<group>"; };
 		60C2663A1FE001250092CD67 /* Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Mappable.swift; path = Entity/Base/Mappable.swift; sourceTree = "<group>"; };
 		7A73B94946A1CC6633E656E5 /* Pods_BrowserVKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrowserVKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -292,6 +294,7 @@
 			children = (
 				6045A19B1FED005A0051F3F4 /* BaseRouter.swift */,
 				6045A19D1FED1C620051F3F4 /* BaseRouterInput.swift */,
+				60B3CD382004C0FE009441C4 /* BasePresenter.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -879,6 +882,7 @@
 				22FF1D9BC790E57C22A6A5CE /* UserInfoInteractor.swift in Sources */,
 				605C81FF1FE76CB20026F026 /* ControllersAssembly.swift in Sources */,
 				604690621FF4D3100077EBF5 /* RealmService.swift in Sources */,
+				60B3CD392004C0FE009441C4 /* BasePresenter.swift in Sources */,
 				D671DC6799E43D942307B915 /* UserInfoRouterInput.swift in Sources */,
 				605C82111FE7D9470026F026 /* MainContainer.swift in Sources */,
 				70273DEC5934A46592C69C0A /* UserInfoRouter.swift in Sources */,
