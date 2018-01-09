@@ -52,18 +52,22 @@ class ApiFacade: VKDelegate {
 
 extension ApiFacade: IApiFacade {
     
+    // Mark: load data
+    
     func loadSearchedContacts(name: String,
                               countContacts: Int,
-                              successHundler: @escaping (Array<Any>?) -> Void,
+                              successHundler: @escaping ([Contact]?) -> Void,
                               errorHundler: @escaping (Error) -> Void) {
         VK.API.Users.search([.q: name,
                              .offset: String(countContacts),
                              .limit: "20",
                              .fields: "photo_50, nickname"]).send(
-            onSuccess: { (response) in
-                guard let objects = response["items"].arrayObject else { return successHundler(nil) }
+            onSuccess: { [weak self] (response) in
+                guard let objects = response["items"].arrayObject, let strongSelf = self else {
+                    return successHundler(nil)
+                }
                 DispatchQueue.main.async {
-                    successHundler(objects)
+                    successHundler(strongSelf.getSearchedContacts(objects: objects))
                 }
             },
             onError: { (error) in
@@ -96,5 +100,18 @@ extension ApiFacade: IApiFacade {
                 }
         }
         )
+    }
+    
+    // Mark: convert data
+    
+    func getSearchedContacts(objects: Array<Any>?) -> [Contact] {
+        guard let objects = objects else { return [] }
+        var contacts: [Contact] = []
+        for object in objects {
+            guard let contact = Contact(map: object as AnyObject) else { continue }
+            contacts.append(contact)
+        }
+        
+        return contacts
     }
 }

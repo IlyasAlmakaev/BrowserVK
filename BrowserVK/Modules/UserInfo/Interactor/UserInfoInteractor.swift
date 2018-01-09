@@ -20,16 +20,19 @@ class UserInfoInteractor: UserInfoInteractorInput {
     func loadUserInfo(userID: Int) {
         output.loadedUserInfo(info: vkRepository.getSelectedContact(contactID: userID))
         apiFacade.loadUserInfo(userID: userID, successHundler: { [weak self] (successObject) in
-            // REVIEW: Уменьшить вложенность. Вынести в отдельную ф-ию
-            self?.vkRepository.setSelectedContact(object: successObject,
-                                                  successHandler: { [weak self] (rContactDetail) in
-                                                    guard let strongSelf = self else { return }
-                                                    let contact = strongSelf.vkRepository.getSelectedContact(contactID: rContactDetail.id)
-                                                    strongSelf.output.loadedUserInfo(info: contact)
-            })
+            self?.setSelectedContact(object: successObject)
             }, errorHundler: { [weak self] (error) in
                 self?.output.showError(error)
                 CocoaLumberjackService.error(error.localizedDescription)
+        })
+    }
+    
+    func setSelectedContact(object: Any?) {
+        vkRepository.setSelectedContact(object: object,
+                                        successHandler: { [weak self] (rContactDetail) in
+                                            guard let strongSelf = self else { return }
+                                            let contact = strongSelf.vkRepository.getSelectedContact(contactID: rContactDetail.id)
+                                            strongSelf.output.loadedUserInfo(info: contact)
         })
     }
 }

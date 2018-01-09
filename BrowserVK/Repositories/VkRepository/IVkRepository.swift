@@ -12,15 +12,6 @@ protocol IVkRepository: class {
     
     /**
      @author Ilyas Almakaev
-     Метод возвращает контакты
-     
-     @return Контакты
-     */
-    
-    func getSearchedContacts(objects: Array<Any>?) -> [Contact]
-    
-    /**
-     @author Ilyas Almakaev
      Метод стирает базу данных контактов
      */
     

@@ -15,7 +15,7 @@ protocol IApiFacade: class {
      Метод получения списка контактов
      */
     
-    func loadSearchedContacts(name: String, countContacts: Int, successHundler: @escaping (Array<Any>?) -> Void, errorHundler: @escaping (Error) -> Void)
+    func loadSearchedContacts(name: String, countContacts: Int, successHundler: @escaping ([Contact]?) -> Void, errorHundler: @escaping (Error) -> Void)
     
     /**
      @author Ilyas Almakaev

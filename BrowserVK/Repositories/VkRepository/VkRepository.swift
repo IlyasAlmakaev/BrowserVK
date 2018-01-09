@@ -28,17 +28,6 @@ class VkRepository {
 
 extension VkRepository: IVkRepository {
     
-    func getSearchedContacts(objects: Array<Any>?) -> [Contact] {
-        guard let objects = objects else { return [] }
-        var contacts: [Contact] = []
-        for object in objects {
-            guard let contact = Contact(map: object as AnyObject) else { continue }
-            contacts.append(contact)
-        }
-        
-        return contacts
-    }
-    
     func setSelectedContact(object: Any?, successHandler: @escaping(ContactDetail) -> Void) {
         guard let object = object else { return }
         let contactDetail = ContactDetail(map: object as AnyObject)

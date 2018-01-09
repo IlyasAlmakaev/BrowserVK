@@ -16,7 +16,7 @@ class UserSearchInteractor: UserSearchInteractorInput {
     private var vkRepository: IVkRepository!
     private var countContacts = 0
     private var currentName = ""
-    private var searchResults: [Any] = [] // REVIEW: Any? Мы же точно знаем, с какими моделями работаем в этом классе
+    private var searchResults: [Contact] = [] // REVIEW: Any? Мы же точно знаем, с какими моделями работаем в этом классе
     
     init(apiFacade: IApiFacade, vkRepository: IVkRepository) {
         self.apiFacade = apiFacade
@@ -48,8 +48,7 @@ class UserSearchInteractor: UserSearchInteractorInput {
                                             strongSelf.hasMore = true
                                         }
                                         strongSelf.searchResults += successArray
-                                        strongSelf.contactsVariable.value = strongSelf.vkRepository.getSearchedContacts(objects: strongSelf.searchResults)
-
+                                        strongSelf.contactsVariable.value = strongSelf.searchResults
             }, errorHundler: { [weak self] (error) in
                 self?.output.showError(error) 
                 CocoaLumberjackService.error(error.localizedDescription)
