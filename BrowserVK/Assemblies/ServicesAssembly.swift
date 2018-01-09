@@ -16,6 +16,9 @@ import Swinject
 
 class ServicesAssembly: Assembly {
     func assemble(container: Container) {
+        container.register(RealmService.self) { (r) in
+            RealmService()
+        }.inObjectScope(.container)
         container.register(IApiFacade.self) { (r) in
             ApiFacade()
             }.inObjectScope(.container)

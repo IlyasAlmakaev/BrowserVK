@@ -17,9 +17,7 @@ import Swinject
 class RepositoriesAssembly: Assembly {
     func assemble(container: Container) {
         container.register(IVkRepository.self) { (r) in
-            let realmService = RealmService() // REVIEW: Не правильно создавать для каждого репозитория свой realm
-            let vkRepository = VkRepository(realmService: realmService) // REVIEW: VkRepository(realmService: r.resolve(RealmService.self)!)
-            return vkRepository
+            VkRepository(realmService: r.resolve(RealmService.self)!) 
         }.inObjectScope(.container)
     }
 }
