@@ -15,10 +15,7 @@ import Foundation
 
 class VkRepository {
     
-    var userSearchInteractor: UserSearchInteractorInput! // REVIEW: не используется
-    var userInfoInteractor: UserInfoInteractorInput! // REVIEW: не используется
     var realmService: RealmService!
-    fileprivate var contactDetailMapper = ContactDetailMapper() // REVIEW: не используется
 
     init(realmService: RealmService) {
         self.realmService = realmService
