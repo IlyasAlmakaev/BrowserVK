@@ -33,11 +33,11 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
     }
     
     func search(string: String) {
-        isLoad = true
         resetSearch()
         if string.isEmpty {
             loadContacts([])
         } else {
+            isLoad = true
             interactor.loadSearchedContacts(name: string)
         }
     }

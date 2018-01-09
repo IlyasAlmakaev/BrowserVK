@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWd-ys-ggW">
-                        <rect key="frame" x="66" y="23" width="221" height="21"/>
+                        <rect key="frame" x="66" y="5" width="221" height="56.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -26,15 +26,15 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LWU-oc-Ra7">
                         <rect key="frame" x="8" y="8" width="50" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="50" id="1j6-fA-grb"/>
-                            <constraint firstAttribute="height" constant="50" id="pmA-am-x9D"/>
+                            <constraint firstAttribute="width" priority="999" constant="50" id="1j6-fA-grb"/>
+                            <constraint firstAttribute="height" priority="999" constant="50" id="pmA-am-x9D"/>
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contact_mask" translatesAutoresizingMaskIntoConstraints="NO" id="Xcv-ao-USB">
                         <rect key="frame" x="8" y="8" width="50" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="50" id="aEb-Or-Nev"/>
-                            <constraint firstAttribute="width" constant="50" id="ane-ye-Nos"/>
+                            <constraint firstAttribute="height" priority="999" constant="50" id="aEb-Or-Nev"/>
+                            <constraint firstAttribute="width" priority="999" constant="50" id="ane-ye-Nos"/>
                         </constraints>
                     </imageView>
                 </subviews>
@@ -45,11 +45,11 @@
                     <constraint firstItem="LWU-oc-Ra7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="6Fj-uM-5ID"/>
                     <constraint firstAttribute="trailing" secondItem="wWd-ys-ggW" secondAttribute="trailing" id="Ii7-M4-Ibr"/>
                     <constraint firstItem="wWd-ys-ggW" firstAttribute="leading" secondItem="LWU-oc-Ra7" secondAttribute="trailing" constant="8" id="O3t-qJ-jyv"/>
-                    <constraint firstItem="wWd-ys-ggW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="23" id="WWS-LK-3ZK"/>
+                    <constraint firstItem="wWd-ys-ggW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="WWS-LK-3ZK"/>
                     <constraint firstItem="wWd-ys-ggW" firstAttribute="leading" secondItem="Xcv-ao-USB" secondAttribute="trailing" constant="8" id="az7-aa-EzO"/>
                     <constraint firstAttribute="bottom" secondItem="LWU-oc-Ra7" secondAttribute="bottom" constant="8.5" id="bS5-HM-kvZ"/>
                     <constraint firstItem="Xcv-ao-USB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="p0t-Wo-nsr"/>
-                    <constraint firstAttribute="bottom" secondItem="wWd-ys-ggW" secondAttribute="bottom" constant="22.5" id="xAn-u8-GdU"/>
+                    <constraint firstAttribute="bottom" secondItem="wWd-ys-ggW" secondAttribute="bottom" constant="5" id="xAn-u8-GdU"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
