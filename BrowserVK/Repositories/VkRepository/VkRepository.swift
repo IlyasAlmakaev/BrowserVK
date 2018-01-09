@@ -35,7 +35,7 @@ extension VkRepository: IVkRepository {
         guard let objects = objects else { return [] }
         var contacts: [Contact] = []
         for object in objects {
-            guard let contact = Contact(map: object as AnyObject) else { return [] } // REVIEW: не return, а continue. Из-за одной косячной модели не стоит гробить все
+            guard let contact = Contact(map: object as AnyObject) else { continue }
             contacts.append(contact)
         }
         
