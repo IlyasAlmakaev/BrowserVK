@@ -9,5 +9,13 @@
 import Foundation
 
 protocol BaseRouterInput {
+    
+    /**
+     @author Ilyas Almakaev
+     Метод показа ошибки при загрузке данных
+     
+     @return Ошибка
+     */
+    
     func showErrorAlert(errorDescription: String)
 }

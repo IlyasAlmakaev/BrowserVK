@@ -51,8 +51,7 @@ class UserSearchInteractor: UserSearchInteractorInput {
                                         strongSelf.contactsVariable.value = strongSelf.vkRepository.getSearchedContacts(objects: strongSelf.searchResults)
 
             }, errorHundler: { [weak self] (error) in
-                guard let strongSelf = self else { return }
-                strongSelf.output.showError(error) // REVIEW: Можно обойтись self?.
+                self?.output.showError(error) 
                 CocoaLumberjackService.error(error.localizedDescription)
         })
     }
