@@ -12,6 +12,8 @@ import Kingfisher
 class UserInfoViewController: UIViewController, UserInfoViewInput {
     
     var output: UserInfoViewOutput!
+    var userFriendsListViewController: UserFriendsListViewController!
+    
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
@@ -19,6 +21,7 @@ class UserInfoViewController: UIViewController, UserInfoViewInput {
     @IBOutlet weak var screennameLabel: UILabel!
     @IBOutlet weak var sexLabel: UILabel!
     @IBOutlet weak var relationLabel: UILabel!
+    @IBOutlet weak var friendsList: UIView!
     
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -29,7 +32,10 @@ class UserInfoViewController: UIViewController, UserInfoViewInput {
     
     
     // MARK: UserInfoViewInput
-    func setupInitialState() {     
+    func setupInitialState() {
+        friendsList.addSubview(userFriendsListViewController.view)
+        self.addChildViewController(userFriendsListViewController)
+        
         self.edgesForExtendedLayout = []
     }
     
@@ -45,6 +51,14 @@ class UserInfoViewController: UIViewController, UserInfoViewInput {
         
         let image = UIImage(named: "contact_default@100")
         avatar.kf.setImage(with: contact.urlImageLarge, placeholder: image)
+        print("initializeUserInfo")
+        print(self.friendsList.bounds)
+    }
+    
+    func provideUserFriendsListViewController(controller: UIViewController) {
+      //  print(self.friendsList.bounds)
+        self.friendsList.addSubview(controller.view)
+        self.addChildViewController(controller)
     }
 }
 

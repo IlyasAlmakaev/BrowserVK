@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00F22A1FFD61AD6AD8BE8440 /* AIUserFriendsListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AA20C65CC85AC7D9A03A46 /* AIUserFriendsListConfigurator.swift */; };
 		05EB4FFA1C26DE746B66754B /* UserSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7510101972D41799B273BC7 /* UserSearchInteractor.swift */; };
 		0B01131739F66B56F138B284 /* UserInfoInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E4B40F6D664D8EF28A620A /* UserInfoInteractorOutput.swift */; };
 		0F35B3089FBD6A1920388AD7 /* UserSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBFDD91E7DD7650671D9EC8 /* UserSearchRouter.swift */; };
+		15EA803C3B64492356208D7F /* AIUserFriendsListViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E805CABBFEDD99DF2576E18E /* AIUserFriendsListViewOutput.swift */; };
 		1E1F8FE3197E15F964DDBDCF /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667D6C53ADBB75F957E625C /* UserInfoViewController.swift */; };
 		2012FC6879E7DB094CF63E18 /* UserSearchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F75C5054F82120770B816C /* UserSearchConfigurator.swift */; };
 		229FBE7772B0813888C16F54 /* UserInfoViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2927F66ECD73379E4B7AAD0D /* UserInfoViewOutput.swift */; };
@@ -17,10 +19,16 @@
 		28FDA1DC1FEFBF880095B5D5 /* CocoaLumberjackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FDA1DB1FEFBF880095B5D5 /* CocoaLumberjackService.swift */; };
 		360ADC336FFC177A65A258D2 /* UserSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C92FAF6FFF5CA0F0BD0B9A /* UserSearchPresenter.swift */; };
 		378349E483F46120FE3E7EEB /* UserInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB4F80E531C13F744172F61 /* UserInfoPresenter.swift */; };
+		41361244D2DB41B1AE9FDBAB /* AIUserFriendsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3ABF5B2879A5A44D2AC7B8 /* AIUserFriendsListPresenter.swift */; };
 		4A007363BDD4046919D4BB81 /* UserSearchInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEABC2BBB7BC5B9B2C09DC04 /* UserSearchInteractorInput.swift */; };
 		4D978EE443B15A7DFD395C73 /* UserSearchRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087981021BFE327C103D1C69 /* UserSearchRouterInput.swift */; };
+		560E6C0B2DF7AB7921BAB491 /* AIUserFriendsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251A04A26A2077B4AB343B8A /* AIUserFriendsListInteractor.swift */; };
 		589C87EF5FE4E05C51AAE24C /* UserSearchModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23301F78D3E6C7620F78EA2E /* UserSearchModuleInput.swift */; };
 		5CAB58F7E63A1E35E3C9EE42 /* UserInfoConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA387EDE3E1450A2F438973 /* UserInfoConfigurator.swift */; };
+		600AC0DC2005D70E00880E65 /* UserFriendsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 600AC0DB2005D70E00880E65 /* UserFriendsListViewController.xib */; };
+		600AC0E02005DF7E00880E65 /* UserFriendListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600AC0DE2005DF7E00880E65 /* UserFriendListCollectionViewCell.swift */; };
+		600AC0E12005DF7E00880E65 /* UserFriendListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 600AC0DF2005DF7E00880E65 /* UserFriendListCollectionViewCell.xib */; };
+		600AC0E52005F8A400880E65 /* UserFriendsListInputDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600AC0E42005F8A400880E65 /* UserFriendsListInputDataModel.swift */; };
 		600F430E1FEA4A0A00C005C2 /* AbstractSectionDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600F430D1FEA4A0A00C005C2 /* AbstractSectionDataBuilder.swift */; };
 		600F43101FEA4A1500C005C2 /* AnyTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600F430F1FEA4A1500C005C2 /* AnyTableDataSource.swift */; };
 		600F43121FEA4A1E00C005C2 /* SectionDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600F43111FEA4A1E00C005C2 /* SectionDataBuilder.swift */; };
@@ -70,14 +78,21 @@
 		60C2663B1FE001250092CD67 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C2663A1FE001250092CD67 /* Mappable.swift */; };
 		619A332E88A43A9926FDC4FE /* UserSearchInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B279D3A12B16CCBD546865 /* UserSearchInteractorOutput.swift */; };
 		6710F5FF25FAC2EC41D38116 /* UserInfoModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E5A864BE70EE516E54C80 /* UserInfoModuleInput.swift */; };
+		6BE2EB0306B398ACF06F8CBC /* AIUserFriendsListInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3E60B60E3A9C1B977ED5CB /* AIUserFriendsListInteractorInput.swift */; };
 		70273DEC5934A46592C69C0A /* UserInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D459D9311BF76BD6C1B3F3D8 /* UserInfoRouter.swift */; };
+		7FF1AC2D74EC460AB0752EC7 /* AIUserFriendsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC75A7E74ABD62797C075FA6 /* AIUserFriendsListRouter.swift */; };
 		84D4FC82C46FADF951031D7E /* UserInfoViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FECB3A4BB7E3C94AAB097E /* UserInfoViewInput.swift */; };
+		8B0B97DE6B0756F4C9AA2500 /* AIUserFriendsListModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64832570707F4A466F6BB1B /* AIUserFriendsListModuleInput.swift */; };
 		9D403CD9E7BD8585428020B5 /* Pods_BrowserVKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73B94946A1CC6633E656E5 /* Pods_BrowserVKTests.framework */; };
 		BB3C420DDAAB0F8C7D95F756 /* UserSearchViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4985B5180FCC688618486964 /* UserSearchViewInput.swift */; };
+		D00FEFA06F4D7ADAE78C34B5 /* AIUserFriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F1938381102D937D3874A /* AIUserFriendsListViewController.swift */; };
 		D671DC6799E43D942307B915 /* UserInfoRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0095A19BDD5757D1B490B4AE /* UserInfoRouterInput.swift */; };
+		DD66AB1295B3DCB0B374A718 /* AIUserFriendsListRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E302F86BF665FFE6E5FF1D5 /* AIUserFriendsListRouterInput.swift */; };
 		E5E45E3B5A699B9E5B2CB8B7 /* UserSearchViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578945ACB0EDA07022B7734 /* UserSearchViewOutput.swift */; };
 		E881FAF9F93DE01C39AC9AB5 /* UserInfoInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5B07817CD67074091A5E4F /* UserInfoInteractorInput.swift */; };
 		F50391F617D4A1701BF7A1F2 /* Pods_BrowserVK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF9C6E4BBCB26789C77089A /* Pods_BrowserVK.framework */; };
+		F71E3FF10E38BEE60928E016 /* AIUserFriendsListInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2459DF69CFF3686940D76A35 /* AIUserFriendsListInteractorOutput.swift */; };
+		F9FD64DE19C68386BF1FB158 /* AIUserFriendsListViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3A78FC46C13C995E3F2DEA /* AIUserFriendsListViewInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,15 +108,24 @@
 /* Begin PBXFileReference section */
 		0095A19BDD5757D1B490B4AE /* UserInfoRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserInfoRouterInput.swift; sourceTree = "<group>"; };
 		087981021BFE327C103D1C69 /* UserSearchRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchRouterInput.swift; sourceTree = "<group>"; };
+		0E302F86BF665FFE6E5FF1D5 /* AIUserFriendsListRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AIUserFriendsListRouterInput.swift; sourceTree = "<group>"; };
 		10E4B40F6D664D8EF28A620A /* UserInfoInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserInfoInteractorOutput.swift; sourceTree = "<group>"; };
 		131A3A400FB63372C9D10CD0 /* Pods-BrowserVKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrowserVKTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrowserVKTests/Pods-BrowserVKTests.release.xcconfig"; sourceTree = "<group>"; };
+		204F1938381102D937D3874A /* AIUserFriendsListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AIUserFriendsListViewController.swift; sourceTree = "<group>"; };
 		23301F78D3E6C7620F78EA2E /* UserSearchModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchModuleInput.swift; sourceTree = "<group>"; };
+		2459DF69CFF3686940D76A35 /* AIUserFriendsListInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AIUserFriendsListInteractorOutput.swift; sourceTree = "<group>"; };
+		251A04A26A2077B4AB343B8A /* AIUserFriendsListInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AIUserFriendsListInteractor.swift; sourceTree = "<group>"; };
 		28F75C5054F82120770B816C /* UserSearchConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchConfigurator.swift; sourceTree = "<group>"; };
 		28FDA1DB1FEFBF880095B5D5 /* CocoaLumberjackService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CocoaLumberjackService.swift; path = Servises/CocoaLumberjackService/CocoaLumberjackService.swift; sourceTree = "<group>"; };
 		2927F66ECD73379E4B7AAD0D /* UserInfoViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserInfoViewOutput.swift; sourceTree = "<group>"; };
 		3578945ACB0EDA07022B7734 /* UserSearchViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchViewOutput.swift; sourceTree = "<group>"; };
 		4985B5180FCC688618486964 /* UserSearchViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchViewInput.swift; sourceTree = "<group>"; };
 		56FECB3A4BB7E3C94AAB097E /* UserInfoViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserInfoViewInput.swift; sourceTree = "<group>"; };
+		5A3ABF5B2879A5A44D2AC7B8 /* AIUserFriendsListPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AIUserFriendsListPresenter.swift; sourceTree = "<group>"; };
+		600AC0DB2005D70E00880E65 /* UserFriendsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserFriendsListViewController.xib; sourceTree = "<group>"; };
+		600AC0DE2005DF7E00880E65 /* UserFriendListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFriendListCollectionViewCell.swift; sourceTree = "<group>"; };
+		600AC0DF2005DF7E00880E65 /* UserFriendListCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserFriendListCollectionViewCell.xib; sourceTree = "<group>"; };
+		600AC0E42005F8A400880E65 /* UserFriendsListInputDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFriendsListInputDataModel.swift; sourceTree = "<group>"; };
 		600F430D1FEA4A0A00C005C2 /* AbstractSectionDataBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractSectionDataBuilder.swift; sourceTree = "<group>"; };
 		600F430F1FEA4A1500C005C2 /* AnyTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyTableDataSource.swift; sourceTree = "<group>"; };
 		600F43111FEA4A1E00C005C2 /* SectionDataBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionDataBuilder.swift; sourceTree = "<group>"; };
@@ -155,12 +179,15 @@
 		60C266381FE0003E0092CD67 /* Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Mapper.swift; path = Entity/Base/Mapper.swift; sourceTree = "<group>"; };
 		60C2663A1FE001250092CD67 /* Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Mappable.swift; path = Entity/Base/Mappable.swift; sourceTree = "<group>"; };
 		7A73B94946A1CC6633E656E5 /* Pods_BrowserVKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrowserVKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AA20C65CC85AC7D9A03A46 /* AIUserFriendsListConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AIUserFriendsListConfigurator.swift; sourceTree = "<group>"; };
 		84B279D3A12B16CCBD546865 /* UserSearchInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchInteractorOutput.swift; sourceTree = "<group>"; };
+		9A3A78FC46C13C995E3F2DEA /* AIUserFriendsListViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AIUserFriendsListViewInput.swift; sourceTree = "<group>"; };
 		A60E5A864BE70EE516E54C80 /* UserInfoModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserInfoModuleInput.swift; sourceTree = "<group>"; };
 		AA5B07817CD67074091A5E4F /* UserInfoInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserInfoInteractorInput.swift; sourceTree = "<group>"; };
 		B2C92FAF6FFF5CA0F0BD0B9A /* UserSearchPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchPresenter.swift; sourceTree = "<group>"; };
 		B7510101972D41799B273BC7 /* UserSearchInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchInteractor.swift; sourceTree = "<group>"; };
 		B933C612A5FA5773D81E8FCE /* Pods-BrowserVK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrowserVK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrowserVK/Pods-BrowserVK.debug.xcconfig"; sourceTree = "<group>"; };
+		C64832570707F4A466F6BB1B /* AIUserFriendsListModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AIUserFriendsListModuleInput.swift; sourceTree = "<group>"; };
 		C667D6C53ADBB75F957E625C /* UserInfoViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		CCA387EDE3E1450A2F438973 /* UserInfoConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserInfoConfigurator.swift; sourceTree = "<group>"; };
 		D459D9311BF76BD6C1B3F3D8 /* UserInfoRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserInfoRouter.swift; sourceTree = "<group>"; };
@@ -168,9 +195,12 @@
 		DAF9C6E4BBCB26789C77089A /* Pods_BrowserVK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrowserVK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEABC2BBB7BC5B9B2C09DC04 /* UserSearchInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchInteractorInput.swift; sourceTree = "<group>"; };
 		DFD62FFA75318C5150E0674D /* UserInfoInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserInfoInteractor.swift; sourceTree = "<group>"; };
+		E805CABBFEDD99DF2576E18E /* AIUserFriendsListViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AIUserFriendsListViewOutput.swift; sourceTree = "<group>"; };
 		EBB4F80E531C13F744172F61 /* UserInfoPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserInfoPresenter.swift; sourceTree = "<group>"; };
 		EDBFDD91E7DD7650671D9EC8 /* UserSearchRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchRouter.swift; sourceTree = "<group>"; };
 		F65AFFDC6E447B2549DC9CAA /* Pods-BrowserVK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrowserVK.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrowserVK/Pods-BrowserVK.release.xcconfig"; sourceTree = "<group>"; };
+		FC75A7E74ABD62797C075FA6 /* AIUserFriendsListRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AIUserFriendsListRouter.swift; sourceTree = "<group>"; };
+		FF3E60B60E3A9C1B977ED5CB /* AIUserFriendsListInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AIUserFriendsListInteractorInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +223,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00E9BD3971753CDCF7AC9FCB /* UserFriendsList */ = {
+			isa = PBXGroup;
+			children = (
+				5C76F2290DA4E464F9107B5E /* View */,
+				771BE1A77BB05306F9F01827 /* Presenter */,
+				6DD104D50D9CADE16FA46286 /* Interactor */,
+				6E7EADD32641BE398833AE48 /* Router */,
+				757E58F8E82ACA69693A1AD8 /* Configurator */,
+			);
+			path = UserFriendsList;
+			sourceTree = "<group>";
+		};
 		044AA0E9379BD2F39AC97330 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +270,7 @@
 				6045A19A1FECFFF60051F3F4 /* Base */,
 				839BAC907BEB5FF84BF63E5F /* UserSearch */,
 				B7B100E56E0F72E0F55936E1 /* UserInfo */,
+				00E9BD3971753CDCF7AC9FCB /* UserFriendsList */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -267,6 +310,27 @@
 				605C82021FE7CED60026F026 /* UserSearchInputDataModel.swift */,
 			);
 			path = Configurator;
+			sourceTree = "<group>";
+		};
+		5C76F2290DA4E464F9107B5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A3A78FC46C13C995E3F2DEA /* AIUserFriendsListViewInput.swift */,
+				E805CABBFEDD99DF2576E18E /* AIUserFriendsListViewOutput.swift */,
+				204F1938381102D937D3874A /* AIUserFriendsListViewController.swift */,
+				600AC0DB2005D70E00880E65 /* UserFriendsListViewController.xib */,
+				600AC0DD2005DF2400880E65 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		600AC0DD2005DF2400880E65 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				600AC0DE2005DF7E00880E65 /* UserFriendListCollectionViewCell.swift */,
+				600AC0DF2005DF7E00880E65 /* UserFriendListCollectionViewCell.xib */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		600F430C1FEA49C900C005C2 /* TableDataSource */ = {
@@ -507,6 +571,43 @@
 			name = ContactPresenter;
 			sourceTree = "<group>";
 		};
+		6DD104D50D9CADE16FA46286 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				FF3E60B60E3A9C1B977ED5CB /* AIUserFriendsListInteractorInput.swift */,
+				2459DF69CFF3686940D76A35 /* AIUserFriendsListInteractorOutput.swift */,
+				251A04A26A2077B4AB343B8A /* AIUserFriendsListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		6E7EADD32641BE398833AE48 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				0E302F86BF665FFE6E5FF1D5 /* AIUserFriendsListRouterInput.swift */,
+				FC75A7E74ABD62797C075FA6 /* AIUserFriendsListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		757E58F8E82ACA69693A1AD8 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				81AA20C65CC85AC7D9A03A46 /* AIUserFriendsListConfigurator.swift */,
+				600AC0E42005F8A400880E65 /* UserFriendsListInputDataModel.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		771BE1A77BB05306F9F01827 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C64832570707F4A466F6BB1B /* AIUserFriendsListModuleInput.swift */,
+				5A3ABF5B2879A5A44D2AC7B8 /* AIUserFriendsListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		839BAC907BEB5FF84BF63E5F /* UserSearch */ = {
 			isa = PBXGroup;
 			children = (
@@ -684,11 +785,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				605F86111FDFB429002EE9C3 /* UserInfoViewController.xib in Resources */,
+				600AC0DC2005D70E00880E65 /* UserFriendsListViewController.xib in Resources */,
 				60513CF51FF5EA1E00B22A90 /* Localizable.strings in Resources */,
 				605F85F41FDF9DF2002EE9C3 /* LaunchScreen.storyboard in Resources */,
 				605F85F11FDF9DF1002EE9C3 /* Assets.xcassets in Resources */,
 				609425721FE11A00005E7492 /* UserSearchViewController.xib in Resources */,
 				605F86161FDFB93A002EE9C3 /* UserSearchTableViewCell.xib in Resources */,
+				600AC0E12005DF7E00880E65 /* UserFriendListCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -843,6 +946,7 @@
 				605C820B1FE7D3FC0026F026 /* IVkRepository.swift in Sources */,
 				6047E6BF1FE8F17B00FB5BE4 /* StartService.swift in Sources */,
 				600F43171FEA6CD500C005C2 /* UITableView+Register.swift in Sources */,
+				600AC0E02005DF7E00880E65 /* UserFriendListCollectionViewCell.swift in Sources */,
 				05EB4FFA1C26DE746B66754B /* UserSearchInteractor.swift in Sources */,
 				605F86261FDFEBD9002EE9C3 /* ContactRealm.swift in Sources */,
 				6045A19E1FED1C620051F3F4 /* BaseRouterInput.swift in Sources */,
@@ -887,6 +991,18 @@
 				605C82111FE7D9470026F026 /* MainContainer.swift in Sources */,
 				70273DEC5934A46592C69C0A /* UserInfoRouter.swift in Sources */,
 				5CAB58F7E63A1E35E3C9EE42 /* UserInfoConfigurator.swift in Sources */,
+				F9FD64DE19C68386BF1FB158 /* AIUserFriendsListViewInput.swift in Sources */,
+				15EA803C3B64492356208D7F /* AIUserFriendsListViewOutput.swift in Sources */,
+				D00FEFA06F4D7ADAE78C34B5 /* AIUserFriendsListViewController.swift in Sources */,
+				8B0B97DE6B0756F4C9AA2500 /* AIUserFriendsListModuleInput.swift in Sources */,
+				41361244D2DB41B1AE9FDBAB /* AIUserFriendsListPresenter.swift in Sources */,
+				6BE2EB0306B398ACF06F8CBC /* AIUserFriendsListInteractorInput.swift in Sources */,
+				F71E3FF10E38BEE60928E016 /* AIUserFriendsListInteractorOutput.swift in Sources */,
+				560E6C0B2DF7AB7921BAB491 /* AIUserFriendsListInteractor.swift in Sources */,
+				DD66AB1295B3DCB0B374A718 /* AIUserFriendsListRouterInput.swift in Sources */,
+				600AC0E52005F8A400880E65 /* UserFriendsListInputDataModel.swift in Sources */,
+				7FF1AC2D74EC460AB0752EC7 /* AIUserFriendsListRouter.swift in Sources */,
+				00F22A1FFD61AD6AD8BE8440 /* AIUserFriendsListConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

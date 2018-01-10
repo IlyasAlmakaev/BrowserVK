@@ -6,8 +6,14 @@
   Copyright © 2017 Ильяс. All rights reserved.
 */
 
+// UserInfoViewController
+
 FIRST_NAME = "Имя";
 LAST_NAME = "Фамилия";
 MIDDLE_NAME = "Отчество";
 GENDER = "Пол";
 RELATIONSHIP_STATUS = "Семейное положение";
+
+// UserFriendsListViewController
+
+FRIENDS = "Друзья";

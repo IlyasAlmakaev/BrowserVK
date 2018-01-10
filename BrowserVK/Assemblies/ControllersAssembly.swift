@@ -23,5 +23,9 @@ class ControllersAssembly: Assembly {
         container.register(UserInfoConfigurator.self) { (r, moduleInput) in
             UserInfoConfigurator(resolver: r, input: moduleInput)
         }
+        
+        container.register(UserFriendsListConfigurator.self) { (r, moduleInput) in
+            UserFriendsListConfigurator(resolver: r, input: moduleInput)
+        }
     }
 }

@@ -20,7 +20,6 @@ class UserInfoConfigurator {
     public var moduleInput: UserInfoModuleInput!
     
     init(resolver: Resolver, input: UserInfoInputDataModel) {
-
         let userInfoViewController = UserInfoViewController()
         let router = UserInfoRouter(viewController: userInfoViewController)
         
@@ -37,6 +36,10 @@ class UserInfoConfigurator {
         
         viewController = userInfoViewController
         moduleInput = presenter
+        
+        guard let userFriendsList: UserFriendsListConfigurator = resolver.resolve(UserFriendsListConfigurator.self,
+                                                                                  argument:UserFriendsListInputDataModel(userID: input.userID)) else { return }
+        userInfoViewController.userFriendsListViewController = userFriendsList.viewController
     }
     
 }

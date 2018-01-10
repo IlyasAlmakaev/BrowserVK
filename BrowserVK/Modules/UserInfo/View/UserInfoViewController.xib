@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="avatar" destination="GtV-Ks-vaR" id="xBJ-Df-s1G"/>
                 <outlet property="firstNameLabel" destination="7AH-zJ-NTf" id="2yC-0C-mia"/>
+                <outlet property="friendsList" destination="ItF-xK-WNO" id="OZb-0F-ADz"/>
                 <outlet property="lastNameLabel" destination="fRJ-Gd-FLJ" id="Bhy-D5-p6Q"/>
                 <outlet property="nicknameLabel" destination="ht1-zp-S0X" id="9qk-RV-nWH"/>
                 <outlet property="relationLabel" destination="Sob-hP-nNa" id="vYF-5i-Mjc"/>
@@ -258,6 +259,13 @@
                         <constraint firstAttribute="trailing" secondItem="Nbk-W4-oyO" secondAttribute="trailing" constant="8" id="trM-ib-cZN"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ItF-xK-WNO">
+                    <rect key="frame" x="0.0" y="472" width="375" height="81"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="81" id="fTc-oP-S7b"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -268,6 +276,7 @@
                 <constraint firstAttribute="trailing" secondItem="lnU-cO-uC1" secondAttribute="trailing" id="6sX-4Z-4Ig"/>
                 <constraint firstItem="lnU-cO-uC1" firstAttribute="top" secondItem="zBd-ES-oE6" secondAttribute="bottom" id="74S-Nm-e0V"/>
                 <constraint firstItem="zBd-ES-oE6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8ND-SV-HzO"/>
+                <constraint firstItem="ItF-xK-WNO" firstAttribute="top" secondItem="0hQ-yW-ddh" secondAttribute="bottom" constant="8" id="AJA-nl-32d"/>
                 <constraint firstAttribute="trailing" secondItem="nPQ-14-u6e" secondAttribute="trailing" id="Aev-ZQ-4CH"/>
                 <constraint firstItem="GtV-Ks-vaR" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.3" id="Bke-ms-9MT"/>
                 <constraint firstItem="lnU-cO-uC1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CMM-nd-I1f"/>
@@ -280,6 +289,7 @@
                 <constraint firstAttribute="trailing" secondItem="4eK-Vc-TlQ" secondAttribute="trailing" id="ZeN-ye-ck5"/>
                 <constraint firstItem="nPQ-14-u6e" firstAttribute="top" secondItem="lnU-cO-uC1" secondAttribute="bottom" id="aUq-Vt-iwi"/>
                 <constraint firstItem="FbY-in-UJi" firstAttribute="top" secondItem="i0b-lj-wHW" secondAttribute="bottom" id="aqY-qj-OiO"/>
+                <constraint firstAttribute="trailing" secondItem="ItF-xK-WNO" secondAttribute="trailing" id="g2J-Nu-RQG"/>
                 <constraint firstAttribute="trailing" secondItem="zBd-ES-oE6" secondAttribute="trailing" id="id4-9B-wip"/>
                 <constraint firstAttribute="trailing" secondItem="GtV-Ks-vaR" secondAttribute="trailing" id="j9D-gI-nHI"/>
                 <constraint firstItem="nPQ-14-u6e" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="okq-vl-KSI"/>
@@ -288,6 +298,7 @@
                 <constraint firstItem="FbY-in-UJi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sin-9Y-9ad"/>
                 <constraint firstItem="4eK-Vc-TlQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="uSe-Q6-apd"/>
                 <constraint firstItem="4eK-Vc-TlQ" firstAttribute="top" secondItem="nPQ-14-u6e" secondAttribute="bottom" id="y52-He-Zfs"/>
+                <constraint firstItem="ItF-xK-WNO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yUl-K8-Jak"/>
             </constraints>
             <point key="canvasLocation" x="24.5" y="52.5"/>
         </view>
