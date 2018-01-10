@@ -13,42 +13,32 @@ import RealmSwift
  @author Ilyas Almakaev
  Сервис по работе с Realm
  */
-// REVIEW: Сервис жестко завязан на конкретных моделях, чего быть не должно
-// Сделать более универсальным. Для этого у наз есть интерфейсы Mappable и Object
+
 class RealmService {
 
     fileprivate var realm: Realm!
-    fileprivate var contactDetailMapper = ContactDetailMapper()
     
     init() {
         realm = try! Realm()
     }
     
-    func write(contact: ContactDetail?, successHandler: @escaping() -> Void) {
-        guard let contact = contact else { return }
-        guard let rContactDetail = contactDetailMapper.mapFrom(item: contact) else { return }
+    func write(object: Object?, successHandler: @escaping() -> Void) {
+        guard let object = object else { return }
         realm.beginWrite()
-        realm.add(rContactDetail, update: true)
+        realm.add(object, update: true)
         try! realm.commitWrite()
         successHandler()
     }
     
-    func read(contactID: Int) -> ContactDetail {
-        let contact = realm.objects(RContactDetail.self).filter("id = %@", contactID)
-        guard let firstObject = contact.first, let contactDetail = contactDetailMapper.mapTo(item: firstObject) else { return ContactDetail() }
-        return contactDetail
+    func read<T: Object>(objectID: Int) -> T {
+        let object = realm.objects(T.self).filter("id = %@", objectID)
+        guard let firstObject = object.first else { return T() }
+        return firstObject
     }
     
     func deleteAll() {
         realm.beginWrite()
         realm.deleteAll()
-        try! realm.commitWrite()
-    }
-    
-    func deleteContact(contact: RContact) {
-        realm.beginWrite()
-        let objectsToDelete = realm.objects(RContact.self).filter("id = %@", contact.id)
-        realm.delete(objectsToDelete)
         try! realm.commitWrite()
     }
 }

@@ -16,6 +16,7 @@ import Foundation
 class VkRepository {
     
     var realmService: RealmService!
+    fileprivate var contactDetailMapper = ContactDetailMapper()
 
     init(realmService: RealmService) {
         self.realmService = realmService
@@ -29,15 +30,17 @@ class VkRepository {
 extension VkRepository: IVkRepository {
     
     func setSelectedContact(object: Any?, successHandler: @escaping(ContactDetail) -> Void) {
-        guard let object = object else { return }
-        let contactDetail = ContactDetail(map: object as AnyObject)
-        realmService.write(contact: contactDetail, successHandler: { [weak self] in
-            guard let strongSelf = self, let contactDetail = contactDetail else { return }
+        guard let object = object, let contactDetail = ContactDetail(map: object as AnyObject) else { return }
+        let rContactDetail = contactDetailMapper.mapFrom(item: contactDetail)
+        realmService.write(object: rContactDetail, successHandler: { [weak self] in
+            guard let strongSelf = self else { return }
             successHandler(strongSelf.getSelectedContact(contactID: contactDetail.id))
         })
     }
     
-    func getSelectedContact(contactID: Int) -> ContactDetail { 
-        return realmService.read(contactID: contactID)
+    func getSelectedContact(contactID: Int) -> ContactDetail {
+        let contact: RContactDetail = realmService.read(objectID: contactID)
+        guard let contactDetail = contactDetailMapper.mapTo(item: contact) else { return ContactDetail() }
+        return contactDetail
     }
 }

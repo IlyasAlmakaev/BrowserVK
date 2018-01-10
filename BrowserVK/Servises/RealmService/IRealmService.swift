@@ -7,24 +7,25 @@
 //
 
 import Foundation
+import RealmSwift
 
 protocol IRealmService: class {
     
     /**
      @author Ilyas Almakaev
-     Метод записи подробной информации о контакте в Realm
+     Метод записи в Realm
      */
     
-    func write(contact: ContactDetail?, successHandler: @escaping() -> Void)
+    func write(contact: Object?, successHandler: @escaping() -> Void)
 
     /**
      @author Ilyas Almakaev
-     Метод получения подробной информации о контакте из Realm
+     Метод получения данных из Realm
      
      @return Подробная информация о контакте
      */
     
-    func read(contactID: Int) -> ContactDetail
+    func read<T: Object>(objectID: Int) -> T
     
     /**
      @author Ilyas Almakaev
