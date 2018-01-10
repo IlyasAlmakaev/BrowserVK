@@ -21,9 +21,8 @@ import RxCocoa
 class UserSearchViewController: UIViewController, UserSearchViewInput {
     
     var output: UserSearchViewOutput!
-    fileprivate var nameContact = "" // REVIEW: View не должен хранить состояния, перенести в presenter
+    var refreshControl = UIRefreshControl()
     private let searchController = UISearchController(searchResultsController: nil)
-    private let refreshControl = UIRefreshControl()
     private var disposedBag: DisposeBag = DisposeBag()
     
     @IBOutlet weak var tableView: UITableView!
@@ -63,8 +62,6 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
             tableView.addSubview(refreshControl)
         }
         
-        refreshControl.addTarget(self, action: #selector(searchWithRefreshControl), for: .valueChanged)
-        
         definesPresentationContext = true
 
         output.viewIsReady()
@@ -74,7 +71,6 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
         super.viewDidAppear(animated)
         
         self.searchController.searchBar.becomeFirstResponder()
-        
     }
     
     // MARK: UserSearchViewInput
@@ -97,14 +93,9 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
         }
     }
     
-    @objc func searchWithRefreshControl() {
-        output.search(string: nameContact)
-    }
-    
     func getContacts(text: String) {
         animateLoadingIndicators(isLoad: true)
-        nameContact = text
-        output.search(string: nameContact)
+        output.search(string: text)
     }
 }
 

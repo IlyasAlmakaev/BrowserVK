@@ -6,6 +6,8 @@
 //  Copyright © 2017 Ilyas. All rights reserved.
 //
 
+import UIKit
+
 protocol UserSearchViewInput: class {
     
     /**
@@ -28,4 +30,6 @@ protocol UserSearchViewInput: class {
      */
     
     func animateLoadingIndicators(isLoad: Bool)
+    
+    var refreshControl: UIRefreshControl { get }
 }

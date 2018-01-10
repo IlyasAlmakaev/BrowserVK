@@ -14,6 +14,7 @@ class UserSearchPresenter: BasePresenter, UserSearchModuleInput, UserSearchViewO
     weak var view: UserSearchViewInput!
     var interactor: UserSearchInteractorInput!
     var userSearchRouter: UserSearchRouterInput!
+    fileprivate var nameContact = ""
     private var tableDatasource: AnyTableDataSource = AnyTableDataSource()
     private var disposedBag: DisposeBag = DisposeBag()
     private var isLoad: Bool!
@@ -28,6 +29,7 @@ class UserSearchPresenter: BasePresenter, UserSearchModuleInput, UserSearchViewO
             let contactsPresenter = strongSelf.prepareContactsPresenter(contacts: contacts)
             strongSelf.loadContacts(contactsPresenter)
         }).addDisposableTo(disposedBag)
+        view.refreshControl.addTarget(self, action: #selector(searchWithRefreshControl), for: .valueChanged)
     }
     
     func loadContacts(_ contacts: [ContactPresenter]) {
@@ -41,9 +43,14 @@ class UserSearchPresenter: BasePresenter, UserSearchModuleInput, UserSearchViewO
         if string.isEmpty {
             loadContacts([])
         } else {
+            nameContact = string
             isLoad = true
-            interactor.loadSearchedContacts(name: string)
+            interactor.loadSearchedContacts(name: nameContact)
         }
+    }
+    
+    func searchWithRefreshControl() {
+        search(string: nameContact)
     }
     
     func resetSearch() {

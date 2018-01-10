@@ -33,6 +33,13 @@ import UIKit
     
     /**
      @author Ilyas Almakaev
+     Метод для поиска контакта при RefreshControl
+     */
+    
+    func searchWithRefreshControl()
+    
+    /**
+     @author Ilyas Almakaev
      Метод для проверки на событие пролистывание таблицы вниз
      */
     

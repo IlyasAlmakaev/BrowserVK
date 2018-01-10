@@ -16,7 +16,7 @@ class UserSearchInteractor: UserSearchInteractorInput {
     private var vkRepository: IVkRepository!
     private var countContacts = 0
     private var currentName = ""
-    private var searchResults: [Contact] = [] // REVIEW: Any? Мы же точно знаем, с какими моделями работаем в этом классе
+    private var searchResults: [Contact] = [] 
     
     init(apiFacade: IApiFacade, vkRepository: IVkRepository) {
         self.apiFacade = apiFacade
