@@ -43,8 +43,11 @@ extension UserFriendsListViewController: UICollectionViewDataSource {
          2: Реализовать метод получения present-модели из презентера
          3: Пусть ячейка сама себя заполняет func setup(model: FriendPresenter)
          */
-        let friend = friendList[indexPath.row]
-        cell.setup(model: friend)
+        let row = indexPath.row
+        if row <= friendList.count {
+            let friend = friendList[indexPath.row]
+            cell.setup(model: friend)
+        }
         
         return cell;
     }

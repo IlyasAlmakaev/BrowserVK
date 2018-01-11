@@ -33,9 +33,11 @@ class UserInfoViewController: UIViewController, UserInfoViewInput {
     
     // MARK: UserInfoViewInput
     func setupInitialState() {
-        friendsList.addSubview(userFriendsListViewController.view) // REVIEW: если забудем или передумаем показывать друзей, то userFriendsListViewController = nil и всё упадёт
-        self.addChildViewController(userFriendsListViewController)
-        
+        if userFriendsListViewController != nil {
+            friendsList.addSubview(userFriendsListViewController.view)
+            self.addChildViewController(userFriendsListViewController)
+        }
+
         self.edgesForExtendedLayout = []
     }
     
