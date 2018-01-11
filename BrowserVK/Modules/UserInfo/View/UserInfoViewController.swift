@@ -51,12 +51,9 @@ class UserInfoViewController: UIViewController, UserInfoViewInput {
         
         let image = UIImage(named: "contact_default@100")
         avatar.kf.setImage(with: contact.urlImageLarge, placeholder: image)
-        print("initializeUserInfo")
-        print(self.friendsList.bounds)
     }
     
     func provideUserFriendsListViewController(controller: UIViewController) {
-      //  print(self.friendsList.bounds)
         self.friendsList.addSubview(controller.view)
         self.addChildViewController(controller)
     }

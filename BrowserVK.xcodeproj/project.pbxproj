@@ -47,6 +47,8 @@
 		6047E6C41FE90B8200FB5BE4 /* FactoriesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6047E6C31FE90B8200FB5BE4 /* FactoriesAssembly.swift */; };
 		604960651FF3A18000F39449 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604960641FF3A18000F39449 /* Const.swift */; };
 		604C2A9D1FEB68E80019C903 /* ContactDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604C2A9C1FEB68E80019C903 /* ContactDetailPresenter.swift */; };
+		60500395200709250068C49F /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60500394200709250068C49F /* Friend.swift */; };
+		605003982007138D0068C49F /* FriendPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605003972007138D0068C49F /* FriendPresenter.swift */; };
 		60511D621FE12970007CFABF /* VkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60511D611FE12970007CFABF /* VkRepository.swift */; };
 		60513CEA1FF5DC6400B22A90 /* WindowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60513CE91FF5DC6400B22A90 /* WindowService.swift */; };
 		60513CF51FF5EA1E00B22A90 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60513CF71FF5EA1E00B22A90 /* Localizable.strings */; };
@@ -68,8 +70,6 @@
 		605F86161FDFB93A002EE9C3 /* UserSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 605F86141FDFB93A002EE9C3 /* UserSearchTableViewCell.xib */; };
 		605F861D1FDFBB84002EE9C3 /* ApiFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605F861C1FDFBB84002EE9C3 /* ApiFacade.swift */; };
 		605F86221FDFEB99002EE9C3 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605F86211FDFEB99002EE9C3 /* Contact.swift */; };
-		605F86241FDFEBB3002EE9C3 /* ContactMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605F86231FDFEBB3002EE9C3 /* ContactMapper.swift */; };
-		605F86261FDFEBD9002EE9C3 /* ContactRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605F86251FDFEBD9002EE9C3 /* ContactRealm.swift */; };
 		6073EAFF1FF0DE7400BFA8D7 /* ContactPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6073EAFE1FF0DE7400BFA8D7 /* ContactPresenter.swift */; };
 		609425711FE11A00005E7492 /* UserSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6094256F1FE11A00005E7492 /* UserSearchViewController.swift */; };
 		609425721FE11A00005E7492 /* UserSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 609425701FE11A00005E7492 /* UserSearchViewController.xib */; };
@@ -143,6 +143,8 @@
 		6047E6C31FE90B8200FB5BE4 /* FactoriesAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FactoriesAssembly.swift; path = ../Assemblies/FactoriesAssembly.swift; sourceTree = "<group>"; };
 		604960641FF3A18000F39449 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Const.swift; path = Constants/Const.swift; sourceTree = "<group>"; };
 		604C2A9C1FEB68E80019C903 /* ContactDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactDetailPresenter.swift; path = Entity/ContactDetailPresenter/ContactDetailPresenter.swift; sourceTree = "<group>"; };
+		60500394200709250068C49F /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Friend.swift; path = Entity/Friend/Friend.swift; sourceTree = "<group>"; };
+		605003972007138D0068C49F /* FriendPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendPresenter.swift; path = Entity/FriendPresenter/FriendPresenter.swift; sourceTree = "<group>"; };
 		60511D611FE12970007CFABF /* VkRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VkRepository.swift; path = ../Repositories/VkRepository/VkRepository.swift; sourceTree = "<group>"; };
 		60513CE91FF5DC6400B22A90 /* WindowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WindowService.swift; path = Servises/WindowService.swift; sourceTree = "<group>"; };
 		60513CF11FF5E9D400B22A90 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -170,8 +172,6 @@
 		605F86141FDFB93A002EE9C3 /* UserSearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserSearchTableViewCell.xib; path = Cell/UserSearchTableViewCell.xib; sourceTree = "<group>"; };
 		605F861C1FDFBB84002EE9C3 /* ApiFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiFacade.swift; path = Servises/ApiFacade/ApiFacade.swift; sourceTree = "<group>"; };
 		605F86211FDFEB99002EE9C3 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = Entity/Contact/Contact.swift; sourceTree = "<group>"; };
-		605F86231FDFEBB3002EE9C3 /* ContactMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactMapper.swift; path = Entity/Contact/ContactMapper.swift; sourceTree = "<group>"; };
-		605F86251FDFEBD9002EE9C3 /* ContactRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactRealm.swift; path = Entity/Contact/ContactRealm.swift; sourceTree = "<group>"; };
 		6073EAFE1FF0DE7400BFA8D7 /* ContactPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactPresenter.swift; path = Entity/ContactPresenter/ContactPresenter.swift; sourceTree = "<group>"; };
 		6094256F1FE11A00005E7492 /* UserSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchViewController.swift; sourceTree = "<group>"; };
 		609425701FE11A00005E7492 /* UserSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserSearchViewController.xib; sourceTree = "<group>"; };
@@ -376,8 +376,6 @@
 			isa = PBXGroup;
 			children = (
 				605F86211FDFEB99002EE9C3 /* Contact.swift */,
-				605F86231FDFEBB3002EE9C3 /* ContactMapper.swift */,
-				605F86251FDFEBD9002EE9C3 /* ContactRealm.swift */,
 			);
 			name = Contact;
 			sourceTree = "<group>";
@@ -423,6 +421,22 @@
 				604C2A9C1FEB68E80019C903 /* ContactDetailPresenter.swift */,
 			);
 			name = ContactDetailPresenter;
+			sourceTree = "<group>";
+		};
+		60500393200709030068C49F /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				60500394200709250068C49F /* Friend.swift */,
+			);
+			name = Friend;
+			sourceTree = "<group>";
+		};
+		60500396200713370068C49F /* FriendPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				605003972007138D0068C49F /* FriendPresenter.swift */,
+			);
+			name = FriendPresenter;
 			sourceTree = "<group>";
 		};
 		60511D601FE1293B007CFABF /* Repositories */ = {
@@ -516,6 +530,8 @@
 		605F85FC1FDF9E5A002EE9C3 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				60500396200713370068C49F /* FriendPresenter */,
+				60500393200709030068C49F /* Friend */,
 				6073EAFD1FF0DB3D00BFA8D7 /* ContactPresenter */,
 				604C2A9B1FEB68980019C903 /* ContactDetailPresenter */,
 				60474D641FE0CF26001AC76A /* Base */,
@@ -935,11 +951,13 @@
 				60C266391FE0003E0092CD67 /* Mapper.swift in Sources */,
 				605F86151FDFB93A002EE9C3 /* UserSearchTableViewCell.swift in Sources */,
 				589C87EF5FE4E05C51AAE24C /* UserSearchModuleInput.swift in Sources */,
+				605003982007138D0068C49F /* FriendPresenter.swift in Sources */,
 				600F43101FEA4A1500C005C2 /* AnyTableDataSource.swift in Sources */,
 				604690651FF4ED070077EBF5 /* IRealmService.swift in Sources */,
 				605C82031FE7CED60026F026 /* UserSearchInputDataModel.swift in Sources */,
 				360ADC336FFC177A65A258D2 /* UserSearchPresenter.swift in Sources */,
 				605C820D1FE7D6E50026F026 /* ServicesAssembly.swift in Sources */,
+				60500395200709250068C49F /* Friend.swift in Sources */,
 				4A007363BDD4046919D4BB81 /* UserSearchInteractorInput.swift in Sources */,
 				619A332E88A43A9926FDC4FE /* UserSearchInteractorOutput.swift in Sources */,
 				60513CFA1FF5F0CF00B22A90 /* UILabel+Localize.swift in Sources */,
@@ -948,7 +966,6 @@
 				600F43171FEA6CD500C005C2 /* UITableView+Register.swift in Sources */,
 				600AC0E02005DF7E00880E65 /* UserFriendListCollectionViewCell.swift in Sources */,
 				05EB4FFA1C26DE746B66754B /* UserSearchInteractor.swift in Sources */,
-				605F86261FDFEBD9002EE9C3 /* ContactRealm.swift in Sources */,
 				6045A19E1FED1C620051F3F4 /* BaseRouterInput.swift in Sources */,
 				4D978EE443B15A7DFD395C73 /* UserSearchRouterInput.swift in Sources */,
 				604960651FF3A18000F39449 /* Const.swift in Sources */,
@@ -965,7 +982,6 @@
 				6045A19C1FED005A0051F3F4 /* BaseRouter.swift in Sources */,
 				6710F5FF25FAC2EC41D38116 /* UserInfoModuleInput.swift in Sources */,
 				605C82091FE7D23C0026F026 /* IApiFacade.swift in Sources */,
-				605F86241FDFEBB3002EE9C3 /* ContactMapper.swift in Sources */,
 				6047E6C41FE90B8200FB5BE4 /* FactoriesAssembly.swift in Sources */,
 				6047E6C21FE907F700FB5BE4 /* UserInfoControllerFactory.swift in Sources */,
 				60474D611FE0C40A001AC76A /* ContactDetailMapper.swift in Sources */,

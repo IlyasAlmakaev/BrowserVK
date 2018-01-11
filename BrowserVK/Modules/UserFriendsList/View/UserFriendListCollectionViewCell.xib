@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="UserFriendListCollectionViewCell" customModule="BrowserVK" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UserFriendListCollectionViewCell" id="gTV-IL-0wX" customClass="UserFriendListCollectionViewCell" customModule="BrowserVK" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -18,23 +18,23 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YGv-ar-otJ">
-                        <rect key="frame" x="10" y="0.0" width="40" height="40"/>
+                        <rect key="frame" x="5" y="0.0" width="50" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="40" id="AkT-Ud-Ffn"/>
-                            <constraint firstAttribute="height" constant="40" id="j6I-9k-TyS"/>
+                            <constraint firstAttribute="width" constant="50" id="AkT-Ud-Ffn"/>
+                            <constraint firstAttribute="height" constant="50" id="j6I-9k-TyS"/>
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contact_mask" translatesAutoresizingMaskIntoConstraints="NO" id="1s3-vt-eR7">
-                        <rect key="frame" x="10" y="0.0" width="40" height="40"/>
+                        <rect key="frame" x="5" y="0.0" width="50" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="Dl7-nh-yXQ"/>
-                            <constraint firstAttribute="width" constant="40" id="snv-eL-RZk"/>
+                            <constraint firstAttribute="height" constant="50" id="Dl7-nh-yXQ"/>
+                            <constraint firstAttribute="width" constant="50" id="snv-eL-RZk"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ivan Petrov" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtB-CA-pno">
-                        <rect key="frame" x="0.0" y="40" width="60" height="20"/>
+                        <rect key="frame" x="0.0" y="50" width="60" height="10"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="BFP-YQ-q1a"/>
+                            <constraint firstAttribute="height" constant="10" id="BFP-YQ-q1a"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="8"/>
                         <nil key="textColor"/>
@@ -43,19 +43,23 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="YGv-ar-otJ" secondAttribute="trailing" constant="10" id="0p0-U5-dEo"/>
+                <constraint firstAttribute="trailing" secondItem="YGv-ar-otJ" secondAttribute="trailing" constant="5" id="0p0-U5-dEo"/>
                 <constraint firstItem="XtB-CA-pno" firstAttribute="top" secondItem="YGv-ar-otJ" secondAttribute="bottom" id="Bwt-k3-mA8"/>
                 <constraint firstItem="XtB-CA-pno" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="J8u-nC-1wl"/>
                 <constraint firstAttribute="trailing" secondItem="XtB-CA-pno" secondAttribute="trailing" id="UrR-Pm-CXV"/>
                 <constraint firstItem="1s3-vt-eR7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="adI-ya-CjK"/>
                 <constraint firstItem="YGv-ar-otJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bct-cM-5l1"/>
-                <constraint firstItem="YGv-ar-otJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="cSC-HK-99J"/>
-                <constraint firstAttribute="trailing" secondItem="1s3-vt-eR7" secondAttribute="trailing" constant="10" id="pTt-z6-qaA"/>
-                <constraint firstItem="1s3-vt-eR7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="rQZ-w2-hNL"/>
+                <constraint firstItem="YGv-ar-otJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="cSC-HK-99J"/>
+                <constraint firstAttribute="trailing" secondItem="1s3-vt-eR7" secondAttribute="trailing" constant="5" id="pTt-z6-qaA"/>
+                <constraint firstItem="1s3-vt-eR7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="rQZ-w2-hNL"/>
                 <constraint firstItem="XtB-CA-pno" firstAttribute="top" secondItem="1s3-vt-eR7" secondAttribute="bottom" id="twd-pi-xjX"/>
                 <constraint firstAttribute="bottom" secondItem="XtB-CA-pno" secondAttribute="bottom" id="vDj-6d-XLZ"/>
             </constraints>
             <size key="customSize" width="65" height="89"/>
+            <connections>
+                <outlet property="avatar" destination="YGv-ar-otJ" id="qbs-2s-uSO"/>
+                <outlet property="fullName" destination="XtB-CA-pno" id="eeM-44-6Pg"/>
+            </connections>
             <point key="canvasLocation" x="32" y="71"/>
         </collectionViewCell>
     </objects>

@@ -20,7 +20,8 @@ class UserSearchInteractor: UserSearchInteractorInput {
     
     init(apiFacade: IApiFacade, vkRepository: IVkRepository) {
         self.apiFacade = apiFacade
-        self.vkRepository = vkRepository
+        //TODO: restructure initializate
+  //      self.vkRepository = vkRepository
     }
     
     func getNextContacts() {
@@ -31,7 +32,7 @@ class UserSearchInteractor: UserSearchInteractorInput {
     func resetSearch() {
         countContacts = 0
         searchResults = []
-        vkRepository.deleteAll()
+   //     vkRepository.deleteAll()
     }
     
     func loadSearchedContacts(name: String) {

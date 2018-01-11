@@ -10,4 +10,10 @@ import Foundation
 
 protocol UserFriendsListInteractorInput {
 
+    /**
+     @author Ilyas Almakaev
+     Метод запроса списка друзей контакта по id-контакту
+     */
+    
+    func loadUserFriendsList(userID: Int)
 }

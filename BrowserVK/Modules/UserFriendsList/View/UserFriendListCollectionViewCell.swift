@@ -9,6 +9,9 @@
 import UIKit
 
 class UserFriendListCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var fullName: UILabel!
+    @IBOutlet weak var avatar: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

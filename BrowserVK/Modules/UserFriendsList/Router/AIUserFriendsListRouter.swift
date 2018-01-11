@@ -6,6 +6,11 @@
 //  Copyright © 2018 Ilyas. All rights reserved.
 //
 
-class UserFriendsListRouter: UserFriendsListRouterInput {
+/**
+ @author Ilyas Almakaev
+ Модуль для отображения контроллеров
+ */
+
+class UserFriendsListRouter: BaseRouter, UserFriendsListRouterInput {
 
 }

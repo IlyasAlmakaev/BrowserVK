@@ -102,6 +102,30 @@ extension ApiFacade: IApiFacade {
         )
     }
     
+    func loadUserFriendsList(userID: Int,
+                      successHundler: @escaping ([Friend]?) -> Void,
+                      errorHundler: @escaping (Error) -> Void) {
+        VK.API.Friends.get([.userId: String(userID),
+                          .fields: Const.VK.userFriendsFields]).send(
+                            onSuccess: { [weak self] (response) in
+                                
+                                guard let objects = response["items"].arrayObject, let strongSelf = self else {
+                                    return successHundler(nil)
+                                }
+                                DispatchQueue.main.async {
+                                    successHundler(strongSelf.getUserFriends(objects: objects))
+                                }
+                          },
+                            onError: { (error) in
+                                DispatchQueue.main.async {
+                                    CocoaLumberjackService.error(error.localizedDescription)
+                                    
+                                    errorHundler(error)
+                                }
+                          }
+        )
+    }
+    
     // Mark: convert data
     
     func getSearchedContacts(objects: Array<Any>?) -> [Contact] {
@@ -113,5 +137,16 @@ extension ApiFacade: IApiFacade {
         }
         
         return contacts
+    }
+    
+    func getUserFriends(objects: Array<Any>?) -> [Friend] {
+        guard let objects = objects else { return [] }
+        var friends: [Friend] = []
+        for object in objects {
+            guard let friend = Friend(map: object as AnyObject) else { continue }
+            friends.append(friend)
+        }
+        
+        return friends
     }
 }

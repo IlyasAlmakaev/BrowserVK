@@ -9,7 +9,7 @@
 import Foundation
 
 class BasePresenter {
-    var router: UserInfoRouterInput!
+    var router: BaseRouterInput!
     
     func showError(_ error: Error) { 
         router.showErrorAlert(errorDescription: error.localizedDescription)

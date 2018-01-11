@@ -23,4 +23,13 @@ protocol IApiFacade: class {
      */
     
     func loadUserInfo(userID: Int, successHundler: @escaping (Any?) -> Void, errorHundler: @escaping (Error) -> Void)
+    
+    /**
+     @author Ilyas Almakaev
+     Метод получения списка друзей выбранного контакта
+     */
+    
+    func loadUserFriendsList(userID: Int,
+                             successHundler: @escaping ([Friend]?) -> Void,
+                             errorHundler: @escaping (Error) -> Void)
 }

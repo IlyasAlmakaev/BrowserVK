@@ -14,4 +14,11 @@ protocol UserFriendsListViewInput: class {
     */
 
     func setupInitialState()
+    
+    /**
+     @author Ilyas Almakaev
+     Метод принимает детальную список друзей выбранного контакта
+     */
+    
+    func loadedUserFriendsList(friendList: [FriendPresenter])
 }

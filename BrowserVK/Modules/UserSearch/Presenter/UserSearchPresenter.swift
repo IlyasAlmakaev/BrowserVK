@@ -29,6 +29,7 @@ class UserSearchPresenter: BasePresenter, UserSearchModuleInput, UserSearchViewO
             let contactsPresenter = strongSelf.prepareContactsPresenter(contacts: contacts)
             strongSelf.loadContacts(contactsPresenter)
         }).addDisposableTo(disposedBag)
+        
         view.refreshControl.addTarget(self, action: #selector(searchWithRefreshControl), for: .valueChanged)
     }
     
