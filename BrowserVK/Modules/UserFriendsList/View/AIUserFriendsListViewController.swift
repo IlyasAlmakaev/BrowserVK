@@ -20,7 +20,10 @@ class UserFriendsListViewController: UIViewController, UserFriendsListViewInput 
         super.viewDidLoad()
         output.viewIsReady()
         
-        self.collectionView.register(UINib(nibName: "UserFriendListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "UserFriendListCollectionViewCell")
+        collectionView.register(UINib(nibName: "UserFriendListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "UserFriendListCollectionViewCell")
+        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = CGSize(width: 60.0, height: 60.0)
+        }
     }
 
 

@@ -43,15 +43,18 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="YGv-ar-otJ" secondAttribute="trailing" constant="5" id="0p0-U5-dEo"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YGv-ar-otJ" secondAttribute="trailing" constant="5" id="0p0-U5-dEo"/>
                 <constraint firstItem="XtB-CA-pno" firstAttribute="top" secondItem="YGv-ar-otJ" secondAttribute="bottom" id="Bwt-k3-mA8"/>
+                <constraint firstAttribute="width" secondItem="XtB-CA-pno" secondAttribute="width" id="EXv-zg-QiL"/>
+                <constraint firstItem="YGv-ar-otJ" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="HD4-JJ-ied"/>
                 <constraint firstItem="XtB-CA-pno" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="J8u-nC-1wl"/>
                 <constraint firstAttribute="trailing" secondItem="XtB-CA-pno" secondAttribute="trailing" id="UrR-Pm-CXV"/>
                 <constraint firstItem="1s3-vt-eR7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="adI-ya-CjK"/>
                 <constraint firstItem="YGv-ar-otJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bct-cM-5l1"/>
-                <constraint firstItem="YGv-ar-otJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="cSC-HK-99J"/>
-                <constraint firstAttribute="trailing" secondItem="1s3-vt-eR7" secondAttribute="trailing" constant="5" id="pTt-z6-qaA"/>
-                <constraint firstItem="1s3-vt-eR7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="rQZ-w2-hNL"/>
+                <constraint firstItem="YGv-ar-otJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="cSC-HK-99J"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1s3-vt-eR7" secondAttribute="trailing" constant="5" id="pTt-z6-qaA"/>
+                <constraint firstItem="1s3-vt-eR7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="rQZ-w2-hNL"/>
+                <constraint firstItem="1s3-vt-eR7" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="s2s-7g-gys"/>
                 <constraint firstItem="XtB-CA-pno" firstAttribute="top" secondItem="1s3-vt-eR7" secondAttribute="bottom" id="twd-pi-xjX"/>
                 <constraint firstAttribute="bottom" secondItem="XtB-CA-pno" secondAttribute="bottom" id="vDj-6d-XLZ"/>
             </constraints>
