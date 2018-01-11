@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class UserFriendListCollectionViewCell: UICollectionViewCell {
     
@@ -17,5 +18,10 @@ class UserFriendListCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    func setup(model: FriendPresenter) {
+        fullName.text = model.fullName
+        let image = UIImage(named: "contact_default@50")
+        avatar.kf.setImage(with: model.urlImage, placeholder: image)
+    }
 }

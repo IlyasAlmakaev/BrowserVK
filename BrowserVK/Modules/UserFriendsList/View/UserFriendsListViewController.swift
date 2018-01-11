@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class UserFriendsListViewController: UIViewController, UserFriendsListViewInput {
 
@@ -45,10 +44,7 @@ extension UserFriendsListViewController: UICollectionViewDataSource {
          3: Пусть ячейка сама себя заполняет func setup(model: FriendPresenter)
          */
         let friend = friendList[indexPath.row]
-        
-        cell.fullName.text = friend.fullName
-        let image = UIImage(named: "contact_default@50")
-        cell.avatar.kf.setImage(with: friend.urlImage, placeholder: image)
+        cell.setup(model: friend)
         
         return cell;
     }
