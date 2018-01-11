@@ -25,12 +25,6 @@ class UserFriendsListViewController: UIViewController, UserFriendsListViewInput 
             flowLayout.estimatedItemSize = CGSize(width: 60.0, height: 60.0)
         }
     }
-
-
-    // MARK: UserFriendsListViewInput
-    func setupInitialState() {
-        //TODO: возможно удалить
-    }
     
     func loadedUserFriendsList(friendList: [FriendPresenter]) {
         self.friendList = friendList

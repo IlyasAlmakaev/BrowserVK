@@ -7,13 +7,6 @@
 //
 
 protocol UserFriendsListViewInput: class {
-
-    /**
-        @author Ilyas
-        Setup initial state of the view
-    */
-
-    func setupInitialState()
     
     /**
      @author Ilyas Almakaev

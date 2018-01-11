@@ -19,7 +19,6 @@ class UserFriendsListInteractor: UserFriendsListInteractorInput {
         apiFacade.loadUserFriendsList(userID: userID, successHundler: { [weak self] (successObject) in
             guard let strongSelf = self, let friends = successObject else { return }
             strongSelf.output.loadedUserFriendsList(friendList: friends)
-        //    self?.setSelectedContact(object: successObject)
             }, errorHundler: { [weak self] (error) in
                 self?.output.showError(error)
                 CocoaLumberjackService.error(error.localizedDescription)
