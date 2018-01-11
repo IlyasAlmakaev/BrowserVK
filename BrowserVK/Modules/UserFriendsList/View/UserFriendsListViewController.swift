@@ -33,12 +33,10 @@ class UserFriendsListViewController: UIViewController, UserFriendsListViewInput 
 }
 
 extension UserFriendsListViewController: UICollectionViewDataSource {
-    @available(iOS 6.0, *) // REVIEW: Зачем тут эта анатация?
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return friendList.count
     }
     
-    @available(iOS 6.0, *) // REVIEW: Зачем тут эта анатация?
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: UserFriendListCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserFriendListCollectionViewCell", for: indexPath) as! UserFriendListCollectionViewCell
         /* REVIEW:
