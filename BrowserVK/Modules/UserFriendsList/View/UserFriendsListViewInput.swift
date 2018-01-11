@@ -10,8 +10,8 @@ protocol UserFriendsListViewInput: class {
     
     /**
      @author Ilyas Almakaev
-     Метод принимает детальную список друзей выбранного контакта
+     Метод обновляет collection view
      */
     
-    func loadedUserFriendsList(friendList: [FriendPresenter])
+    func reloadCollectionView()
 }

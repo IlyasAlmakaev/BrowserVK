@@ -10,6 +10,7 @@ class UserFriendsListPresenter: BasePresenter, UserFriendsListModuleInput, UserF
 
     weak var view: UserFriendsListViewInput!
     var interactor: UserFriendsListInteractorInput!
+    private var friendList: [FriendPresenter] = []
     private var userID: Int
     
     init(userID: Int) {
@@ -21,8 +22,16 @@ class UserFriendsListPresenter: BasePresenter, UserFriendsListModuleInput, UserF
     }
     
     func loadedUserFriendsList(friendList: [Friend]) {
-        let friendsPresenter = prepareFriendsPresenter(friends: friendList)
-        view.loadedUserFriendsList(friendList: friendsPresenter)
+        self.friendList = prepareFriendsPresenter(friends: friendList)
+        view.reloadCollectionView()
+    }
+    
+    func getUserFriendsListCount() -> Int {
+        return friendList.count
+    }
+    
+    func getUserFriend(row: Int) -> FriendPresenter {
+        return friendList[row]
     }
     
     func prepareFriendsPresenter(friends: [Friend]) -> [FriendPresenter] {

@@ -10,6 +10,7 @@ class UserInfoPresenter: BasePresenter, UserInfoModuleInput, UserInfoViewOutput,
     
     weak var view: UserInfoViewInput!
     var interactor: UserInfoInteractorInput!
+    var userFriendsListModule: UserFriendsListModuleInput!
     private var userID: Int 
     
     init(userID: Int) {

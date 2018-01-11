@@ -40,6 +40,6 @@ class UserInfoConfigurator {
         guard let userFriendsList: UserFriendsListConfigurator = resolver.resolve(UserFriendsListConfigurator.self,
                                                                                   argument:UserFriendsListInputDataModel(userID: input.userID)) else { return }
         userInfoViewController.userFriendsListViewController = userFriendsList.viewController
-    }
-    
+        presenter.userFriendsListModule = userFriendsList.moduleInput
+    }    
 }

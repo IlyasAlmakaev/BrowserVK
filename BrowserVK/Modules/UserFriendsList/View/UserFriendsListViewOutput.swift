@@ -14,4 +14,22 @@ protocol UserFriendsListViewOutput {
      */
 
     func viewIsReady()
+    
+    /**
+     @author Ilyas Almakaev
+     Метод возвращает общее количество друзей выбранного контакта
+     
+     return Количество друзей
+     */
+    
+    func getUserFriendsListCount() -> Int
+    
+    /**
+     @author Ilyas Almakaev
+     Метод друга выбранного контакта
+     
+     return Друг выбранного контакта
+     */
+    
+    func getUserFriend(row: Int) -> FriendPresenter
 }

@@ -17,6 +17,7 @@ import Swinject
 class UserFriendsListConfigurator {
     
     public var viewController: UserFriendsListViewController!
+    public var moduleInput: UserFriendsListModuleInput!
 
     init(resolver: Resolver, input: UserFriendsListInputDataModel) {
         let userFriendsListViewController = UserFriendsListViewController()
@@ -33,6 +34,7 @@ class UserFriendsListConfigurator {
         userFriendsListViewController.output = presenter
         
         viewController = userFriendsListViewController
+        moduleInput = presenter
     }
 
 }
