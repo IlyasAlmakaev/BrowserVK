@@ -16,7 +16,7 @@ import Foundation
 class Friend: Mappable {
     
     /** id Друга */
-    var id: Int?
+    var id: Int = 0
     /** Фамилия */
     var lastName: String?
     /** Имя */
@@ -27,8 +27,7 @@ class Friend: Mappable {
     init() {}
     
     required init?(map: AnyObject?) {
-        guard let map = map as? [String: AnyObject] else { return nil }
-        guard let id = map["id"] as? Int else { return nil }
+        guard let map = map as? [String: AnyObject], let id = map["id"] as? Int else { return nil }
         self.id = id
         self.lastName = map["last_name"] as? String
         self.firstName = map["first_name"] as? String

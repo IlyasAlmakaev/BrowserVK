@@ -18,8 +18,7 @@ class ContactDetailMapper: Mapper<ContactDetail,RContactDetail> {
     
     override func mapTo(item: RContactDetail) -> ContactDetail? {
         let object = ContactDetail()
-        guard let id = item.id.value else { return ContactDetail() }
-        object.id = id
+        object.id = item.id
         object.lastName = item.lastName
         object.firstName = item.firstName
         object.nickName = item.nickName
@@ -33,7 +32,7 @@ class ContactDetailMapper: Mapper<ContactDetail,RContactDetail> {
     
     override func mapFrom(item: ContactDetail) -> RContactDetail? {
         let object = RContactDetail()
-        object.id.value = item.id
+        object.id = item.id
         object.lastName = item.lastName
         object.firstName = item.firstName
         object.nickName = item.nickName

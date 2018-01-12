@@ -19,6 +19,7 @@ class UserFriendsListViewController: UIViewController, UserFriendsListViewInput 
         output.viewIsReady()
         
         collectionView.register(UINib(nibName: "UserFriendListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "UserFriendListCollectionViewCell")
+        collectionView.register(UINib(nibName: "EmptyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "EmptyCollectionViewCell")
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = CGSize(width: 60.0, height: 60.0)
         }
@@ -39,7 +40,10 @@ extension UserFriendsListViewController: UICollectionViewDataSource, UICollectio
                                                                                         for: indexPath) as! UserFriendListCollectionViewCell
 
         guard let friend = output.getUserFriend(row: indexPath.row) else {
-            return cell
+            let emptyCell: EmptyCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmptyCollectionViewCell",
+                                                                                            for: indexPath) as! EmptyCollectionViewCell
+
+            return emptyCell
         }
         cell.setup(model: friend)
         

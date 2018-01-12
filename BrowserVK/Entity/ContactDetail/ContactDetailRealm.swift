@@ -15,9 +15,9 @@ import RealmSwift
  */
 
 class RContactDetail: Object {
-    
+
     /** id Контакта */
-    var id = RealmOptional<Int>()
+    dynamic var id: Int = 0
     /** Фамилия */
     dynamic var lastName: String?
     /** Имя */

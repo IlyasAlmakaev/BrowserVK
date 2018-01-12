@@ -16,7 +16,7 @@ import Foundation
 class ContactPresenter {
     
     /** id Контакта */
-    var id: Int?
+    var id: Int = 0
     /** Фамилия и имя */
     var fullName: String?
     /** Фамилия */
