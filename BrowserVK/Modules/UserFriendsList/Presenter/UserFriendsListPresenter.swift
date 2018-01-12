@@ -10,11 +10,13 @@ class UserFriendsListPresenter: BasePresenter, UserFriendsListModuleInput, UserF
 
     weak var view: UserFriendsListViewInput!
     var interactor: UserFriendsListInteractorInput!
+    var userFriendListRouter: UserFriendsListRouter!
     private var friendList: [FriendPresenter] = []
     private var userID: Int
     
-    init(userID: Int) {
+    init(userID: Int, router: UserFriendsListRouter) {
         self.userID = userID
+        userFriendListRouter = router
     }
 
     func viewIsReady() {
@@ -41,5 +43,10 @@ class UserFriendsListPresenter: BasePresenter, UserFriendsListModuleInput, UserF
             friendsPresenter.append(friendPresenter)
         }
         return friendsPresenter
+    }
+    
+    func openFriendInfo(row: Int) {
+        let friend = friendList[row]
+        userFriendListRouter.openFriendInfo(friendID: friend.id)
     }
 }

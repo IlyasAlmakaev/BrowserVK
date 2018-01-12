@@ -29,8 +29,8 @@ class UserFriendsListViewController: UIViewController, UserFriendsListViewInput 
     }
 }
 
-extension UserFriendsListViewController: UICollectionViewDataSource {
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension UserFriendsListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return output.getUserFriendsListCount()
     }
     
@@ -45,5 +45,9 @@ extension UserFriendsListViewController: UICollectionViewDataSource {
         }
         
         return cell;
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        output.openFriendInfo(row: indexPath.row)
     }
 }

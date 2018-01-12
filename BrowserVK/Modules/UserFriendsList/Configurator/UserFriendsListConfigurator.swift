@@ -21,11 +21,10 @@ class UserFriendsListConfigurator {
 
     init(resolver: Resolver, input: UserFriendsListInputDataModel) {
         let userFriendsListViewController = UserFriendsListViewController()
-        let router = UserFriendsListRouter(viewController: userFriendsListViewController)
+        let router = UserFriendsListRouter(controller: userFriendsListViewController, factory: resolver.resolve(UserInfoControllerFactory.self)!)
 
-        let presenter = UserFriendsListPresenter(userID: input.userID)
+        let presenter = UserFriendsListPresenter(userID: input.userID, router: router)
         presenter.view = userFriendsListViewController
-        presenter.router = router
 
         let interactor = UserFriendsListInteractor(apiFacade: resolver.resolve(IApiFacade.self)!)
         interactor.output = presenter

@@ -9,5 +9,11 @@
 import Foundation
 
 protocol UserFriendsListRouterInput {
+    
+    /**
+     @author Ilyas Almakaev
+     Метод показа UserInfoViewController
+     */
 
+    func openFriendInfo(friendID: Int)
 }

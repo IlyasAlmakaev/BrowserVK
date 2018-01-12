@@ -32,4 +32,11 @@ protocol UserFriendsListViewOutput {
      */
     
     func getUserFriend(row: Int) -> FriendPresenter
+    
+    /**
+     @author Ilyas Almakaev
+     Метод открывает подробную информацию о выбранном друге
+     */
+    
+    func openFriendInfo(row: Int)
 }
