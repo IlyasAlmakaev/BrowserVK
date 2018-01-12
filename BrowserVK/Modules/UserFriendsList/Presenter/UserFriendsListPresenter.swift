@@ -6,6 +6,8 @@
 //  Copyright © 2018 Ilyas. All rights reserved.
 //
 
+import UIKit
+
 class UserFriendsListPresenter: BasePresenter, UserFriendsListModuleInput, UserFriendsListViewOutput, UserFriendsListInteractorOutput {
 
     weak var view: UserFriendsListViewInput!
@@ -50,11 +52,17 @@ class UserFriendsListPresenter: BasePresenter, UserFriendsListModuleInput, UserF
     }
     
     func openFriendInfo(row: Int) {
-        if row >= friendList.count {
-            return
-        } else {
+        if row < friendList.count {
             let friend = friendList[row]
             userFriendListRouter.openFriendInfo(friendID: friend.id)
+        }
+    }
+    
+    func sizeCell(row: Int) -> CGSize {
+        if row >= friendList.count {
+            return CGSize(width: 0, height: 0)
+        } else {
+            return CGSize(width: 60.0, height: 60.0)
         }
     }
     

@@ -6,6 +6,8 @@
 //  Copyright © 2018 Ilyas. All rights reserved.
 //
 
+import UIKit
+
 protocol UserFriendsListViewOutput {
 
     /**
@@ -39,4 +41,13 @@ protocol UserFriendsListViewOutput {
      */
     
     func openFriendInfo(row: Int)
+    
+    /**
+     @author Ilyas Almakaev
+     Метод возвращает размер ячейки
+     
+     return Размер ячейки
+     */
+    
+    func sizeCell(row: Int) -> CGSize
 }

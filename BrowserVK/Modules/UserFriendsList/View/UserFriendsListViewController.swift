@@ -30,7 +30,7 @@ class UserFriendsListViewController: UIViewController, UserFriendsListViewInput 
     }
 }
 
-extension UserFriendsListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension UserFriendsListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return output.getUserFriendsListCount()
     }
@@ -52,5 +52,9 @@ extension UserFriendsListViewController: UICollectionViewDataSource, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         output.openFriendInfo(row: indexPath.row)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return output.sizeCell(row: indexPath.row)
     }
 }
