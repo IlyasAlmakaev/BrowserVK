@@ -38,13 +38,12 @@ extension UserFriendsListViewController: UICollectionViewDataSource, UICollectio
         let cell: UserFriendListCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserFriendListCollectionViewCell",
                                                                                         for: indexPath) as! UserFriendListCollectionViewCell
 
-        let row = indexPath.row
-        if row < output.getUserFriendsListCount() {
-            let friend = output.getUserFriend(row: row)
-            cell.setup(model: friend)
+        guard let friend = output.getUserFriend(row: indexPath.row) else {
+            return cell
         }
+        cell.setup(model: friend)
         
-        return cell;
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

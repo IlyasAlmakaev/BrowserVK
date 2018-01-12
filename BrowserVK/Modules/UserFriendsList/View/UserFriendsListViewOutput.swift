@@ -31,7 +31,7 @@ protocol UserFriendsListViewOutput {
      return Друг выбранного контакта
      */
     
-    func getUserFriend(row: Int) -> FriendPresenter
+    func getUserFriend(row: Int) -> FriendPresenter?
     
     /**
      @author Ilyas Almakaev

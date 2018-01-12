@@ -32,8 +32,12 @@ class UserFriendsListPresenter: BasePresenter, UserFriendsListModuleInput, UserF
         return friendList.count
     }
     
-    func getUserFriend(row: Int) -> FriendPresenter {
-        return friendList[row]
+    func getUserFriend(row: Int) -> FriendPresenter? {
+        if row >= friendList.count {
+            return nil
+        } else {
+            return friendList[row]
+        }
     }
     
     func prepareFriendsPresenter(friends: [Friend]) -> [FriendPresenter] {
