@@ -18,19 +18,19 @@ class ContactDetail: Mappable {
     /** id Контакта */
     var id: Int = 0
     /** Фамилия */
-    var lastName: String = ""
+    var lastName: String?
     /** Имя */
-    var firstName: String = ""
+    var firstName: String?
     /** Отчество */
-    var nickName: String = ""
+    var nickName: String?
     /** screenname */
-    var screenname: String = ""
+    var screenname: String?
     /** Пол */
-    var sex: Int = 0
+    var sex: Int?
     /** Семейное положение */
     var relation: Int?
     /** Ссылка на картинку */
-    var urlImageLarge: String = ""
+    var urlImageLarge: String?
     
     init() {}
     
@@ -38,13 +38,13 @@ class ContactDetail: Mappable {
         guard let map = map as? [String: AnyObject] else { return nil }
         guard let id = map["id"] as? Int else { return nil }
         self.id = id
-        self.lastName = map["last_name"] as! String
-        self.firstName = map["first_name"] as! String
-        self.nickName = map["nickname"] as! String
-        self.screenname = map["screen_name"] as! String
-        self.sex = map["sex"] as! Int
+        self.lastName = map["last_name"] as? String
+        self.firstName = map["first_name"] as? String
+        self.nickName = map["nickname"] as? String
+        self.screenname = map["screen_name"] as? String
+        self.sex = map["sex"] as? Int
         self.relation = map["relation"] as? Int
-        self.urlImageLarge = map["photo_200"] as! String
+        self.urlImageLarge = map["photo_200"] as? String
     }
 }
 

@@ -16,22 +16,22 @@ import Foundation
 class ContactPresenter {
     
     /** id Контакта */
-    var id: Int = 0
+    var id: Int?
     /** Фамилия и имя */
-    var fullName: String = ""
+    var fullName: String?
     /** Фамилия */
-    var lastName: String = ""
+    var lastName: String?
     /** Имя */
-    var firstName: String = ""
+    var firstName: String?
     /** Url-адрес картинки */
     var urlImage: URL?
     
     init() {}
 
     required init(contact: Contact?) {
-        guard let contact = contact else { return }
+        guard let contact = contact, let lastName = contact.lastName, let firstName = contact.firstName, let urlImage = contact.urlImage else { return }
         self.id = contact.id
-        self.fullName = "\(contact.lastName) \(contact.firstName)"
-        self.urlImage = URL(string: contact.urlImage) ?? nil
+        self.fullName = "\(lastName) \(firstName)"
+        self.urlImage = URL(string: urlImage) ?? nil
     }
 }

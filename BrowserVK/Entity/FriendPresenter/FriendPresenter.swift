@@ -16,22 +16,22 @@ import Foundation
 class FriendPresenter {
     
     /** id Контакта */
-    var id: Int = 0
+    var id: Int?
     /** Фамилия и имя */
-    var fullName: String = ""
+    var fullName: String?
     /** Фамилия */
-    var lastName: String = ""
+    var lastName: String?
     /** Имя */
-    var firstName: String = ""
+    var firstName: String?
     /** Url-адрес картинки */
     var urlImage: URL?
     
     init() {}
     
     required init(friend: Friend?) {
-        guard let friend = friend else { return }
+        guard let friend = friend, let lastName = friend.lastName, let firstName = friend.firstName, let urlImage = friend.urlImage else { return }
         self.id = friend.id
-        self.fullName = "\(friend.lastName) \(friend.firstName)"
-        self.urlImage = URL(string: friend.urlImage) ?? nil
+        self.fullName = "\(lastName) \(firstName)"
+        self.urlImage = URL(string: urlImage) ?? nil
     }
 }

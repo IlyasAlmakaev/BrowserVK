@@ -89,8 +89,8 @@ class UserSearchPresenter: BasePresenter, UserSearchModuleInput, UserSearchViewO
             return cell
         }
         let selectRowAction: ((ContactPresenter) -> Void) = { [weak self] (item) -> Void in
-            guard let strongSelf = self else { return }
-            strongSelf.userSearchRouter.openUserInfoViewController(userID: item.id)
+            guard let strongSelf = self, let id = item.id else { return }
+            strongSelf.userSearchRouter.openUserInfoViewController(userID: id)
         }
         tableDatasource.registerSection(for: UserSearchTableViewCell.self, for: ContactPresenter.self, with: contactList, factory: contactFactory, selectAction: selectRowAction)
         view.provideTableDataSource(datasource: tableDatasource)

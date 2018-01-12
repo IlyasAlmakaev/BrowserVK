@@ -18,31 +18,36 @@ class ContactDetailPresenter {
     /** id Контакта */
     var id: Int = 0
     /** Фамилия и Имя */
-    var fullName: String = ""
+    var fullName: String?
     /** Фамилия */
-    var lastName: String = ""
+    var lastName: String?
     /** Имя */
-    var firstName: String = ""
+    var firstName: String?
     /** Отчество */
-    var nickName: String = ""
+    var nickName: String?
     /** screenname */
-    var screenname: String = ""
+    var screenname: String?
     /** Пол */
-    var sex: String = ""
+    var sex: String?
     /** Семейное положение */
-    var relation: String = ""
+    var relation: String?
     /** Url-адрес картинки */
     var urlImageLarge: URL?
     
     init(contactDetail: ContactDetail?) {
-        guard let contactDetail = contactDetail else { return }
-        self.fullName = "\(contactDetail.lastName) \(contactDetail.firstName)"
-        self.lastName = contactDetail.lastName
-        self.firstName = contactDetail.firstName
+        guard let contactDetail = contactDetail,
+            let lastName = contactDetail.lastName,
+            let firstName = contactDetail.firstName,
+            let sexInt = contactDetail.sex,
+            let urlImageLarge = contactDetail.urlImageLarge else { return }
+        
+        self.fullName = "\(lastName) \(firstName)"
+        self.lastName = lastName
+        self.firstName = firstName
         self.nickName = contactDetail.nickName
         self.screenname = contactDetail.screenname
         
-        let sexEnum = Sex(rawValue: contactDetail.sex)
+        let sexEnum = Sex(rawValue: sexInt)
         guard let sex = sexEnum?.description else { return }
         self.sex = sex
         
@@ -50,7 +55,7 @@ class ContactDetailPresenter {
         guard let relation = relationEnum?.description else { return }
         self.relation = relation
         
-        self.urlImageLarge = URL(string: contactDetail.urlImageLarge) ?? nil
+        self.urlImageLarge = URL(string: urlImageLarge) ?? nil
     }
     
     enum Sex: Int {

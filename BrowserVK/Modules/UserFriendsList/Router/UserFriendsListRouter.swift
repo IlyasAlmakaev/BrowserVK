@@ -23,7 +23,6 @@ class UserFriendsListRouter: BaseRouter, UserFriendsListRouterInput {
     }
     
     func openFriendInfo(friendID: Int) {
-        print("opent \(friendID)")
         guard let userInfoViewController = factory.controller(input: UserInfoInputDataModel(userID: friendID))?.viewController else { return }
         viewController.navigationController?.pushViewController(userInfoViewController, animated: true)
     }

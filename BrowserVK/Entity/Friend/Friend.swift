@@ -16,13 +16,13 @@ import Foundation
 class Friend: Mappable {
     
     /** id Друга */
-    var id: Int = 0
+    var id: Int?
     /** Фамилия */
-    var lastName: String = ""
+    var lastName: String?
     /** Имя */
-    var firstName: String = ""
+    var firstName: String?
     /** Ссылка на картинку */
-    var urlImage: String = ""
+    var urlImage: String?
     
     init() {}
     
@@ -30,9 +30,9 @@ class Friend: Mappable {
         guard let map = map as? [String: AnyObject] else { return nil }
         guard let id = map["id"] as? Int else { return nil }
         self.id = id
-        self.lastName = map["last_name"] as! String
-        self.firstName = map["first_name"] as! String
-        self.urlImage = map["photo_50"] as! String
+        self.lastName = map["last_name"] as? String
+        self.firstName = map["first_name"] as? String
+        self.urlImage = map["photo_50"] as? String
     }
 }
 

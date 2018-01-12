@@ -18,12 +18,13 @@ class ContactDetailMapper: Mapper<ContactDetail,RContactDetail> {
     
     override func mapTo(item: RContactDetail) -> ContactDetail? {
         let object = ContactDetail()
-        object.id = item.id
+        guard let id = item.id.value else { return ContactDetail() }
+        object.id = id
         object.lastName = item.lastName
         object.firstName = item.firstName
         object.nickName = item.nickName
         object.screenname = item.screenname
-        object.sex = item.sex
+        object.sex = item.sex.value
         object.relation = item.relation.value
         object.urlImageLarge = item.urlImageLarge
         
@@ -32,12 +33,12 @@ class ContactDetailMapper: Mapper<ContactDetail,RContactDetail> {
     
     override func mapFrom(item: ContactDetail) -> RContactDetail? {
         let object = RContactDetail()
-        object.id = item.id
+        object.id.value = item.id
         object.lastName = item.lastName
         object.firstName = item.firstName
         object.nickName = item.nickName
         object.screenname = item.screenname
-        object.sex = item.sex
+        object.sex.value = item.sex
         object.relation.value = item.relation
         object.urlImageLarge = item.urlImageLarge
         

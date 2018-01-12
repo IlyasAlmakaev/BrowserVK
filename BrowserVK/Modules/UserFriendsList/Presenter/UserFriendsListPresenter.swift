@@ -47,6 +47,11 @@ class UserFriendsListPresenter: BasePresenter, UserFriendsListModuleInput, UserF
     
     func openFriendInfo(row: Int) {
         let friend = friendList[row]
-        userFriendListRouter.openFriendInfo(friendID: friend.id)
+        guard let id = friend.id else { return }
+        userFriendListRouter.openFriendInfo(friendID: id)
+    }
+    
+    override func showError(_ error: Error) {
+        userFriendListRouter.showErrorAlert(errorDescription: error.localizedDescription)
     }
 }
